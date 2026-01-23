@@ -10,17 +10,11 @@ export const metadata: Metadata = {
 
 const projects = [
   {
-    name: "OCTAIA",
-    description: "Plateforme d'intelligence artificielle innovante offrant des solutions AI avancées pour les entreprises.",
+    name: "OCTA-IA",
+    description: "Octa-AI est une intelligence artificielle de bien-être qui accompagne les utilisateurs au quotidien pour améliorer l'équilibre mental, émotionnel et personnel grâce à des conseils simples et personnalisés.",
     href: "https://octaia.netlify.app/",
     tags: ["Intelligence Artificielle", "Web App", "SaaS"],
-  },
-  {
-    name: "Octa-AI",
-    description: "Octa-AI est une intelligence artificielle de bien-être qui accompagne les utilisateurs au quotidien pour améliorer l'équilibre mental, émotionnel et personnel grâce à des conseils simples et personnalisés.",
-    href: "#",
-    tags: ["Intelligence Artificielle", "Bien-être", "Santé Mentale"],
-  },
+  }
 ]
 
 const partners = [
