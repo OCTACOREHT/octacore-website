@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import { Instagram, Linkedin, Facebook, ArrowUpRight, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Wordmark } from "@/components/logotype"
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -152,15 +153,7 @@ export default function PortfolioPage() {
           {/* Coming Soon Placeholder */}
           <div className="relative bg-[#0a0a2e] border border-[#2382FF]/20 rounded-2xl p-8 sm:p-12 md:p-16 octagon-pattern">
             <div className="relative z-10 text-center">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-6 rounded-full bg-[#0030FF]/10 flex items-center justify-center">
-                <Image 
-                  src="/logo.png" 
-                  alt="OCTACORE Logo" 
-                  width={48} 
-                  height={48}
-                  className="w-10 h-10 sm:w-12 sm:h-12"
-                />
-              </div>
+              <Wordmark size="sm" className="mx-auto mb-6 h-auto w-auto" />
               <h3 className="font-[family-name:var(--font-heading)] font-semibold text-lg sm:text-xl text-white mb-3 uppercase">
                 Plus de projets à venir
               </h3>

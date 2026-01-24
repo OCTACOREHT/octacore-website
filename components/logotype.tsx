@@ -6,33 +6,30 @@ interface LogotypeProps {
   className?: string
 }
 
-export function Logotype({ size = "md", showTagline = true, className = "" }: LogotypeProps) {
+export function Logotype({ size = "md", showTagline = false, className = "" }: LogotypeProps) {
   const sizes = {
-    sm: { logo: 32, text: "text-lg", tagline: "text-[8px]" },
-    md: { logo: 40, text: "text-xl", tagline: "text-[10px]" },
-    lg: { logo: 56, text: "text-2xl", tagline: "text-xs" },
-    xl: { logo: 80, text: "text-3xl", tagline: "text-sm" },
+    sm: { lockup: 120, tagline: "text-[9px]" },
+    md: { lockup: 150, tagline: "text-[11px]" },
+    lg: { lockup: 190, tagline: "text-xs" },
+    xl: { lockup: 220, tagline: "text-sm" },
   }
 
   const s = sizes[size]
 
   return (
-    <div className={`flex items-center gap-3 ${className}`}>
-      <Image 
-        src="/logo.png" 
-        alt="OCTACORE Logo" 
-        width={s.logo} 
-        height={s.logo}
-        className="flex-shrink-0"
-        style={{ width: s.logo, height: s.logo }}
-        priority
-      />
-      <div className="flex flex-col">
-        <span className={`font-[family-name:var(--font-heading)] font-bold ${s.text} text-white uppercase tracking-tight`}>
-          OCTACORE
-        </span>
+    <div className={`flex items-center gap-2.5 ${className}`}>
+      <div className="flex flex-col leading-none">
+        <img
+          src="/Horizontal-lockup-white.png"
+          alt="Octacore lockup"
+          width={s.lockup}
+          height={Math.round(s.lockup / 4.2)}
+          className="h-auto"
+          style={{ width: s.lockup, height: "auto" }}
+          loading="eager"
+        />
         {showTagline && (
-          <span className={`${s.tagline} text-white/70 tracking-wider mt-0.5`}>
+          <span className={`${s.tagline} text-white/70 tracking-wide mt-1 uppercase`}>
             Smart solutions. Real impact.
           </span>
         )}
@@ -42,21 +39,32 @@ export function Logotype({ size = "md", showTagline = true, className = "" }: Lo
 }
 
 export function LogotypeText({ size = "xl", className = "" }: { size?: "sm" | "md" | "lg" | "xl" | "hero", className?: string }) {
-  const sizes = {
-    sm: "text-lg",
-    md: "text-xl",
-    lg: "text-2xl",
-    xl: "text-3xl",
-    hero: "text-4xl sm:text-5xl md:text-6xl lg:text-7xl",
-  }
-  
-  return (
-    <span className={`font-[family-name:var(--font-heading)] font-bold ${sizes[size]} text-white uppercase tracking-tight ${className}`}>
-      OCTACORE
-    </span>
-  )
+  const map = { sm: "xs", md: "sm", lg: "md", xl: "lg", hero: "hero" } as const
+  return <Wordmark size={map[size]} className={className} />
 }
 
 export function OctacoreText({ size = "md", className = "" }: { size?: "sm" | "md" | "lg" | "xl" | "hero", className?: string }) {
   return <LogotypeText size={size} className={className} />
+}
+
+export function Wordmark({
+  size = "md",
+  className = "",
+}: {
+  size?: "xs" | "sm" | "md" | "lg" | "hero";
+  className?: string;
+}) {
+  const sizes = { xs: 100, sm: 140, md: 180, lg: 220, hero: 300 }
+  const width = sizes[size]
+  return (
+    <img
+      src="/Horizontal-lockup-white.png"
+      alt="Octacore"
+      width={width}
+      height={Math.round(width / 4.2)}
+      className={className}
+      style={{ width, height: "auto" }}
+      loading="eager"
+    />
+  )
 }

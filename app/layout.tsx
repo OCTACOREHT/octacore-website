@@ -6,12 +6,13 @@ import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://octacore.ht'),
   title: {
     default: 'OCTACORE - Smart Solutions. Real Impact.',
     template: '%s | OCTACORE'
   },
-  description: 'Octacore is a technology company focused on designing, securing, and optimizing intelligent digital solutions. We help organizations navigate digital transformation and achieve real, measurable impact.',
-  keywords: ['OCTACORE', 'solutions technologiques', 'développement web', 'Haïti', 'Port-au-Prince', 'digital', 'transformation digitale', 'smart solutions'],
+  description: 'Octacore est une entreprise technologique qui conçoit, sécurise et optimise des solutions numériques intelligentes. Nous aidons les organisations à réussir leur transformation digitale et à obtenir un impact mesurable.',
+  keywords: ['OCTACORE', 'solutions technologiques', 'développement web', 'Haïti', 'Port-au-Prince', 'digital', 'transformation digitale', 'smart solutions', 'sécurité numérique'],
   authors: [{ name: 'OCTACORE' }],
   creator: 'OCTACORE',
   icons: {
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     locale: 'fr_HT',
     siteName: 'OCTACORE',
     title: 'OCTACORE - Smart Solutions. Real Impact.',
-    description: 'Octacore provides cutting edge digital systems built for performance, safety, and growth.',
+    description: 'Octacore conçoit des systèmes digitaux de pointe pensés pour la performance, la sécurité et la croissance.',
     images: ['/logo.png'],
   },
     generator: 'v0.app'
@@ -51,7 +52,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               "name": "OCTACORE",
-              "description": "Octacore is a technology company focused on designing, securing, and optimizing intelligent digital solutions.",
+              "description": "Octacore conçoit, sécurise et optimise des solutions numériques intelligentes.",
               "slogan": "Smart solutions. Real impact.",
               "address": {
                 "@type": "PostalAddress",

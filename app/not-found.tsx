@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Home } from "lucide-react"
+import { Wordmark } from "@/components/logotype"
 
 export default function NotFound() {
   return (
@@ -21,13 +22,7 @@ export default function NotFound() {
 
         {/* Logo */}
         <div className="flex justify-center mb-6">
-          <Image 
-            src="/logo.png" 
-            alt="OCTACORE Logo" 
-            width={64} 
-            height={64}
-            className="w-16 h-16"
-          />
+          <Wordmark size="sm" className="h-auto w-auto" />
         </div>
 
         {/* Message */}

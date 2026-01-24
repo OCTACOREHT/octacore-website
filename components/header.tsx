@@ -1,17 +1,18 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Logotype } from "@/components/logotype"
 
 const navigation = [
   { name: "Accueil", href: "/" },
   { name: "À propos", href: "/a-propos" },
   { name: "Services", href: "/services" },
   { name: "Portfolio", href: "/portfolio" },
+  { name: "Carrière", href: "/carriere" },
   { name: "Contact", href: "/contact" },
 ]
 
@@ -59,7 +60,14 @@ export function Header() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 py-4 lg:px-8">
         {/* Logo - Primary Horizontal Lockup (min 200px width) */}
         <Link href="/" className="min-w-[180px] sm:min-w-[200px]">
-          <Logotype size="md" showTagline={true} />
+          <Image
+            src="/Horizontal-lockup%20V2.png"
+            alt="Octacore"
+            width={180}
+            height={70}
+            className="h-auto w-[150px] sm:w-[180px]"
+            priority
+          />
         </Link>
 
         {/* Desktop Navigation */}
@@ -101,32 +109,65 @@ export function Header() {
 
       {/* Mobile menu - Fixed overlay with no scroll */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 bg-[#03011E] z-40 overflow-hidden">
-          <div className="flex flex-col items-center justify-center h-full gap-6 px-6">
-            {navigation.map((item) => {
-              const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href))
-              return (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={`text-2xl font-medium transition-colors ${isActive ? 'text-[#2382FF]' : 'text-white hover:text-[#2382FF]'}`}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              )
-            })}
+        <div className="lg:hidden fixed inset-0 bg-[#03011E]/95 backdrop-blur-xl z-40 overflow-hidden px-6 pt-20 pb-10">
+          <div className="max-w-md mx-auto bg-white/5 border border-white/10 rounded-3xl p-6 flex flex-col gap-5 shadow-xl">
+            <div className="flex items-center justify-between">
+              <Image
+                src="/Horizontal-lockup%20V2.png"
+                alt="Octacore"
+                width={140}
+                height={60}
+                className="h-auto w-[140px]"
+                priority
+              />
+              <Button
+                variant="ghost"
+                className="text-white hover:text-[#2382FF] px-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <X className="h-5 w-5" />
+              </Button>
+            </div>
 
-            {/* Mobile CTA */}
-            <Button
-              asChild
-              size="lg"
-              className="w-full max-w-xs mx-auto mt-6 bg-[#0030FF] text-white hover:bg-[#2382FF] font-semibold btn-glow"
-            >
-              <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                Débuter projet
-              </Link>
-            </Button>
+            <div className="grid grid-cols-1 gap-3">
+              {navigation.map((item) => {
+                const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href))
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={`rounded-xl px-4 py-3 flex items-center justify-between text-base font-medium border transition-all ${
+                      isActive
+                        ? 'border-[#2382FF] bg-[#0030FF]/20 text-white'
+                        : 'border-white/10 bg-white/5 text-white/80 hover:border-[#2382FF]/50 hover:text-white'
+                    }`}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <span>{item.name}</span>
+                    <span className="text-xs text-white/50">→</span>
+                  </Link>
+                )
+              })}
+            </div>
+
+            <div className="flex flex-col gap-3">
+              <Button
+                asChild
+                size="lg"
+                className="w-full bg-[#0030FF] text-white hover:bg-[#2382FF] font-semibold btn-glow"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <Link href="/contact">Débuter projet</Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="w-full border-white/20 text-white hover:bg-white/10"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <Link href="/services">Voir nos services</Link>
+              </Button>
+            </div>
           </div>
         </div>
       )}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import { Lightbulb, Target, Shield, Users } from "lucide-react"
+import { Wordmark } from "@/components/logotype"
 
 export const metadata: Metadata = {
   title: "À propos",
@@ -39,11 +40,14 @@ export default function AProposPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a2e] to-[#03011E]" />
         <div className="absolute inset-0 circuit-bg opacity-30" />
 
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h1 className="font-[family-name:var(--font-heading)] font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-tight text-white mb-4 sm:mb-6 animate-fade-up">
-            À PROPOS D&apos;OCTACORE
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center gap-4">
+          <h1 className="font-[family-name:var(--font-heading)] font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-tight text-white animate-fade-up">
+            À PROPOS DE
           </h1>
-          <p className="text-lg sm:text-xl text-white/80 animate-fade-up-delay-1">
+          <div className="animate-fade-up-delay-1">
+            <Wordmark size="md" className="mx-auto h-auto w-auto" />
+          </div>
+          <p className="text-lg sm:text-xl text-white/80 animate-fade-up-delay-2">
             Smart solutions. Real impact.
           </p>
         </div>
