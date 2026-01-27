@@ -12,6 +12,7 @@ const navigation = [
   { name: "À propos", href: "/a-propos" },
   { name: "Services", href: "/services" },
   { name: "Portfolio", href: "/portfolio" },
+  { name: "Blog", href: "/blog" },
   { name: "Carrière", href: "/carriere" },
   { name: "Contact", href: "/contact" },
 ]
@@ -86,15 +87,7 @@ export function Header() {
           })}
         </div>
 
-        {/* Desktop CTA */}
-        <div className="hidden lg:flex lg:items-center lg:gap-4">
-          <Button
-            asChild
-            className="bg-[#0030FF] text-white hover:bg-[#2382FF] font-semibold btn-glow"
-          >
-            <Link href="/contact">Débuter projet</Link>
-          </Button>
-        </div>
+        {/* Desktop CTA removed per request (Débuter projet) */}
 
         {/* Mobile menu button */}
         <button
@@ -151,14 +144,7 @@ export function Header() {
             </div>
 
             <div className="flex flex-col gap-3">
-              <Button
-                asChild
-                size="lg"
-                className="w-full bg-[#0030FF] text-white hover:bg-[#2382FF] font-semibold btn-glow"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <Link href="/contact">Débuter projet</Link>
-              </Button>
+              {/* Removed Débuter projet button from mobile menu per request */}
               <Button
                 asChild
                 variant="outline"

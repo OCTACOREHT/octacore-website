@@ -171,6 +171,13 @@ export default function HomePage() {
                 >
                   <Link href="/services">Découvrir nos services</Link>
                 </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-white/6 border border-white/10 text-white hover:bg-white/10 px-6 py-6 font-semibold"
+                >
+                  <Link href="/blog">Voir le blog</Link>
+                </Button>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
                 {metrics.map((item) => (
