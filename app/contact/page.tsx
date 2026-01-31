@@ -1,99 +1,54 @@
 "use client"
 
-import React from "react"
-import { useState } from "react"
+import React, { useState, useRef } from "react"
 import { Mail, Phone, Instagram, Linkedin, Facebook, Send, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
+const ACCESS_KEY = "7fdaacca-8ad7-4669-be27-40f4384540df"  // TA CLÉ
+
 const contactInfo = [
-  {
-    label: "Email",
-    value: "octacore.haiti@gmail.com",
-    href: "mailto:octacore.haiti@gmail.com",
-    icon: Mail,
-  },
-  {
-    label: "Téléphone",
-    value: "+509 4473-2152",
-    href: "tel:+50944732152",
-    icon: Phone,
-  },
-  {
-    label: "Téléphone",
-    value: "+509 3794-7597",
-    href: "tel:+50937947597",
-    icon: Phone,
-  },
+  { label: "Email", value: "octacore.haiti@gmail.com", href: "mailto:octacore.haiti@gmail.com", icon: Mail },
+  { label: "Téléphone", value: "509 4473-2152", href: "tel:50944732152", icon: Phone },
+  { label: "Téléphone", value: "509 3794-7597", href: "tel:50937947597", icon: Phone },
 ]
 
 const socialLinks = [
   { name: "Instagram", href: "https://www.instagram.com/octacore.ht/", icon: Instagram },
-  { name: "LinkedIn", href: "https://www.linkedin.com/company/octacoreplus/?viewAsMember=true", icon: Linkedin },
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/octacoreplus?viewAsMember=true", icon: Linkedin },
   { name: "Facebook", href: "https://www.facebook.com/profile.php?id=61587140361937&locale=fr_FR", icon: Facebook },
   { name: "Email", href: "mailto:octacore.haiti@gmail.com", icon: Mail },
 ]
 
 export default function ContactPage() {
-  const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  })
+  const formRef = useRef<HTMLFormElement>(null)
+  const [result, setResult] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [errors, setErrors] = useState<Record<string, string>>({})
-  const [submitError, setSubmitError] = useState("")
 
-  const validateForm = () => {
-    const newErrors: Record<string, string> = {}
-    
-    if (!formState.email.trim()) {
-      newErrors.email = "L'email est requis"
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formState.email)) {
-      newErrors.email = "Email invalide"
-    }
-    
-    if (!formState.message.trim()) {
-      newErrors.message = "Le message est requis"
-    }
-    
-    setErrors(newErrors)
-    return Object.keys(newErrors).length === 0
-  }
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    
-    if (!validateForm()) return
-    
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
     setIsSubmitting(true)
-    setSubmitError("")
-    
+    setResult("")
+
+    const formData = new FormData(event.target as HTMLFormElement)
+    formData.append("access_key", ACCESS_KEY)
+
     try {
-      const response = await fetch("https://formspree.io/f/octacore.haiti@gmail.com", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify({
-          name: formState.name,
-          email: formState.email,
-          phone: formState.phone,
-          message: formState.message,
-        }),
+        body: formData,
       })
 
-      if (response.ok) {
-        setIsSubmitted(true)
-        setFormState({ name: "", email: "", phone: "", message: "" })
+      const data = await response.json()
+      
+      if (data.success) {
+        setResult("✅ Message envoyé !")
+        formRef.current?.reset()
       } else {
-        throw new Error("Erreur lors de l'envoi")
+        setResult("❌ Erreur : " + (data.message || "Réessayez"))
       }
     } catch (error) {
-      setSubmitError(error instanceof Error ? error.message : "Une erreur est survenue")
+      setResult("❌ Erreur réseau")
     } finally {
       setIsSubmitting(false)
     }
@@ -103,197 +58,124 @@ export default function ContactPage() {
     <>
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
-        {/* Blue Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a2e] to-[#03011E]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-0a0a2e to-03011E" />
         <div className="absolute inset-0 circuit-bg opacity-30" />
-
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h1 className="font-[family-name:var(--font-heading)] font-bold text-clamp-h1 uppercase tracking-tight text-white mb-6 animate-fade-up">
+          <h1 className="font-bold text-4xl lg:text-6xl uppercase tracking-tight text-white mb-6 animate-fade-up">
             CONTACTEZ-NOUS
           </h1>
-          <p className="text-lg sm:text-xl text-white/80 animate-fade-up-delay-1">
+          <p className="text-xl text-white/80 animate-fade-up animation-delay-200">
             Discutons de votre projet
           </p>
         </div>
       </section>
 
-      {/* Contact Content */}
-      <section className="py-16 sm:py-20 lg:py-28 bg-[#03011E]">
+      <section className="py-20 bg-03011E">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          {/* Contact Form - Centered */}
-          <div className="max-w-xl mx-auto bg-[#0a0a2e] border border-[#2382FF]/20 rounded-2xl p-6 sm:p-8 md:p-10 mb-12">
-            {isSubmitted ? (
-              <div className="flex flex-col items-center justify-center min-h-[400px] text-center">
-                <div className="w-16 h-16 mb-6 rounded-full bg-[#0030FF]/20 flex items-center justify-center">
-                  <CheckCircle className="w-8 h-8 text-[#2382FF]" />
-                </div>
-                <h3 className="font-[family-name:var(--font-heading)] font-semibold text-xl text-white mb-3 uppercase">
-                  Message envoyé!
-                </h3>
-                <p className="text-white/70 mb-6">
-                  Merci de nous avoir contactés. Nous vous répondrons dans les plus brefs délais.
-                </p>
-                <Button
-                  onClick={() => setIsSubmitted(false)}
-                  variant="outline"
-                  className="border-[#0030FF]/50 text-[#2382FF] hover:bg-[#0030FF]/10 bg-transparent"
-                >
-                  Envoyer un autre message
-                </Button>
+          {/* Formulaire */}
+          <div className="max-w-lg mx-auto bg-0a0a2e border border-2382FF/20 rounded-2xl p-8 mb-12">
+            <h3 className="font-bold text-2xl text-white mb-8 text-center uppercase">
+              Envoyez-nous un message
+            </h3>
+            
+            <form ref={formRef} onSubmit={onSubmit} className="space-y-6">
+              <div>
+                <label className="block text-sm font-medium text-white/70 mb-2">Nom complet</label>
+                <Input 
+                  type="text" 
+                  name="name" 
+                  required 
+                  className="w-full bg-03011E border border-2382FF/20 text-white placeholder-white/40 focus:border-0030FF focus:ring-0030FF/20 px-4 py-3 rounded-lg"
+                  placeholder="Votre nom"
+                />
               </div>
-            ) : (
-              <>
-                <h3 className="font-[family-name:var(--font-heading)] font-semibold text-xl text-white mb-6 text-center uppercase">
-                  Envoyez-nous un message
-                </h3>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  {/* Name */}
-                  <div className="space-y-2">
-                    <label htmlFor="name" className="block text-sm font-medium text-white/70">
-                      Nom complet
-                    </label>
-                    <Input
-                      id="name"
-                      name="name"
-                      type="text"
-                      value={formState.name}
-                      onChange={handleChange}
-                      className="bg-[#03011E] border-[#2382FF]/20 text-white placeholder:text-white/40 focus:border-[#0030FF] focus:ring-[#0030FF]/20"
-                      placeholder="Votre nom"
-                    />
-                  </div>
 
-                  {/* Email */}
-                  <div className="space-y-2">
-                    <label htmlFor="email" className="block text-sm font-medium text-white/70">
-                      Email <span className="text-[#0030FF]">*</span>
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formState.email}
-                      onChange={handleChange}
-                      className={`bg-[#03011E] border-[#2382FF]/20 text-white placeholder:text-white/40 focus:border-[#0030FF] focus:ring-[#0030FF]/20 ${errors.email ? 'border-red-500' : ''}`}
-                      placeholder="votre@email.com"
-                      required
-                    />
-                    {errors.email && (
-                      <p className="text-red-400 text-sm">{errors.email}</p>
-                    )}
-                  </div>
+              <div>
+                <label className="block text-sm font-medium text-white/70 mb-2">
+                  Email <span className="text-0030FF">*</span>
+                </label>
+                <Input 
+                  type="email" 
+                  name="email" 
+                  required 
+                  className="w-full bg-03011E border border-2382FF/20 text-white placeholder-white/40 focus:border-0030FF focus:ring-0030FF/20 px-4 py-3 rounded-lg"
+                  placeholder="nom@exemple.com"
+                />
+              </div>
 
-                  {/* Phone */}
-                  <div className="space-y-2">
-                    <label htmlFor="phone" className="block text-sm font-medium text-white/70">
-                      Téléphone
-                    </label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formState.phone}
-                      onChange={handleChange}
-                      className="bg-[#03011E] border-[#2382FF]/20 text-white placeholder:text-white/40 focus:border-[#0030FF] focus:ring-[#0030FF]/20"
-                      placeholder="+509 XXXX-XXXX"
-                    />
-                  </div>
+              <div>
+                <label className="block text-sm font-medium text-white/70 mb-2">Téléphone</label>
+                <Input 
+                  type="tel" 
+                  name="phone" 
+                  className="w-full bg-03011E border border-2382FF/20 text-white placeholder-white/40 focus:border-0030FF focus:ring-0030FF/20 px-4 py-3 rounded-lg"
+                  placeholder="509 XXXX-XXXX"
+                />
+              </div>
 
-                  {/* Message */}
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="block text-sm font-medium text-white/70">
-                      Message <span className="text-[#0030FF]">*</span>
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={5}
-                      value={formState.message}
-                      onChange={handleChange}
-                      className={`w-full rounded-md bg-[#03011E] border border-[#2382FF]/20 text-white placeholder:text-white/40 focus:border-[#0030FF] focus:ring-[#0030FF]/20 focus:outline-none focus:ring-2 px-3 py-2 text-base ${errors.message ? 'border-red-500' : ''}`}
-                      placeholder="Décrivez votre projet..."
-                      required
-                    />
-                    {errors.message && (
-                      <p className="text-red-400 text-sm">{errors.message}</p>
-                    )}
-                  </div>
+              <div>
+                <label className="block text-sm font-medium text-white/70 mb-2">
+                  Message <span className="text-0030FF">*</span>
+                </label>
+                <textarea 
+                  name="message" 
+                  rows={5}
+                  required
+                  className="w-full bg-03011E border border-2382FF/20 text-white placeholder-white/40 focus:border-0030FF focus:ring-0030FF/20 px-4 py-3 rounded-lg resize-vertical"
+                  placeholder="Décrivez votre projet..."
+                />
+              </div>
 
-                  {/* Error Message */}
-                  {submitError && (
-                    <div className="p-4 rounded-lg bg-red-500/10 border border-red-500/30">
-                      <p className="text-red-400 text-sm">{submitError}</p>
-                    </div>
-                  )}
+              {result && (
+                <div className={`p-4 rounded-lg text-center font-medium ${
+                  result.includes("✅") ? "bg-green-500/10 border border-green-500/30 text-green-400" : 
+                  "bg-red-500/10 border border-red-500/30 text-red-400"
+                }`}>
+                  {result}
+                </div>
+              )}
 
-                  {/* Submit Button - Core Electric Blue */}
-                  <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full mx-auto bg-[#0030FF] text-white hover:bg-[#2382FF] font-semibold btn-glow disabled:opacity-50"
-                  >
-                    {isSubmitting ? (
-                      "Envoi en cours..."
-                    ) : (
-                      <>
-                        Envoyer message
-                        <Send className="w-4 h-4 ml-2" />
-                      </>
-                    )}
-                  </Button>
-                </form>
-              </>
-            )}
+              <Button 
+                type="submit" 
+                disabled={isSubmitting}
+                className="w-full bg-gradient-to-r from-0030FF to-2382FF hover:from-2382FF hover:to-0030FF text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-200 disabled:opacity-50"
+              >
+                {isSubmitting ? "Envoi en cours..." : "Envoyer Message"}
+                <Send className="w-5 h-5 ml-2" />
+              </Button>
+            </form>
           </div>
 
-          {/* Contact Info - Centered below form */}
-          <div className="max-w-xl mx-auto">
-            {/* Contact Details */}
-            <div className="bg-[#0a0a2e] border border-[#2382FF]/20 rounded-2xl p-6 sm:p-8 mb-6">
-              <h3 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-white mb-6 text-center uppercase">
-                Nos coordonnées
-              </h3>
+          {/* Contact Info */}
+          <div className="max-w-lg mx-auto">
+            <div className="bg-0a0a2e border border-2382FF/20 rounded-2xl p-8 mb-8">
+              <h3 className="font-bold text-xl text-white mb-6 text-center uppercase">Nos coordonnées</h3>
               <div className="space-y-4">
-                {contactInfo.map((info, index) => (
-                  <a
-                    key={index}
-                    href={info.href}
-                    className="flex items-center gap-4 p-3 rounded-lg hover:bg-[#0030FF]/5 transition-colors group"
-                  >
-                    <div className="w-10 h-10 rounded-lg bg-[#0030FF]/10 flex items-center justify-center group-hover:bg-[#0030FF]/20 transition-colors flex-shrink-0">
-                      <info.icon className="w-5 h-5 text-[#0030FF]" />
+                {contactInfo.map((info, i) => (
+                  <a key={i} href={info.href} className="flex items-center gap-4 p-4 rounded-xl hover:bg-0030FF/10 transition-all group">
+                    <div className="w-12 h-12 bg-0030FF/20 rounded-xl flex items-center justify-center group-hover:bg-0030FF/40 transition-colors">
+                      <info.icon className="w-6 h-6 text-0030FF" />
                     </div>
-                    <div className="min-w-0">
-                      <p className="text-white/60 text-sm">{info.label}</p>
-                      <p className="text-white truncate">{info.value}</p>
+                    <div>
+                      <p className="text-white/60 text-sm font-medium">{info.label}</p>
+                      <p className="text-white font-semibold truncate">{info.value}</p>
                     </div>
                   </a>
                 ))}
               </div>
             </div>
 
-            {/* Social Links - 4 icons centered */}
-            <div className="bg-[#0a0a2e] border border-[#2382FF]/20 rounded-2xl p-6 sm:p-8">
-              <h3 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-white mb-6 text-center uppercase">
-                Suivez-nous
-              </h3>
-              <div className="flex flex-wrap justify-center gap-4">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 rounded-lg bg-[#0030FF]/10 flex items-center justify-center hover:bg-[#0030FF]/20 transition-colors"
-                    aria-label={social.name}
-                  >
-                    <social.icon className="w-5 h-5 text-[#0030FF]" />
+            <div className="bg-0a0a2e border border-2382FF/20 rounded-2xl p-8 text-center">
+              <h3 className="font-bold text-xl text-white mb-6 uppercase">Suivez-nous</h3>
+              <div className="flex justify-center gap-6 mb-6">
+                {socialLinks.map(link => (
+                  <a key={link.name} href={link.href} target="_blank" rel="noopener" 
+                    className="w-14 h-14 bg-0030FF/20 rounded-xl flex items-center justify-center hover:bg-0030FF/40 transition-all hover:scale-110 shadow-lg">
+                    <link.icon className="w-6 h-6 text-0030FF" />
                   </a>
                 ))}
               </div>
-              <p className="text-white/50 text-sm text-center mt-6">
-                Port-au-Prince, Haïti
-              </p>
+              <p className="text-white/50 text-lg">Port-au-Prince, Haïti</p>
             </div>
           </div>
         </div>
