@@ -4,29 +4,29 @@ import { Lightbulb, Target, Shield, Users } from "lucide-react"
 import { Wordmark } from "@/components/logotype"
 
 export const metadata: Metadata = {
-  title: "À propos",
-  description: "Octacore est une entreprise technologique spécialisée dans la conception, la sécurisation et l'optimisation de solutions numériques intelligentes. Port-au-Prince, Haïti.",
+  title: "About",
+  description: "Octacore is a technology company specializing in the design, security and optimization of intelligent digital solutions. Port-au-Prince, Haiti.",
 }
 
 const values = [
   {
     title: "Innovation",
-    description: "Nous combinons innovation et précision pour offrir des solutions de pointe.",
+    description: "We combine innovation and precision to offer cutting-edge solutions.",
     icon: Lightbulb,
   },
   {
-    title: "Précision",
-    description: "Chaque projet est développé avec rigueur et attention aux détails.",
+    title: "Precision",
+    description: "Each project is developed with rigor and attention to detail.",
     icon: Target,
   },
   {
-    title: "Sécurité",
-    description: "La protection des données est au coeur de tout ce que nous construisons.",
+    title: "Security",
+    description: "Data protection is at the heart of everything we build.",
     icon: Shield,
   },
   {
     title: "Collaboration",
-    description: "Une approche centrée sur l'humain guide nos solutions numériques.",
+    description: "A human-centered approach guides our digital solutions.",
     icon: Users,
   },
 ]
@@ -42,7 +42,7 @@ export default function AProposPage() {
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center gap-4">
           <h1 className="font-[family-name:var(--font-heading)] font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-tight text-white animate-fade-up">
-            À PROPOS DE
+            ABOUT
           </h1>
           <div className="animate-fade-up-delay-1">
             <Wordmark size="md" className="mx-auto h-auto w-auto" />
@@ -60,17 +60,17 @@ export default function AProposPage() {
             {/* Text Content */}
             <div>
               <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl sm:text-3xl md:text-4xl uppercase text-white mb-6">
-                Qui sommes-nous
+                Who we are
               </h2>
               <div className="space-y-5 sm:space-y-6 text-white/80 text-base sm:text-lg leading-relaxed">
                 <p>
-                  Octacore est une entreprise technologique spécialisée dans la conception, la sécurisation et l&apos;optimisation de solutions numériques intelligentes. Notre marque combine innovation, précision et une approche centrée sur l&apos;humain pour aider les organisations à réussir leur transformation digitale et à atteindre un impact réel et mesurable.
+                  Octacore is a technology company specializing in the design, security and optimization of intelligent digital solutions. Our brand combines innovation, precision and a human-centered approach to help organizations succeed in their digital transformation and achieve real and measurable impact.
                 </p>
                 <p>
-                  Octacore fournit des systèmes numériques de pointe conçus pour la performance, la sécurité et la croissance.
+                  Octacore provides cutting-edge digital systems designed for performance, security and growth.
                 </p>
                 <p className="text-white/60 text-sm sm:text-base">
-                  Basé à Port-au-Prince, Haïti — Opérant localement et internationalement.
+                  Based in Port-au-Prince, Haiti — Operating locally and internationally.
                 </p>
               </div>
             </div>
@@ -102,10 +102,10 @@ export default function AProposPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl sm:text-3xl md:text-4xl uppercase text-white mb-4">
-              Notre approche
+              Our approach
             </h2>
             <p className="text-white/70 text-base sm:text-lg max-w-2xl mx-auto">
-              Les valeurs qui guident chacun de nos projets
+              The values that guide each of our projects
             </p>
           </div>
 

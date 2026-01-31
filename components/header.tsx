@@ -8,12 +8,12 @@ import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const navigation = [
-  { name: "Accueil", href: "/" },
-  { name: "À propos", href: "/a-propos" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/a-propos" },
   { name: "Services", href: "/services" },
   { name: "Portfolio", href: "/portfolio" },
   { name: "Blog", href: "/blog" },
-  { name: "Carrière", href: "/carriere" },
+  { name: "Careers", href: "/carriere" },
   { name: "Contact", href: "/contact" },
 ]
 
@@ -87,14 +87,14 @@ export function Header() {
           })}
         </div>
 
-        {/* Desktop CTA removed per request (Débuter projet) */}
+        {/* Desktop CTA removed per request (Start a project) */}
 
         {/* Mobile menu button */}
         <button
           type="button"
           className="lg:hidden p-2 text-white z-50"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label={mobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
         >
           {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
@@ -137,21 +137,21 @@ export function Header() {
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     <span>{item.name}</span>
-                    <span className="text-xs text-white/50">→</span>
+                    <span className="text-xs text-white/50">&gt;</span>
                   </Link>
                 )
               })}
             </div>
 
             <div className="flex flex-col gap-3">
-              {/* Removed Débuter projet button from mobile menu per request */}
+              {/* Removed Start a project button from mobile menu per request */}
               <Button
                 asChild
                 variant="outline"
                 className="w-full border-white/20 text-white hover:bg-white/10"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                <Link href="/services">Voir nos services</Link>
+                <Link href="/services">View our services</Link>
               </Button>
             </div>
           </div>
@@ -160,3 +160,4 @@ export function Header() {
     </header>
   )
 }
+

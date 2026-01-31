@@ -108,7 +108,7 @@ export async function generateMetadata({
 }
 
 const formatDate = (value: string | null) =>
-  value ? new Intl.DateTimeFormat('fr-FR', { dateStyle: 'long' }).format(new Date(value)) : 'Non publié'
+  value ? new Intl.DateTimeFormat('en-US', { dateStyle: 'long' }).format(new Date(value)) : 'Not published'
 
 const renderContent = (content: unknown) => {
   if (!content) {
@@ -185,7 +185,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
       <div className="mx-auto flex max-w-4xl flex-col gap-10">
         <div className="space-y-4">
           <Link href="/blog" className="text-sm text-core-electric transition hover:text-white">
-            ← Retour au blog
+            ← Back to blog
           </Link>
           <h1 className="text-4xl font-semibold text-white md:text-5xl">{post.title}</h1>
           <p className="text-white/60">{formatDate(post.published_at)}</p>

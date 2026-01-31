@@ -12,9 +12,9 @@ export const metadata: Metadata = {
 const projects = [
   {
     name: "OCTA-IA",
-    description: "Octa-AI est une intelligence artificielle de bien-être qui accompagne les utilisateurs au quotidien pour améliorer l'équilibre mental, émotionnel et personnel grâce à des conseils simples et personnalisés.",
+    description: "Octa-AI is a wellness artificial intelligence that accompanies users daily to improve mental, emotional and personal balance through simple and personalized advice.",
     href: "https://octaia.netlify.app/",
-    tags: ["Intelligence Artificielle", "Web App", "SaaS"],
+    tags: ["Artificial Intelligence", "Web App", "SaaS"],
   }
 ]
 
@@ -30,21 +30,21 @@ const socialLinks = [
   {
     name: "Instagram",
     handle: "@octacore.ht",
-    description: "Voir notre portfolio",
+    description: "View our portfolio",
     href: "https://www.instagram.com/octacore.ht/",
     icon: Instagram,
   },
   {
     name: "LinkedIn",
     handle: "OCTACORE",
-    description: "Découvrir nos projets",
+    description: "Discover our projects",
     href: "https://www.linkedin.com/company/octacoreplus/?viewAsMember=true",
     icon: Linkedin,
   },
   {
     name: "Facebook",
     handle: "OCTACORE",
-    description: "Suivre notre actualité",
+    description: "Follow our news",
     href: "https://www.facebook.com/profile.php?id=61587140361937&locale=fr_FR",
     icon: Facebook,
   },
@@ -61,10 +61,10 @@ export default function PortfolioPage() {
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h1 className="font-[family-name:var(--font-heading)] font-bold text-clamp-h1 uppercase tracking-tight text-white mb-6 animate-fade-up">
-            NOS RÉALISATIONS
+            OUR ACHIEVEMENTS
           </h1>
           <p className="text-lg sm:text-xl text-white/80 animate-fade-up-delay-1">
-            Découvrez nos derniers projets
+            Discover our latest projects
           </p>
         </div>
       </section>
@@ -73,7 +73,7 @@ export default function PortfolioPage() {
       <section className="py-16 sm:py-20 lg:py-28 bg-[#03011E]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl sm:text-3xl uppercase text-white mb-10 text-center">
-            Projets Réalisés
+            Completed Projects
           </h2>
           
           {/* Project Cards */}
@@ -109,7 +109,7 @@ export default function PortfolioPage() {
                     </div>
                   </div>
                   <div className="flex items-center gap-2 text-[#0030FF] font-semibold group-hover:text-[#2382FF] transition-colors">
-                    <span className="text-sm">Voir le projet</span>
+                    <span className="text-sm">View project</span>
                     <ArrowUpRight className="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   </div>
                 </div>
@@ -120,8 +120,8 @@ export default function PortfolioPage() {
           {/* Message */}
           <div className="text-center mb-12">
             <p className="text-white/70 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
-              Nos projets récents sont également visibles sur nos réseaux sociaux. 
-              Suivez-nous pour découvrir nos dernières réalisations et rester informés de notre actualité.
+              Our recent projects are also visible on our social networks. 
+              Follow us to discover our latest achievements and stay informed of our news.
             </p>
           </div>
 
@@ -155,10 +155,10 @@ export default function PortfolioPage() {
             <div className="relative z-10 text-center">
               <Wordmark size="sm" className="mx-auto mb-6 h-auto w-auto" />
               <h3 className="font-[family-name:var(--font-heading)] font-semibold text-lg sm:text-xl text-white mb-3 uppercase">
-                Plus de projets à venir
+                More projects coming
               </h3>
               <p className="text-white/60 max-w-md mx-auto text-sm sm:text-base">
-                Bientôt disponible: une galerie complète de nos réalisations avec études de cas détaillées.
+                Coming soon: a complete gallery of our achievements with detailed case studies.
               </p>
             </div>
           </div>
@@ -169,10 +169,10 @@ export default function PortfolioPage() {
       <section className="py-16 sm:py-20 lg:py-28 bg-[#03011E]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl sm:text-3xl uppercase text-white mb-4 text-center">
-            Nos Partenaires
+            Our Partners
           </h2>
           <p className="text-white/70 text-center mb-12 max-w-2xl mx-auto">
-            Nous collaborons avec des organisations engagées pour créer un impact positif.
+            We collaborate with committed organizations to create a positive impact.
           </p>
           
           <div className="flex flex-wrap justify-center gap-8">
@@ -206,17 +206,17 @@ export default function PortfolioPage() {
       <section className="py-16 sm:py-20 lg:py-28 bg-[#0a0a2e]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="font-[family-name:var(--font-heading)] font-bold text-clamp-h2 uppercase text-white mb-6">
-            Vous avez un projet en tête?
+            Do you have a project in mind?
           </h2>
           <p className="text-white/70 text-base sm:text-lg mb-8 max-w-2xl mx-auto">
-            Discutons ensemble de comment nous pouvons vous aider à concrétiser vos idées.
+            Let's discuss together how we can help you realize your ideas.
           </p>
           <Button
             asChild
             size="lg"
             className="bg-[#0030FF] text-white hover:bg-[#2382FF] font-bold text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 btn-glow"
           >
-            <a href="/contact">Démarrer un projet</a>
+            <a href="/contact">Start a project</a>
           </Button>
         </div>
       </section>

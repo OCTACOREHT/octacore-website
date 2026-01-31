@@ -17,8 +17,8 @@ type PostSummary = {
 
 const formatDate = (value: string | null) =>
   value
-    ? new Intl.DateTimeFormat('fr-FR', { dateStyle: 'medium' }).format(new Date(value))
-    : 'Date à venir'
+    ? new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' }).format(new Date(value))
+    : 'Coming soon'
 
 const imageUrlFromPath = (path: string | null) =>
   path && supabaseStorageUrl ? `${supabaseStorageUrl}${path}` : null
@@ -51,14 +51,14 @@ export default async function BlogPage() {
             <p className="text-sm uppercase tracking-[0.2em] text-white/60">Octacore Insights</p>
             <h1 className="text-4xl font-semibold text-white md:text-5xl">Blog</h1>
             <p className="max-w-3xl text-white/70">
-              Articles publiés par l’équipe Octacore : architecture, sécurité, productivité et retours d’expérience.
+              Articles published by the Octacore team: architecture, security, productivity and experience feedback.
             </p>
           </div>
         </header>
 
         {posts.length === 0 ? (
           <div className="rounded-2xl border border-white/10 bg-white/5 px-6 py-10 text-center text-white/80 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
-            Aucun article publié pour le moment. Revenez bientôt !
+            No articles published yet. Come back soon!
           </div>
         ) : (
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -83,7 +83,7 @@ export default async function BlogPage() {
                       ) : (
                         <div className="flex h-full w-full items-center justify-center text-white/60 p-4">
                           <div className="text-center">
-                            <div className="mb-2 text-sm uppercase">Image non fournie</div>
+                            <div className="mb-2 text-sm uppercase">Image not provided</div>
                             <div className="text-xs">{post.cover_image_alt ?? post.title}</div>
                           </div>
                         </div>
@@ -96,7 +96,7 @@ export default async function BlogPage() {
                     </div>
                     <div className="flex items-center gap-2 text-sm text-core-electric">
                       <span className="h-px w-6 bg-core-electric/60" />
-                      Lire l’article
+                      Read article
                     </div>
                   </div>
                 </Link>

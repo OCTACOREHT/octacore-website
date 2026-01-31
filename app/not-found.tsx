@@ -27,10 +27,10 @@ export default function NotFound() {
 
         {/* Message */}
         <h1 className="font-[family-name:var(--font-heading)] font-bold text-2xl md:text-3xl text-white mb-4 uppercase">
-          Page non trouvée
+          Page not found
         </h1>
         <p className="text-white/70 text-lg mb-8">
-          Désolé, la page que vous recherchez n&apos;existe pas ou a été déplacée.
+          Sorry, the page you are looking for does not exist or has been moved.
         </p>
 
         {/* CTA - Core Electric Blue */}
@@ -41,7 +41,7 @@ export default function NotFound() {
         >
           <Link href="/">
             <Home className="w-4 h-4 mr-2" />
-            Retour accueil
+            Back to home
           </Link>
         </Button>
       </div>

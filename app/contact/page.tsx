@@ -9,8 +9,8 @@ const ACCESS_KEY = "7fdaacca-8ad7-4669-be27-40f4384540df"  // TA CLÉ
 
 const contactInfo = [
   { label: "Email", value: "octacore.haiti@gmail.com", href: "mailto:octacore.haiti@gmail.com", icon: Mail },
-  { label: "Téléphone", value: "509 4473-2152", href: "tel:50944732152", icon: Phone },
-  { label: "Téléphone", value: "509 3794-7597", href: "tel:50937947597", icon: Phone },
+  { label: "Phone", value: "509 4473-2152", href: "tel:50944732152", icon: Phone },
+  { label: "Phone", value: "509 3794-7597", href: "tel:50937947597", icon: Phone },
 ]
 
 const socialLinks = [
@@ -48,13 +48,13 @@ export default function ContactPage() {
       const data = await response.json()
       
       if (data.success) {
-        setResult("Message envoyé !")
+        setResult("Message sent!")
         formRef.current?.reset()
       } else {
-        setResult("Erreur : " + (data.message || "Réessayez"))
+        setResult("Error: " + (data.message || "Try again"))
       }
     } catch (error) {
-      setResult("Erreur réseau")
+      setResult("Network error")
     } finally {
       setIsSubmitting(false)
     }
@@ -68,10 +68,10 @@ export default function ContactPage() {
         <div className="absolute inset-0 circuit-bg opacity-30" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h1 className="font-bold text-4xl lg:text-6xl uppercase tracking-tight text-white mb-6 animate-fade-up">
-            CONTACTEZ-NOUS
+            CONTACT US
           </h1>
           <p className="text-xl text-white/80 animate-fade-up animation-delay-200">
-            Discutons de votre projet
+            Let's discuss your project
           </p>
         </div>
       </section>
@@ -81,18 +81,18 @@ export default function ContactPage() {
           {/* Formulaire */}
           <div className="max-w-lg mx-auto bg-0a0a2e border border-2382FF/20 rounded-2xl p-8 mb-12">
             <h3 className="font-bold text-2xl text-white mb-8 text-center uppercase">
-              Envoyez-nous un message
+              Send us a message
             </h3>
             
             <form ref={formRef} onSubmit={onSubmit} className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-white/70 mb-2">Nom complet</label>
+                <label className="block text-sm font-medium text-white/70 mb-2">Full name</label>
                 <Input 
                   type="text" 
                   name="name" 
                   required 
                   className="w-full bg-03011E border border-2382FF/20 text-white placeholder-white/40 focus:border-0030FF focus:ring-0030FF/20 px-4 py-3 rounded-lg"
-                  placeholder="Votre nom"
+                  placeholder="Your name"
                 />
               </div>
 
@@ -110,7 +110,7 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-white/70 mb-2">Téléphone</label>
+                <label className="block text-sm font-medium text-white/70 mb-2">Phone</label>
                 <Input 
                   type="tel" 
                   name="phone" 
@@ -128,7 +128,7 @@ export default function ContactPage() {
                   rows={5}
                   required
                   className="w-full bg-03011E border border-2382FF/20 text-white placeholder-white/40 focus:border-0030FF focus:ring-0030FF/20 px-4 py-3 rounded-lg resize-vertical"
-                  placeholder="Décrivez votre projet..."
+                  placeholder="Describe your project..."
                 />
               </div>
 
@@ -145,7 +145,7 @@ export default function ContactPage() {
                 disabled={isSubmitting}
                 className="w-full bg-gradient-to-r from-0030FF to-2382FF hover:from-2382FF hover:to-0030FF text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-200 disabled:opacity-50"
               >
-                {isSubmitting ? "Envoi en cours..." : "Envoyer Message"}
+                {isSubmitting ? "Sending..." : "Send Message"}
                 <Send className="w-5 h-5 ml-2" />
               </Button>
             </form>
@@ -154,7 +154,7 @@ export default function ContactPage() {
           {/* Contact Info */}
           <div className="max-w-lg mx-auto">
             <div className="bg-0a0a2e border border-2382FF/20 rounded-2xl p-8 mb-8">
-              <h3 className="font-bold text-xl text-white mb-6 text-center uppercase">Nos coordonnées</h3>
+              <h3 className="font-bold text-xl text-white mb-6 text-center uppercase">Our contact details</h3>
               <div className="space-y-4">
                 {contactInfo.map((info, i) => (
                   <a key={i} href={info.href} className="flex items-center gap-4 p-4 rounded-xl hover:bg-0030FF/10 transition-all group">
@@ -171,7 +171,7 @@ export default function ContactPage() {
             </div>
 
             <div className="bg-0a0a2e border border-2382FF/20 rounded-2xl p-8 text-center">
-              <h3 className="font-bold text-xl text-white mb-6 uppercase">Suivez-nous</h3>
+              <h3 className="font-bold text-xl text-white mb-6 uppercase">Follow us</h3>
               <div className="flex justify-center gap-6 mb-6">
                 {socialLinks.map(link => (
                   <a key={link.name} href={link.href} target="_blank" rel="noopener" 
@@ -180,7 +180,7 @@ export default function ContactPage() {
                   </a>
                 ))}
               </div>
-              <p className="text-white/50 text-lg">Port-au-Prince, Haïti</p>
+              <p className="text-white/50 text-lg">Port-au-Prince, Haiti</p>
             </div>
           </div>
         </div>

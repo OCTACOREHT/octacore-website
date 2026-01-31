@@ -5,35 +5,35 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
-  title: "Carrière",
-  description: "Découvrez les postes ouverts chez Octacore et rejoignez une équipe qui construit des solutions digitales fiables et élégantes.",
+  title: "Careers",
+  description: "Discover open positions at Octacore and join a team that builds reliable and elegant digital solutions.",
 }
 
 const jobs = [
   {
-    title: "Développeur·se Fullstack (TypeScript/Next.js)",
+    title: "Fullstack Developer (TypeScript/Next.js)",
     location: "Remote / Port-au-Prince",
-    type: "Temps plein",
-    perks: ["Front + API", "CI/CD", "Sécurité by design"],
+    type: "Full-time",
+    perks: ["Front + API", "CI/CD", "Security by design"],
   },
   {
     title: "Product Designer (UX/UI)",
     location: "Remote",
-    type: "Contrat",
-    perks: ["Design system", "Prototypage", "Recherche utilisateur"],
+    type: "Contract",
+    perks: ["Design system", "Prototyping", "User research"],
   },
   {
-    title: "Ingénieur·e Cloud & SRE",
+    title: "Cloud & SRE Engineer",
     location: "Remote / Port-au-Prince",
-    type: "Temps plein",
-    perks: ["Azure / AWS", "Observabilité", "PRA & sauvegardes"],
+    type: "Full-time",
+    perks: ["Azure / AWS", "Observability", "DR & backups"],
   },
 ]
 
 const values = [
-  { icon: Sparkles, title: "Exigence produit", text: "Design soigné, performances mesurées, expérience sans friction." },
-  { icon: ShieldCheck, title: "Sécurité native", text: "Accès maîtrisés, revue de code, automatisation et résilience." },
-  { icon: Briefcase, title: "Croissance", text: "Coaching, formations ciblées et missions à fort impact." },
+  { icon: Sparkles, title: "Product excellence", text: "Careful design, measured performance, frictionless experience." },
+  { icon: ShieldCheck, title: "Native security", text: "Controlled access, code review, automation and resilience." },
+  { icon: Briefcase, title: "Growth", text: "Coaching, targeted training and high-impact missions." },
 ]
 
 export default function CarrierePage() {
@@ -52,13 +52,13 @@ export default function CarrierePage() {
             className="h-auto w-[210px]"
             priority
           />
-          <p className="text-white/70 uppercase tracking-[0.22em] text-xs">Rejoindre l'équipe</p>
+          <p className="text-white/70 uppercase tracking-[0.22em] text-xs">Join the team</p>
           <h1 className="font-[family-name:var(--font-heading)] font-bold text-3xl sm:text-4xl md:text-5xl text-white leading-tight">
-            Construisons la prochaine génération de solutions digitales.
+            Let's build the next generation of digital solutions.
           </h1>
           <p className="text-lg sm:text-xl text-white/80 max-w-3xl">
-            Nous recrutons des talents qui aiment concevoir, sécuriser et opérer des expériences numériques élégantes.
-            Parcourez les postes ouverts ou écrivez-nous une candidature spontanée.
+            We recruit talents who love designing, securing and operating elegant digital experiences.
+            Browse the open positions or send us a spontaneous application.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Button
@@ -66,14 +66,14 @@ export default function CarrierePage() {
               size="lg"
               className="bg-[#0030FF] text-white hover:bg-[#2382FF] font-semibold btn-glow"
             >
-              <Link href="#offres">Voir les offres</Link>
+              <Link href="#offres">View offers</Link>
             </Button>
             <Button
               asChild
               variant="outline"
               className="border-white/30 text-white hover:bg-white/10"
             >
-              <Link href="mailto:octacore.haiti@gmail.com?subject=Candidature%20spontanée">Candidature spontanée</Link>
+              <Link href="mailto:octacore.haiti@gmail.com?subject=Spontaneous%20application">Spontaneous application</Link>
             </Button>
           </div>
         </div>
@@ -82,13 +82,13 @@ export default function CarrierePage() {
       <section id="offres" className="py-16 sm:py-20 lg:py-24 bg-[#03011E]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-3 mb-8 sm:mb-10">
-            <p className="text-white/60 uppercase tracking-[0.2em] text-xs">Postes ouverts</p>
+            <p className="text-white/60 uppercase tracking-[0.2em] text-xs">Open positions</p>
             <h2 className="text-3xl sm:text-4xl font-[family-name:var(--font-heading)] font-bold text-white leading-tight">
-              Des missions où design, code et fiabilité se rencontrent.
+              Missions where design, code and reliability meet.
             </h2>
             <p className="text-white/70 text-lg max-w-3xl">
-              Nous privilégions des profils autonomes, curieux et rigoureux sur la qualité. Remote-friendly, avec un
-              noyau d’équipe basé à Port-au-Prince.
+              We favor autonomous, curious and rigorous profiles on quality. Remote-friendly, with a
+              core team based in Port-au-Prince.
             </p>
           </div>
 
@@ -120,7 +120,7 @@ export default function CarrierePage() {
                 </div>
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                   <p className="text-white/70 text-sm">
-                    Envoyez votre CV et quelques projets récents à{" "}
+                    Send your CV and some recent projects to{" "}
                     <a className="text-[#2382FF] hover:underline" href="mailto:octacore.haiti@gmail.com">
                       octacore.haiti@gmail.com
                     </a>
@@ -130,7 +130,7 @@ export default function CarrierePage() {
                     size="sm"
                     className="bg-[#0030FF] text-white hover:bg-[#2382FF] font-semibold"
                   >
-                    <Link href="mailto:octacore.haiti@gmail.com?subject=Candidature%20-%20Octacore">Postuler</Link>
+                    <Link href="mailto:octacore.haiti@gmail.com?subject=Application%20-%20Octacore">Apply</Link>
                   </Button>
                 </div>
               </div>
@@ -143,16 +143,16 @@ export default function CarrierePage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 items-center">
             <div className="space-y-4">
-              <p className="text-white/60 uppercase tracking-[0.2em] text-xs">Travailler chez Octacore</p>
+              <p className="text-white/60 uppercase tracking-[0.2em] text-xs">Working at Octacore</p>
               <h3 className="text-3xl sm:text-4xl font-[family-name:var(--font-heading)] font-bold text-white leading-tight">
-                Un environnement qui valorise la qualité et la progression.
+                An environment that values quality and progress.
               </h3>
               <p className="text-white/70 text-lg">
-                On met l’accent sur la clarté des missions, la documentation et la relecture collective. Les livrables
-                doivent être fiables, élégants et faciles à faire évoluer.
+                We emphasize clarity of missions, documentation and collective review. Deliverables
+                must be reliable, elegant and easy to evolve.
               </p>
               <div className="flex flex-wrap gap-2">
-                {["Remote-friendly", "Process clair", "Design system", "Revues de code", "Sécurité by default"].map((chip) => (
+                {["Remote-friendly", "Clear process", "Design system", "Code reviews", "Security by default"].map((chip) => (
                   <span key={chip} className="px-3 py-2 rounded-full border border-white/10 bg-white/5 text-white/70 text-sm">
                     {chip}
                   </span>

@@ -4,11 +4,11 @@ import { Instagram, Linkedin, Facebook, Mail, ArrowUpRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const navigation = [
-  { name: "Accueil", href: "/" },
-  { name: "À propos", href: "/a-propos" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/a-propos" },
   { name: "Services", href: "/services" },
   { name: "Portfolio", href: "/portfolio" },
-  { name: "Carrière", href: "/carriere" },
+  { name: "Careers", href: "/carriere" },
   { name: "Contact", href: "/contact" },
 ]
 
@@ -21,9 +21,9 @@ const socials = [
 
 const contacts = [
   { label: "Email", value: "octacore.haiti@gmail.com", href: "mailto:octacore.haiti@gmail.com" },
-  { label: "Tél", value: "+509 4473-2152", href: "tel:+50944732152" },
-  { label: "Tél", value: "+509 3794-7597", href: "tel:+50937947597" },
-  { label: "Bureau", value: "Port-au-Prince, Haïti" },
+  { label: "Phone", value: "+509 4473-2152", href: "tel:+50944732152" },
+  { label: "Phone", value: "+509 3794-7597", href: "tel:+50937947597" },
+  { label: "Office", value: "Port-au-Prince, Haiti" },
 ]
 
 export function Footer() {
@@ -33,13 +33,13 @@ export function Footer() {
         <div className="relative -mt-16 mb-14">
           <div className="brand-glass rounded-3xl p-6 sm:p-8 lg:p-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
             <div className="space-y-3 max-w-2xl">
-              <p className="text-white/60 uppercase tracking-[0.2em] text-xs">Parlons de votre projet</p>
+              <p className="text-white/60 uppercase tracking-[0.2em] text-xs">Let's talk about your project</p>
               <h3 className="text-2xl sm:text-3xl font-[family-name:var(--font-heading)] font-bold text-white leading-tight">
-                Un enjeu à cadrer ? Nous revenons vers vous avec un plan clair.
+                A challenge to frame? We'll get back to you with a clear plan.
               </h3>
               <p className="text-white/70">
-                Donnez-nous quelques lignes sur votre contexte et vos priorités. Nous préparons une proposition rapide
-                avec jalons, responsables et délais.
+                Give us a few lines about your context and priorities. We prepare a quick proposal
+                with milestones, responsible parties and deadlines.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
@@ -49,7 +49,7 @@ export function Footer() {
                 className="bg-[#0030FF] text-white hover:bg-[#2382FF] font-semibold px-7 py-6 gradient-cta ring-highlight w-full sm:w-auto"
               >
                 <Link href="/contact" className="flex items-center gap-2">
-                  Programmer un échange <ArrowUpRight className="h-4 w-4" />
+                  Schedule an exchange <ArrowUpRight className="h-4 w-4" />
                 </Link>
               </Button>
               <Button
@@ -58,7 +58,7 @@ export function Footer() {
                 variant="outline"
                 className="border-white/30 text-white hover:bg-white/10 px-6 py-6 w-full sm:w-auto"
               >
-                <Link href="/portfolio">Voir nos réalisations</Link>
+                <Link href="/portfolio">See our achievements</Link>
               </Button>
             </div>
           </div>
@@ -74,8 +74,8 @@ export function Footer() {
               className="h-auto w-[200px]"
             />
             <p className="text-white/70 text-sm leading-relaxed max-w-md">
-              Solutions numériques de pointe conçues pour la performance, la sécurité et la croissance. Nous livrons
-              des plateformes élégantes, fiables et prêtes pour l’évolution.
+              Cutting-edge digital solutions designed for performance, security and growth. We deliver
+              elegant, reliable platforms ready for evolution.
             </p>
             <div className="flex items-center gap-4">
               {socials.map((social) => (
@@ -125,7 +125,7 @@ export function Footer() {
                 </p>
               ))}
             </div>
-            <p className="text-white/50 text-xs mt-4">Disponible du lundi au samedi.</p>
+            <p className="text-white/50 text-xs mt-4">Available Monday to Saturday.</p>
           </div>
         </div>
 
@@ -135,7 +135,7 @@ export function Footer() {
             <span className="hidden sm:inline-block">— Smart solutions. Real impact.</span>
           </p>
           <div className="flex items-center gap-3">
-            <span className="text-white/60">Port-au-Prince, Haïti</span>
+            <span className="text-white/60">Port-au-Prince, Haiti</span>
             <span className="text-white/30">|</span>
             <a className="text-white/70 hover:text-[#2382FF]" href="mailto:octacore.haiti@gmail.com">
               octacore.haiti@gmail.com
