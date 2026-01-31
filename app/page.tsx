@@ -6,15 +6,13 @@ import { Wordmark } from "@/components/logotype"
 import {
   ArrowUpRight,
   CheckCircle2,
-  Cloud,
   Cpu,
   Globe,
-  Headphones,
-  Layers,
   LineChart,
   ShieldCheck,
   Sparkles,
 } from "lucide-react"
+import { RiGlobalLine, RiStackFill, RiCloudLine, RiHeadphoneFill } from "react-icons/ri"
 
 const metrics = [
   { label: "Disponibilité cible", value: "99,9%", detail: "Architecture surveillée et redondance intégrée." },
@@ -45,13 +43,13 @@ const solutionAreas = [
     title: "Sites et portails web",
     description: "Expériences sur mesure, rapides et faciles à faire évoluer.",
     bullets: ["Core Web Vitals optimisés", "Parcours client mesurables", "Accessibilité et SEO technique"],
-    icon: Sparkles,
+    icon: RiGlobalLine,
   },
   {
     title: "Intégration & automatisation",
     description: "APIs, interconnexions métiers et workflows fluides.",
     bullets: ["Architecture orientée services", "Workflows automatisés et alertés", "Monitoring temps réel"],
-    icon: Layers,
+    icon: RiStackFill,
   },
   {
     title: "Cloud & données",
@@ -61,7 +59,7 @@ const solutionAreas = [
       "Sauvegardes, PRA et tests de restauration",
       "Tableaux de bord pour la décision",
     ],
-    icon: Cloud,
+    icon: RiCloudLine,
   },
   {
     title: "Support & cybersécurité",
@@ -71,7 +69,7 @@ const solutionAreas = [
       "Tests de sécurité réguliers",
       "Runbooks et formation des équipes",
     ],
-    icon: Headphones,
+    icon: RiHeadphoneFill,
   },
 ]
 
@@ -132,7 +130,7 @@ export default function HomePage() {
         type="module"
         strategy="afterInteractive"
       />
-      <section className="relative isolate overflow-hidden min-h-[90vh] flex items-center pt-28 pb-16">
+      <section className="relative isolate overflow-hidden min-h-[80vh] flex items-center pt-12 pb-12">
         <div className="absolute inset-0 hero-gradient" />
         <div className="absolute inset-0 hero-grid opacity-50" />
         <div className="absolute -left-40 -bottom-40 w-96 h-96 rounded-full bg-[#0030FF] opacity-25 blur-[140px]" />
@@ -141,7 +139,7 @@ export default function HomePage() {
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid lg:grid-cols-[1.08fr_0.92fr] items-center gap-12">
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full subtle-border bg-white/5 text-white/80 text-[11px] tracking-[0.3em] uppercase">
+              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full subtle-border bg-white/5 text-white/80 text-[11px] tracking-[0.3em] uppercase mt-6 sm:mt-8">
                 <Image src="/logo.png" alt="OCTACORE" width={24} height={24} className="h-6 w-6" priority />
                 <span>Partenaire technologique</span>
               </div>
@@ -190,7 +188,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="rounded-3xl min-h-[600px] flex items-center justify-center">
+            <div className="rounded-3xl min-h-[520px] flex items-center justify-center">
               <dotlottie-wc
                 src="https://lottie.host/18708b3c-fdc8-4c0d-8558-7aacf5bf821e/VKBKd1qfHi.lottie"
                 style={{ width: "100%", maxWidth: "1100px", height: "620px" }}

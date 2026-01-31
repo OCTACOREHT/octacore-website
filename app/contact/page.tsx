@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useRef } from "react"
+import React, { useState, useRef, useEffect } from "react"
 import { Mail, Phone, Instagram, Linkedin, Facebook, Send, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -25,6 +25,12 @@ export default function ContactPage() {
   const [result, setResult] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
 
+  useEffect(() => {
+    if (!result) return
+    const id = window.setTimeout(() => setResult(""), 3000)
+    return () => clearTimeout(id)
+  }, [result])
+
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     setIsSubmitting(true)
@@ -42,13 +48,13 @@ export default function ContactPage() {
       const data = await response.json()
       
       if (data.success) {
-        setResult("✅ Message envoyé !")
+        setResult("Message envoyé !")
         formRef.current?.reset()
       } else {
-        setResult("❌ Erreur : " + (data.message || "Réessayez"))
+        setResult("Erreur : " + (data.message || "Réessayez"))
       }
     } catch (error) {
-      setResult("❌ Erreur réseau")
+      setResult("Erreur réseau")
     } finally {
       setIsSubmitting(false)
     }
@@ -128,8 +134,7 @@ export default function ContactPage() {
 
               {result && (
                 <div className={`p-4 rounded-lg text-center font-medium ${
-                  result.includes("✅") ? "bg-green-500/10 border border-green-500/30 text-green-400" : 
-                  "bg-red-500/10 border border-red-500/30 text-red-400"
+                  /erreur/i.test(result) ? "bg-red-500/10 border border-red-500/30 text-red-400" : "bg-green-500/10 border border-green-500/30 text-green-400"
                 }`}>
                   {result}
                 </div>
