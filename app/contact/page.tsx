@@ -99,14 +99,6 @@ export default function ContactPage() {
     }
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormState(prev => ({ ...prev, [name]: value }))
-    if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: "" }))
-    }
-  }
-
   return (
     <>
       {/* Hero Section */}
