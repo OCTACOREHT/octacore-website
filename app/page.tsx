@@ -4,6 +4,7 @@ import Script from "next/script"
 import { Button } from "@/components/ui/button"
 import { Wordmark } from "@/components/logotype"
 import { HeroLottie } from "@/components/hero-lottie"
+import { ActivePartners } from "@/components/active-partners"
 import {
   RiShieldCheckLine,
   RiGlobalLine,
@@ -396,6 +397,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <ActivePartners />
 
       <section className="py-16 sm:py-20 bg-[#03011E]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

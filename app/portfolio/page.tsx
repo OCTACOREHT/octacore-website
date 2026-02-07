@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
-import Image from "next/image"
 import { Instagram, Linkedin, Facebook, ArrowUpRight, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Wordmark } from "@/components/logotype"
+import { ActivePartners } from "@/components/active-partners"
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -16,14 +16,6 @@ const projects = [
     href: "https://octaia.netlify.app/",
     tags: ["Artificial Intelligence", "Web App", "SaaS"],
   }
-]
-
-const partners = [
-  {
-    name: "Youth Foundation Haiti",
-    logo: "/partners/youth-foundation-haiti.png",
-    description: "Humanity starts when we share.",
-  },
 ]
 
 const socialLinks = [
@@ -165,42 +157,8 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* Partners Section */}
-      <section className="py-16 sm:py-20 lg:py-28 bg-[#03011E]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl sm:text-3xl uppercase text-white mb-4 text-center">
-            Our Partners
-          </h2>
-          <p className="text-white/70 text-center mb-12 max-w-2xl mx-auto">
-            We collaborate with committed organizations to create a positive impact.
-          </p>
-          
-          <div className="flex flex-wrap justify-center gap-8">
-            {partners.map((partner) => (
-              <div
-                key={partner.name}
-                className="bg-[#0a0a2e] border border-[#2382FF]/20 rounded-2xl p-8 flex flex-col items-center text-center hover:border-[#2382FF]/50 transition-all duration-300 w-full sm:w-auto sm:min-w-[280px] max-w-sm"
-              >
-                <div className="w-32 h-32 mb-6 flex items-center justify-center bg-white rounded-xl p-4">
-                  <Image 
-                    src={partner.logo || "/placeholder.svg"}
-                    alt={partner.name}
-                    width={120}
-                    height={120}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <h3 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-white mb-2">
-                  {partner.name}
-                </h3>
-                <p className="text-white/60 text-sm italic">
-                  {partner.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Partners Section (same logos style as homepage) */}
+      <ActivePartners />
 
       {/* CTA Section */}
       <section className="py-16 sm:py-20 lg:py-28 bg-[#0a0a2e]">
