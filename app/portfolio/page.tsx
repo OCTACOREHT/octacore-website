@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import { Instagram, Linkedin, Facebook, ArrowUpRight, ExternalLink } from "lucide-react"
-import { Button } from "@/components/ui/button"
 import { Wordmark } from "@/components/logotype"
 import { ActivePartners } from "@/components/active-partners"
 
@@ -159,25 +158,6 @@ export default function PortfolioPage() {
 
       {/* Partners Section (same logos style as homepage) */}
       <ActivePartners />
-
-      {/* CTA Section */}
-      <section className="py-16 sm:py-20 lg:py-28 bg-[#0a0a2e]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="font-[family-name:var(--font-heading)] font-bold text-clamp-h2 uppercase text-white mb-6">
-            Do you have a project in mind?
-          </h2>
-          <p className="text-white/70 text-base sm:text-lg mb-8 max-w-2xl mx-auto">
-            Let's discuss together how we can help you realize your ideas.
-          </p>
-          <Button
-            asChild
-            size="lg"
-            className="bg-[#0030FF] text-white hover:bg-[#2382FF] font-bold text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 btn-glow"
-          >
-            <a href="/contact">Start a project</a>
-          </Button>
-        </div>
-      </section>
     </>
   )
 }

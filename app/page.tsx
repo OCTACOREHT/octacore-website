@@ -2,7 +2,6 @@ import Link from "next/link"
 import Image from "next/image"
 import Script from "next/script"
 import { Button } from "@/components/ui/button"
-import { Wordmark } from "@/components/logotype"
 import { HeroLottie } from "@/components/hero-lottie"
 import { ActivePartners } from "@/components/active-partners"
 import {
@@ -12,8 +11,6 @@ import {
   RiBarChartLine,
   RiHeadphoneLine,
   RiSparklingLine,
-  RiCloudLine,
-  RiStackLine,
 } from "react-icons/ri"
 import { ArrowUpRight, CheckCircle2 } from "lucide-react"
 
@@ -38,41 +35,6 @@ const pillars = [
     title: "Security & Continuity",
     description: "Asset protection, supervision and recovery plans to stay online.",
     icon: RiShieldCheckLine,
-  },
-]
-
-const solutionAreas = [
-  {
-    title: "Web Sites and Portals",
-    description: "Custom experiences, fast and easy to evolve.",
-    bullets: ["Optimized Core Web Vitals", "Measurable customer journeys", "Accessibility and technical SEO"],
-    icon: RiSparklingLine,
-  },
-  {
-    title: "Integration & Automation",
-    description: "APIs, business interconnections and smooth workflows.",
-    bullets: ["Service-oriented architecture", "Automated and alerted workflows", "Real-time monitoring"],
-    icon: RiStackLine,
-  },
-  {
-    title: "Cloud & Data",
-    description: "Modular infrastructure, protected and useful data.",
-    bullets: [
-      "Secure and observable environments",
-      "Backups, DRP and restoration tests",
-      "Decision dashboards",
-    ],
-    icon: RiCloudLine,
-  },
-  {
-    title: "Support & Cybersecurity",
-    description: "On-call, hardening and user support.",
-    bullets: [
-      "24/7 supervision and documented remediation",
-      "Regular security tests",
-      "Runbooks and team training",
-    ],
-    icon: RiHeadphoneLine,
   },
 ]
 
@@ -253,7 +215,7 @@ export default function HomePage() {
 
       <section className="bg-[#03011E] py-20 sm:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div className="flex flex-col gap-6">
             <div className="space-y-3 max-w-2xl">
               <p className="text-white/60 uppercase tracking-[0.2em] text-xs">Our Expertise</p>
               <h2 className="text-3xl sm:text-4xl font-[family-name:var(--font-heading)] font-bold text-white leading-tight">
@@ -285,49 +247,6 @@ export default function HomePage() {
                 </div>
                 <p className="text-white/70 leading-relaxed">{pillar.description}</p>
                 <div className="h-1 w-16 bg-gradient-to-r from-[#0030FF] to-[#2382FF] rounded-full" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 sm:py-24 bg-[#050520]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col gap-3 mb-10">
-            <p className="text-white/60 uppercase tracking-[0.2em] text-xs">Key Solutions</p>
-            <h2 className="text-3xl sm:text-4xl font-[family-name:var(--font-heading)] font-bold text-white leading-tight">
-              Digital journeys that make people want to work with you.
-            </h2>
-            <p className="text-white/70 text-lg max-w-3xl">
-              Each solution is designed with a clear editorial line, measured performance and integrated security,
-              to inspire confidence in your users and partners.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-            {solutionAreas.map((area) => (
-              <div key={area.title} className="rounded-2xl border border-[#2382FF]/25 bg-[#0a0a2e]/80 p-6 sm:p-7 space-y-4">
-                <div className="flex items-start justify-between gap-3">
-                  <div className="flex items-center gap-3">
-                    <area.icon className="h-10 w-10 text-[#2382FF]" />
-                    <div>
-                      <Wordmark size="xs" className="h-5 w-auto" />
-                      <h3 className="text-xl font-semibold text-white">{area.title}</h3>
-                    </div>
-                  </div>
-                  <div className="h-10 w-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-white/70">
-                    <ArrowUpRight className="h-5 w-5" />
-                  </div>
-                </div>
-                <p className="text-white/70 leading-relaxed">{area.description}</p>
-                <div className="space-y-2">
-                  {area.bullets.map((item) => (
-                    <div key={item} className="flex items-start gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-[#2382FF] mt-0.5" />
-                      <span className="text-white/80 text-sm">{item}</span>
-                    </div>
-                  ))}
-                </div>
               </div>
             ))}
           </div>
@@ -399,41 +318,6 @@ export default function HomePage() {
       </section>
 
       <ActivePartners />
-
-      <section className="py-16 sm:py-20 bg-[#03011E]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="brand-glass rounded-3xl p-8 sm:p-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-            <div className="space-y-3">
-              <p className="text-white/60 uppercase tracking-[0.2em] text-xs">Let's talk</p>
-              <h3 className="text-2xl sm:text-3xl font-[family-name:var(--font-heading)] font-bold text-white leading-tight">
-                Ready to build the next digital chapter of your organization?
-              </h3>
-              <p className="text-white/70 text-lg max-w-3xl">
-                Describe your challenges, we'll get back to you with a structured proposal and a quick action plan.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
-              <Button
-                asChild
-                size="lg"
-                className="bg-[#0030FF] text-white hover:bg-[#2382FF] font-semibold px-7 py-6 gradient-cta ring-highlight w-full sm:w-auto"
-              >
-                <Link href="/contact" className="flex items-center gap-2">
-                  Schedule an exchange <ArrowUpRight className="h-4 w-4" />
-                </Link>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 px-6 py-6 w-full sm:w-auto"
-              >
-                <Link href="/portfolio">See our achievements</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   )
 }

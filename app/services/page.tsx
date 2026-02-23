@@ -1,7 +1,9 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Globe, Building2, Headphones, Share2, Wrench } from "lucide-react"
+import { Wordmark } from "@/components/logotype"
+import { Globe, Building2, Headphones, Share2, Wrench, ArrowUpRight, CheckCircle2 } from "lucide-react"
+import { RiSparklingLine, RiStackLine, RiCloudLine, RiHeadphoneLine } from "react-icons/ri"
 
 export const metadata: Metadata = {
   title: "Services",
@@ -66,6 +68,41 @@ const services = [
   },
 ]
 
+const solutionAreas = [
+  {
+    title: "Web Sites and Portals",
+    description: "Custom experiences, fast and easy to evolve.",
+    bullets: ["Optimized Core Web Vitals", "Measurable customer journeys", "Accessibility and technical SEO"],
+    icon: RiSparklingLine,
+  },
+  {
+    title: "Integration & Automation",
+    description: "APIs, business interconnections and smooth workflows.",
+    bullets: ["Service-oriented architecture", "Automated and alerted workflows", "Real-time monitoring"],
+    icon: RiStackLine,
+  },
+  {
+    title: "Cloud & Data",
+    description: "Modular infrastructure, protected and useful data.",
+    bullets: [
+      "Secure and observable environments",
+      "Backups, DRP and restoration tests",
+      "Decision dashboards",
+    ],
+    icon: RiCloudLine,
+  },
+  {
+    title: "Support & Cybersecurity",
+    description: "On-call, hardening and user support.",
+    bullets: [
+      "24/7 supervision and documented remediation",
+      "Regular security tests",
+      "Runbooks and team training",
+    ],
+    icon: RiHeadphoneLine,
+  },
+]
+
 export default function ServicesPage() {
   return (
     <>
@@ -82,6 +119,49 @@ export default function ServicesPage() {
           <p className="text-lg sm:text-xl text-white/80 animate-fade-up-delay-1 text-balance">
             Cutting-edge digital solutions designed for performance, security and growth.
           </p>
+        </div>
+      </section>
+
+      <section className="py-20 sm:py-24 bg-[#050520]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col gap-3 mb-10">
+            <p className="text-white/60 uppercase tracking-[0.2em] text-xs">Key Solutions</p>
+            <h2 className="text-3xl sm:text-4xl font-[family-name:var(--font-heading)] font-bold text-white leading-tight">
+              Digital journeys that make people want to work with you.
+            </h2>
+            <p className="text-white/70 text-lg max-w-3xl">
+              Each solution is designed with a clear editorial line, measured performance and integrated security,
+              to inspire confidence in your users and partners.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            {solutionAreas.map((area) => (
+              <div key={area.title} className="rounded-2xl border border-[#2382FF]/25 bg-[#0a0a2e]/80 p-6 sm:p-7 space-y-4">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex items-center gap-3">
+                    <area.icon className="h-10 w-10 text-[#2382FF]" />
+                    <div>
+                      <Wordmark size="xs" className="h-5 w-auto" />
+                      <h3 className="text-xl font-semibold text-white">{area.title}</h3>
+                    </div>
+                  </div>
+                  <div className="h-10 w-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-white/70">
+                    <ArrowUpRight className="h-5 w-5" />
+                  </div>
+                </div>
+                <p className="text-white/70 leading-relaxed">{area.description}</p>
+                <div className="space-y-2">
+                  {area.bullets.map((item) => (
+                    <div key={item} className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-[#2382FF] mt-0.5" />
+                      <span className="text-white/80 text-sm">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -129,25 +209,6 @@ export default function ServicesPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 sm:py-20 lg:py-28 bg-[#0a0a2e]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl sm:text-3xl md:text-4xl uppercase text-white mb-4 sm:mb-6">
-            Ready to start your project?
-          </h2>
-          <p className="text-white/70 text-base sm:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto">
-            Contact us to discuss your needs and discover how we can support your digital transformation.
-          </p>
-          <Button
-            asChild
-            size="lg"
-            className="bg-[#0030FF] text-white hover:bg-[#2382FF] font-bold text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 btn-glow"
-          >
-            <Link href="/contact">Contact us</Link>
-          </Button>
         </div>
       </section>
     </>
