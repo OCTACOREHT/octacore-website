@@ -14,7 +14,7 @@ const contactInfo = [
 ]
 
 const socialLinks = [
-  { name: "Instagram", href: "https://www.instagram.com/octacore.ht/", icon: Instagram },
+  { name: "Instagram", href: "https://www.instagram.com/octacore.ioh?igsh=MWlvYmJsZndnYXFzYQ==", icon: Instagram },
   { name: "LinkedIn", href: "https://www.linkedin.com/company/octacoreplus?viewAsMember=true", icon: Linkedin },
   { name: "Facebook", href: "https://www.facebook.com/profile.php?id=61587140361937&locale=fr_FR", icon: Facebook },
   { name: "Email", href: "mailto:octacore.haiti@gmail.com", icon: Mail },

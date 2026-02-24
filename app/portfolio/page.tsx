@@ -20,9 +20,9 @@ const projects = [
 const socialLinks = [
   {
     name: "Instagram",
-    handle: "@octacore.ht",
+    handle: "@octacore.ioh",
     description: "View our portfolio",
-    href: "https://www.instagram.com/octacore.ht/",
+    href: "https://www.instagram.com/octacore.ioh?igsh=MWlvYmJsZndnYXFzYQ==",
     icon: Instagram,
   },
   {

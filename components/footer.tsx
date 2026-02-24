@@ -13,7 +13,7 @@ const navigation = [
 ]
 
 const socials = [
-  { name: "Instagram", href: "https://www.instagram.com/octacore.ht/", icon: Instagram },
+  { name: "Instagram", href: "https://www.instagram.com/octacore.ioh?igsh=MWlvYmJsZndnYXFzYQ==", icon: Instagram },
   { name: "LinkedIn", href: "https://www.linkedin.com/company/octacoreplus/?viewAsMember=true", icon: Linkedin },
   { name: "Facebook", href: "https://www.facebook.com/profile.php?id=61587140361937&locale=fr_FR", icon: Facebook },
   { name: "Email", href: "mailto:octacore.haiti@gmail.com", icon: Mail },
@@ -131,8 +131,7 @@ export function Footer() {
 
         <div className="border-t border-[#2382FF]/20 py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-white/50 text-sm">
           <p className="flex items-center gap-2">
-            <span>&copy; {new Date().getFullYear()} OCTACORE</span>
-            <span className="hidden sm:inline-block">— Smart solutions. Real impact.</span>
+            <span>&copy; {new Date().getFullYear()} Octacore</span>
           </p>
           <div className="flex items-center gap-3">
             <span className="text-white/60">Port-au-Prince, Haiti</span>

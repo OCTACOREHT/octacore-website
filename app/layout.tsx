@@ -8,8 +8,8 @@ import { Footer } from '@/components/footer'
 export const metadata: Metadata = {
   metadataBase: new URL('https://octacore.ht'),
   title: {
-    default: 'OCTACORE - Smart Solutions. Real Impact.',
-    template: '%s | OCTACORE'
+    default: 'Octacore',
+    template: '%s | Octacore'
   },
   description: 'Octacore est une entreprise technologique qui conçoit, sécurise et optimise des solutions numériques intelligentes. Nous aidons les organisations à réussir leur transformation digitale et à obtenir un impact mesurable.',
   keywords: ['OCTACORE', 'solutions technologiques', 'développement web', 'Haïti', 'Port-au-Prince', 'digital', 'transformation digitale', 'smart solutions', 'sécurité numérique'],
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'fr_HT',
-    siteName: 'OCTACORE',
-    title: 'OCTACORE - Smart Solutions. Real Impact.',
+    siteName: 'Octacore',
+    title: 'Octacore',
     description: 'Octacore conçoit des systèmes digitaux de pointe pensés pour la performance, la sécurité et la croissance.',
     images: ['/logo.png'],
   },
