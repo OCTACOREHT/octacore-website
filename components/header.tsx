@@ -14,6 +14,7 @@ const navigation = [
   { name: "Portfolio", href: "/portfolio" },
   { name: "Blog", href: "/blog" },
   { name: "Careers", href: "/carriere" },
+  { name: "Pricing", href: "/pricing" },
   { name: "Contact", href: "/contact" },
 ]
 
@@ -45,13 +46,15 @@ export function Header() {
     }
   }, [mobileMenuOpen])
 
+  const isPricingPage = pathname === '/pricing'
+
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-background/95 backdrop-blur-md border-b border-[#2382FF]/20' : 'bg-transparent'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? (isPricingPage ? 'bg-black/90 backdrop-blur-md border-b border-[#2382FF]/20' : 'bg-background/95 backdrop-blur-md border-b border-[#2382FF]/20') : 'bg-transparent'}`}>
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 py-4 lg:px-8">
         {/* Logo - Primary Horizontal Lockup (min 200px width) */}
         <Link href="/" className="min-w-[180px] sm:min-w-[200px]">
           <Image
-            src="/horizontal-lockup-v1.png"
+            src={isPricingPage ? "/horizontal-lockup-v2.png" : "/horizontal-lockup-v1.png"}
             alt="Octacore"
             width={180}
             height={70}
@@ -68,7 +71,7 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-medium transition-colors ${isActive ? 'text-[#2382FF]' : 'text-foreground/80 hover:text-foreground'}`}
+                className={`text-sm font-medium transition-colors ${isActive ? 'text-[#2382FF]' : (isPricingPage ? 'text-white/80 hover:text-white' : 'text-foreground/80 hover:text-foreground')}`}
               >
                 {item.name}
               </Link>
@@ -81,7 +84,7 @@ export function Header() {
         {/* Mobile menu button */}
         <button
           type="button"
-          className="lg:hidden p-2 text-foreground z-50"
+          className={`lg:hidden p-2 z-50 ${isPricingPage ? 'text-white' : 'text-foreground'}`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
         >

@@ -8,6 +8,8 @@
 
 :root {
   /* OCTACORE Brand Guidelines - Light Theme */
+  --gradient-color: #0030FF;
+  --sparkles-color: #0030FF;
   
   /* Primary Blue Palette */
   --nightfall: #03011E;          /* Dark navy - text and accents */
@@ -61,6 +63,8 @@
 @theme inline {
   --font-sans: 'Satoshi', 'Poppins', 'Satoshi Fallback', sans-serif;
   --font-heading: 'Visby', 'Poppins', 'Visby Fallback', sans-serif;
+  --color-sparkles-color: var(--sparkles-color);
+  --color-gradient-color: var(--gradient-color);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
