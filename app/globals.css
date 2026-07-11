@@ -7,40 +7,40 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* OCTACORE Brand Guidelines - PURE BLUES ONLY (ZERO GREEN) */
+  /* OCTACORE Brand Guidelines - Light Theme */
   
   /* Primary Blue Palette */
-  --nightfall: #03011E;          /* Dark navy - main background */
+  --nightfall: #03011E;          /* Dark navy - text and accents */
   --core-electric: #0030FF;       /* Core Electric Blue - CTAs, buttons, icons */
   --digital-sky: #2382FF;         /* Digital Sky Blue - accents, hover states */
   --light-blue: #E6F1FF;          /* Light blue - gradient start */
   --mid-blue: #194FA2;            /* Mid blue - gradient middle */
   
-  /* Semantic tokens - ALL BLUES */
-  --background: #03011E;
-  --foreground: #ffffff;
-  --card: rgba(3, 1, 30, 0.9);
-  --card-foreground: #ffffff;
-  --popover: #03011E;
-  --popover-foreground: #ffffff;
+  /* Semantic tokens - Light Theme */
+  --background: #ffffff;          /* White background */
+  --foreground: #03011E;          /* Navy text */
+  --card: #ffffff;
+  --card-foreground: #03011E;
+  --popover: #ffffff;
+  --popover-foreground: #03011E;
   --primary: #0030FF;
   --primary-foreground: #ffffff;
   --secondary: #2382FF;
   --secondary-foreground: #ffffff;
-  --muted: rgba(255, 255, 255, 0.1);
-  --muted-foreground: rgba(255, 255, 255, 0.7);
-  --accent: #2382FF;
-  --accent-foreground: #ffffff;
+  --muted: #f1f5f9;               /* Slate-50 */
+  --muted-foreground: #64748b;    /* Slate-500 */
+  --accent: #E6F1FF;              /* Light blue background for hover/accents */
+  --accent-foreground: #0030FF;   /* Primary blue text */
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: rgba(35, 130, 255, 0.2);
-  --input: rgba(255, 255, 255, 0.1);
+  --border: rgba(3, 1, 30, 0.1);  /* Subtle dark border */
+  --input: rgba(3, 1, 30, 0.1);
   --ring: #0030FF;
   --radius: 0.625rem;
   
-  /* Glow effects - Electric Blue */
-  --glow: rgba(0, 48, 255, 0.4);
-  --glow-light: rgba(35, 130, 255, 0.3);
+  /* Glow effects - Adjusted for light theme */
+  --glow: rgba(0, 48, 255, 0.2);
+  --glow-light: rgba(35, 130, 255, 0.15);
 
   /* Shadcn/ui defaults */
   --chart-1: oklch(0.646 0.222 41.116);
@@ -48,13 +48,13 @@
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: #03011E;
-  --sidebar-foreground: #ffffff;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #03011E;
   --sidebar-primary: #0030FF;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #2382FF;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: rgba(35, 130, 255, 0.2);
+  --sidebar-accent: #E6F1FF;
+  --sidebar-accent-foreground: #0030FF;
+  --sidebar-border: rgba(3, 1, 30, 0.1);
   --sidebar-ring: #0030FF;
 }
 
@@ -124,26 +124,26 @@
 
 /* Brand Gradient - BLUE ONLY */
 .gradient-hero {
-  background: linear-gradient(180deg, #E6F1FF 0%, #194FA2 50%, #03011E 100%);
+  background: linear-gradient(180deg, #f8fafc 0%, #E6F1FF 50%, #ffffff 100%);
 }
 
 .gradient-dark {
-  background: linear-gradient(135deg, #03011E 0%, #0030FF 100%);
+  background: linear-gradient(135deg, #f8fafc 0%, #E6F1FF 100%);
 }
 
 .gradient-section {
-  background: linear-gradient(180deg, #0a0a2e 0%, #03011E 100%);
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
 }
 
 /* Custom button glow effect */
 .btn-glow {
-  box-shadow: 0 0 20px var(--glow);
+  box-shadow: 0 4px 15px var(--glow);
   transition: all 0.3s ease;
 }
 
 .btn-glow:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 30px var(--glow), 0 0 60px var(--glow-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px var(--glow), 0 0 40px var(--glow-light);
 }
 
 /* Fade up animation */
@@ -180,42 +180,42 @@
 /* Circuit background pattern - BLUE */
 .circuit-bg {
   background-image: 
-    radial-gradient(circle at 25% 25%, rgba(0, 48, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(35, 130, 255, 0.1) 0%, transparent 50%);
+    radial-gradient(circle at 25% 25%, rgba(0, 48, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(35, 130, 255, 0.05) 0%, transparent 50%);
 }
 
 /* Octagon pattern - Electric Blue */
 .octagon-pattern {
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5l17.32 10v20L30 45 12.68 35V15L30 5z' fill='none' stroke='%230030FF' stroke-opacity='0.15' stroke-width='1'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5l17.32 10v20L30 45 12.68 35V15L30 5z' fill='none' stroke='%230030FF' stroke-opacity='0.05' stroke-width='1'/%3E%3C/svg%3E");
   background-size: 60px 60px;
 }
 
 /* Hero layering using the Octacore blues */
 .hero-gradient {
   background:
-    radial-gradient(circle at 20% 35%, rgba(35, 130, 255, 0.18), transparent 34%),
-    radial-gradient(circle at 78% 22%, rgba(0, 48, 255, 0.22), transparent 32%),
-    linear-gradient(120deg, #05071f 0%, #0a1b5e 42%, #0b3bb4 70%, #0b5bff 100%);
+    radial-gradient(circle at 20% 35%, rgba(35, 130, 255, 0.1), transparent 34%),
+    radial-gradient(circle at 78% 22%, rgba(0, 48, 255, 0.1), transparent 32%),
+    linear-gradient(120deg, #f8fafc 0%, #eff6ff 42%, #dbeafe 70%, #eff6ff 100%);
 }
 
 .hero-grid {
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0, 48, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 48, 255, 0.05) 1px, transparent 1px);
   background-size: 90px 90px;
-  mask-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.55), transparent 70%);
-  -webkit-mask-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.55), transparent 70%);
+  mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.55), transparent 70%);
+  -webkit-mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.55), transparent 70%);
 }
 
 .brand-glass {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(35, 130, 255, 0.25);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 48, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(18px);
 }
 
 .subtle-border {
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 48, 255, 0.08);
 }
 
 .gradient-cta {
@@ -223,7 +223,7 @@
 }
 
 .ring-highlight {
-  box-shadow: 0 0 0 1px rgba(35, 130, 255, 0.35), 0 0 40px rgba(0, 48, 255, 0.35);
+  box-shadow: 0 0 0 1px rgba(35, 130, 255, 0.35), 0 0 40px rgba(0, 48, 255, 0.15);
 }
 
 /* Responsive text clamp */

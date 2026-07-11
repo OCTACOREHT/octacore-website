@@ -6,7 +6,7 @@ import { Wordmark } from "@/components/logotype"
 
 export default function NotFound() {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-[#03011E] pt-20">
+    <section className="min-h-screen flex items-center justify-center bg-background pt-20">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/3 left-1/3 w-72 h-72 bg-[#0030FF]/10 rounded-full blur-3xl" />
         <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-[#2382FF]/10 rounded-full blur-3xl" />
@@ -26,10 +26,10 @@ export default function NotFound() {
         </div>
 
         {/* Message */}
-        <h1 className="font-[family-name:var(--font-heading)] font-bold text-2xl md:text-3xl text-white mb-4 uppercase">
+        <h1 className="font-[family-name:var(--font-heading)] font-bold text-2xl md:text-3xl text-foreground mb-4 uppercase">
           Page not found
         </h1>
-        <p className="text-white/70 text-lg mb-8">
+        <p className="text-foreground/70 text-lg mb-8">
           Sorry, the page you are looking for does not exist or has been moved.
         </p>
 

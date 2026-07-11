@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#03011E',
+  themeColor: '#ffffff',
   width: 'device-width',
   initialScale: 1,
 }
@@ -59,14 +59,14 @@ export default function RootLayout({
                 "addressLocality": "Port-au-Prince",
                 "addressCountry": "HT"
               },
-              "email": "octacore.haiti@gmail.com",
+              "email": "info@octacore.com",
               "telephone": ["+509 4472-2152", "+509 3794-7597"],
               "foundingDate": "2024"
             })
           }}
         />
       </head>
-      <body className="font-sans antialiased bg-[#03011E] text-white">
+      <body className="font-sans antialiased bg-background text-foreground">
         <Header />
         <main>{children}</main>
         <Footer />

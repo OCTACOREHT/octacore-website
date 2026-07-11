@@ -8,16 +8,16 @@ import { Input } from "@/components/ui/input"
 const ACCESS_KEY = "7fdaacca-8ad7-4669-be27-40f4384540df"  // TA CLÉ
 
 const contactInfo = [
-  { label: "Email", value: "octacore.haiti@gmail.com", href: "mailto:octacore.haiti@gmail.com", icon: Mail },
+  { label: "Email", value: "info@octacore.com", href: "mailto:info@octacore.com", icon: Mail },
   { label: "Phone", value: "509 4473-2152", href: "tel:50944732152", icon: Phone },
   { label: "Phone", value: "509 3794-7597", href: "tel:50937947597", icon: Phone },
 ]
 
 const socialLinks = [
-  { name: "Instagram", href: "https://www.instagram.com/octacore.ioh?igsh=MWlvYmJsZndnYXFzYQ==", icon: Instagram },
+  { name: "Instagram", href: "https://www.instagram.com/octacore.ht?igsh=eWR1aGVwdHhsdXB4&utm_source=qr", icon: Instagram },
   { name: "LinkedIn", href: "https://www.linkedin.com/company/octacoreplus?viewAsMember=true", icon: Linkedin },
   { name: "Facebook", href: "https://www.facebook.com/profile.php?id=61587140361937&locale=fr_FR", icon: Facebook },
-  { name: "Email", href: "mailto:octacore.haiti@gmail.com", icon: Mail },
+  { name: "Email", href: "mailto:info@octacore.com", icon: Mail },
 ]
 
 export default function ContactPage() {
@@ -64,70 +64,70 @@ export default function ContactPage() {
     <>
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-0a0a2e to-03011E" />
+        <div className="absolute inset-0 bg-gradient-section" />
         <div className="absolute inset-0 circuit-bg opacity-30" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h1 className="font-bold text-4xl lg:text-6xl uppercase tracking-tight text-white mb-6 animate-fade-up">
+          <h1 className="font-[family-name:var(--font-heading)] font-bold text-4xl lg:text-6xl uppercase tracking-tight text-foreground mb-6 animate-fade-up">
             CONTACT US
           </h1>
-          <p className="text-xl text-white/80 animate-fade-up animation-delay-200">
+          <p className="text-xl text-foreground/80 animate-fade-up animation-delay-200">
             Let's discuss your project
           </p>
         </div>
       </section>
 
-      <section className="py-20 bg-03011E">
+      <section className="py-20 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           {/* Formulaire */}
-          <div className="max-w-lg mx-auto bg-0a0a2e border border-2382FF/20 rounded-2xl p-8 mb-12">
-            <h3 className="font-bold text-2xl text-white mb-8 text-center uppercase">
+          <div className="max-w-lg mx-auto bg-foreground/5 border border-border rounded-2xl p-8 mb-12">
+            <h3 className="font-bold text-2xl text-foreground mb-8 text-center uppercase">
               Send us a message
             </h3>
             
             <form ref={formRef} onSubmit={onSubmit} className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-white/70 mb-2">Full name</label>
+                <label className="block text-sm font-medium text-foreground/70 mb-2">Full name</label>
                 <Input 
                   type="text" 
                   name="name" 
                   required 
-                  className="w-full bg-03011E border border-2382FF/20 text-white placeholder-white/40 focus:border-0030FF focus:ring-0030FF/20 px-4 py-3 rounded-lg"
+                  className="w-full bg-03011E border border-2382FF/20 text-foreground placeholder-white/40 focus:border-0030FF focus:ring-0030FF/20 px-4 py-3 rounded-lg"
                   placeholder="Your name"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-white/70 mb-2">
+                <label className="block text-sm font-medium text-foreground/70 mb-2">
                   Email <span className="text-0030FF">*</span>
                 </label>
                 <Input 
                   type="email" 
                   name="email" 
                   required 
-                  className="w-full bg-03011E border border-2382FF/20 text-white placeholder-white/40 focus:border-0030FF focus:ring-0030FF/20 px-4 py-3 rounded-lg"
+                  className="w-full bg-03011E border border-2382FF/20 text-foreground placeholder-white/40 focus:border-0030FF focus:ring-0030FF/20 px-4 py-3 rounded-lg"
                   placeholder="nom@exemple.com"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-white/70 mb-2">Phone</label>
+                <label className="block text-sm font-medium text-foreground/70 mb-2">Phone</label>
                 <Input 
                   type="tel" 
                   name="phone" 
-                  className="w-full bg-03011E border border-2382FF/20 text-white placeholder-white/40 focus:border-0030FF focus:ring-0030FF/20 px-4 py-3 rounded-lg"
+                  className="w-full bg-03011E border border-2382FF/20 text-foreground placeholder-white/40 focus:border-0030FF focus:ring-0030FF/20 px-4 py-3 rounded-lg"
                   placeholder="509 XXXX-XXXX"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-white/70 mb-2">
+                <label className="block text-sm font-medium text-foreground/70 mb-2">
                   Message <span className="text-0030FF">*</span>
                 </label>
                 <textarea 
                   name="message" 
                   rows={5}
                   required
-                  className="w-full bg-03011E border border-2382FF/20 text-white placeholder-white/40 focus:border-0030FF focus:ring-0030FF/20 px-4 py-3 rounded-lg resize-vertical"
+                  className="w-full bg-03011E border border-2382FF/20 text-foreground placeholder-white/40 focus:border-0030FF focus:ring-0030FF/20 px-4 py-3 rounded-lg resize-vertical"
                   placeholder="Describe your project..."
                 />
               </div>
@@ -143,7 +143,7 @@ export default function ContactPage() {
               <Button 
                 type="submit" 
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-0030FF to-2382FF hover:from-2382FF hover:to-0030FF text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-200 disabled:opacity-50"
+                className="w-full bg-gradient-to-r from-0030FF to-2382FF hover:from-2382FF hover:to-0030FF text-foreground font-bold py-4 px-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-200 disabled:opacity-50"
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
                 <Send className="w-5 h-5 ml-2" />
@@ -154,7 +154,7 @@ export default function ContactPage() {
           {/* Contact Info */}
           <div className="max-w-lg mx-auto">
             <div className="bg-0a0a2e border border-2382FF/20 rounded-2xl p-8 mb-8">
-              <h3 className="font-bold text-xl text-white mb-6 text-center uppercase">Our contact details</h3>
+              <h3 className="font-bold text-xl text-foreground mb-6 text-center uppercase">Our contact details</h3>
               <div className="space-y-4">
                 {contactInfo.map((info, i) => (
                   <a key={i} href={info.href} className="flex items-center gap-4 p-4 rounded-xl hover:bg-0030FF/10 transition-all group">
@@ -162,8 +162,8 @@ export default function ContactPage() {
                       <info.icon className="w-6 h-6 text-0030FF" />
                     </div>
                     <div>
-                      <p className="text-white/60 text-sm font-medium">{info.label}</p>
-                      <p className="text-white font-semibold truncate">{info.value}</p>
+                      <p className="text-foreground/60 text-sm font-medium">{info.label}</p>
+                      <p className="text-foreground font-semibold truncate">{info.value}</p>
                     </div>
                   </a>
                 ))}
@@ -171,7 +171,7 @@ export default function ContactPage() {
             </div>
 
             <div className="bg-0a0a2e border border-2382FF/20 rounded-2xl p-8 text-center">
-              <h3 className="font-bold text-xl text-white mb-6 uppercase">Follow us</h3>
+              <h3 className="font-bold text-xl text-foreground mb-6 uppercase">Follow us</h3>
               <div className="flex justify-center gap-6 mb-6">
                 {socialLinks.map(link => (
                   <a key={link.name} href={link.href} target="_blank" rel="noopener" 
@@ -180,7 +180,7 @@ export default function ContactPage() {
                   </a>
                 ))}
               </div>
-              <p className="text-white/50 text-lg">Port-au-Prince, Haiti</p>
+              <p className="text-foreground/50 text-lg">Port-au-Prince, Haiti</p>
             </div>
           </div>
         </div>

@@ -29,7 +29,7 @@ export function Logotype({ size = "md", showTagline = false, className = "" }: L
           loading="eager"
         />
         {showTagline && (
-          <span className={`${s.tagline} text-white/70 tracking-wide mt-1 uppercase`}>
+          <span className={`${s.tagline} text-foreground/70 tracking-wide mt-1 uppercase`}>
             Smart solutions. Real impact.
           </span>
         )}

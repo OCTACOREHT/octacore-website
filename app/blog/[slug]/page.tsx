@@ -112,7 +112,7 @@ const formatDate = (value: string | null) =>
 
 const renderContent = (content: unknown) => {
   if (!content) {
-    return <p className="text-white/70">Pas de contenu fourni.</p>
+    return <p className="text-foreground/70">Pas de contenu fourni.</p>
   }
 
   // Plain string: render as text, but if it looks like HTML, render as HTML
@@ -120,12 +120,12 @@ const renderContent = (content: unknown) => {
     if (/<[^>]+>/.test(content)) {
       return (
         <div
-          className="prose prose-invert max-w-none prose-headings:text-white prose-p:text-white/80 prose-strong:text-white prose-a:text-core-electric"
+          className="prose prose-invert max-w-none prose-headings:text-foreground prose-p:text-foreground/80 prose-strong:text-foreground prose-a:text-core-electric"
           dangerouslySetInnerHTML={{ __html: content }}
         />
       )
     }
-    return <p className="whitespace-pre-line text-lg leading-7 text-white/80">{content}</p>
+    return <p className="whitespace-pre-line text-lg leading-7 text-foreground/80">{content}</p>
   }
 
   if (typeof content === 'object' && content) {
@@ -134,7 +134,7 @@ const renderContent = (content: unknown) => {
       const html = String(obj.html)
       return (
         <div
-          className="prose prose-invert max-w-none prose-headings:text-white prose-p:text-white/80 prose-strong:text-white prose-a:text-core-electric"
+          className="prose prose-invert max-w-none prose-headings:text-foreground prose-p:text-foreground/80 prose-strong:text-foreground prose-a:text-core-electric"
           dangerouslySetInnerHTML={{ __html: html }}
         />
       )
@@ -144,18 +144,18 @@ const renderContent = (content: unknown) => {
       if (/<[^>]+>/.test(raw)) {
         return (
           <div
-            className="prose prose-invert max-w-none prose-headings:text-white prose-p:text-white/80 prose-strong:text-white prose-a:text-core-electric"
+            className="prose prose-invert max-w-none prose-headings:text-foreground prose-p:text-foreground/80 prose-strong:text-foreground prose-a:text-core-electric"
             dangerouslySetInnerHTML={{ __html: raw }}
           />
         )
       }
-      return <p className="whitespace-pre-line text-lg leading-7 text-white/80">{raw}</p>
+      return <p className="whitespace-pre-line text-lg leading-7 text-foreground/80">{raw}</p>
     }
   }
 
   const pretty = JSON.stringify(content, null, 2)
   return (
-    <pre className="overflow-x-auto rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-white/80">
+    <pre className="overflow-x-auto rounded-xl border border-foreground/10 bg-foreground/5 p-4 text-sm text-foreground/80">
       {pretty}
     </pre>
   )
@@ -184,16 +184,16 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
     <article className="px-6 py-16 md:py-20">
       <div className="mx-auto flex max-w-4xl flex-col gap-10">
         <div className="space-y-4">
-          <Link href="/blog" className="text-sm text-core-electric transition hover:text-white">
+          <Link href="/blog" className="text-sm text-core-electric transition hover:text-foreground">
             ← Back to blog
           </Link>
-          <h1 className="text-4xl font-semibold text-white md:text-5xl">{post.title}</h1>
-          <p className="text-white/60">{formatDate(post.published_at)}</p>
-          {post.excerpt && <p className="text-lg text-white/70">{post.excerpt}</p>}
+          <h1 className="text-4xl font-semibold text-foreground md:text-5xl">{post.title}</h1>
+          <p className="text-foreground/60">{formatDate(post.published_at)}</p>
+          {post.excerpt && <p className="text-lg text-foreground/70">{post.excerpt}</p>}
         </div>
 
         {cover && (
-          <div className="overflow-hidden rounded-2xl border border-white/10 shadow-[0_30px_80px_rgba(0,0,0,0.45)]">
+          <div className="overflow-hidden rounded-2xl border border-foreground/10 shadow-[0_30px_80px_rgba(0,0,0,0.45)]">
             <Image
               src={cover}
               alt={post.cover_image_alt ?? post.title}
@@ -205,8 +205,8 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           </div>
         )}
 
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
-          <div className="space-y-6 text-white/80">{renderContent(post.content)}</div>
+        <div className="rounded-2xl border border-foreground/10 bg-foreground/5 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
+          <div className="space-y-6 text-foreground/80">{renderContent(post.content)}</div>
         </div>
       </div>
     </article>

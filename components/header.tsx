@@ -57,12 +57,12 @@ export function Header() {
   }, [mobileMenuOpen])
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-[#03011E]/95 backdrop-blur-md border-b border-[#2382FF]/20' : 'bg-transparent'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-background/95 backdrop-blur-md border-b border-[#2382FF]/20' : 'bg-transparent'}`}>
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 py-4 lg:px-8">
         {/* Logo - Primary Horizontal Lockup (min 200px width) */}
         <Link href="/" className="min-w-[180px] sm:min-w-[200px]">
           <Image
-            src="/Horizontal-lockup%20V2.png"
+            src="/horizontal-lockup-v1.png"
             alt="Octacore"
             width={180}
             height={70}
@@ -79,7 +79,7 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-medium transition-colors ${isActive ? 'text-[#2382FF]' : 'text-white/80 hover:text-white'}`}
+                className={`text-sm font-medium transition-colors ${isActive ? 'text-[#2382FF]' : 'text-foreground/80 hover:text-foreground'}`}
               >
                 {item.name}
               </Link>
@@ -92,7 +92,7 @@ export function Header() {
         {/* Mobile menu button */}
         <button
           type="button"
-          className="lg:hidden p-2 text-white z-50"
+          className="lg:hidden p-2 text-foreground z-50"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
         >
@@ -102,11 +102,11 @@ export function Header() {
 
       {/* Mobile menu - Fixed overlay with no scroll */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 bg-[#03011E]/95 backdrop-blur-xl z-40 overflow-hidden px-6 pt-20 pb-10">
-          <div className="max-w-md mx-auto bg-white/5 border border-white/10 rounded-3xl p-6 flex flex-col gap-5 shadow-xl">
+        <div className="lg:hidden fixed inset-0 bg-background/95 backdrop-blur-xl z-40 overflow-hidden px-6 pt-20 pb-10">
+          <div className="max-w-md mx-auto bg-foreground/5 border border-foreground/10 rounded-3xl p-6 flex flex-col gap-5 shadow-xl">
             <div className="flex items-center justify-between">
               <Image
-                src="/Horizontal-lockup%20V2.png"
+                src="/horizontal-lockup-v1.png"
                 alt="Octacore"
                 width={140}
                 height={60}
@@ -115,7 +115,7 @@ export function Header() {
               />
               <Button
                 variant="ghost"
-                className="text-white hover:text-[#2382FF] px-2"
+                className="text-foreground hover:text-[#2382FF] px-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <X className="h-5 w-5" />
@@ -131,13 +131,13 @@ export function Header() {
                     href={item.href}
                     className={`rounded-xl px-4 py-3 flex items-center justify-between text-base font-medium border transition-all ${
                       isActive
-                        ? 'border-[#2382FF] bg-[#0030FF]/20 text-white'
-                        : 'border-white/10 bg-white/5 text-white/80 hover:border-[#2382FF]/50 hover:text-white'
+                        ? 'border-[#2382FF] bg-[#0030FF]/20 text-foreground'
+                        : 'border-foreground/10 bg-foreground/5 text-foreground/80 hover:border-[#2382FF]/50 hover:text-foreground'
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     <span>{item.name}</span>
-                    <span className="text-xs text-white/50">&gt;</span>
+                    <span className="text-xs text-foreground/50">&gt;</span>
                   </Link>
                 )
               })}
@@ -148,7 +148,7 @@ export function Header() {
               <Button
                 asChild
                 variant="outline"
-                className="w-full border-white/20 text-white hover:bg-white/10"
+                className="w-full border-foreground/10 text-foreground hover:bg-foreground/5"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <Link href="/services">View our services</Link>

@@ -109,27 +109,27 @@ export default function ServicesPage() {
       {/* Hero Section */}
       <section className="relative pt-28 sm:pt-32 pb-16 sm:pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
         {/* Blue Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a2e] to-[#03011E]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-50 to-white" />
         <div className="absolute inset-0 circuit-bg opacity-30" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h1 className="font-[family-name:var(--font-heading)] font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-tight text-white mb-4 sm:mb-6 animate-fade-up">
+          <h1 className="font-[family-name:var(--font-heading)] font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-tight text-foreground mb-4 sm:mb-6 animate-fade-up">
             OUR SERVICES
           </h1>
-          <p className="text-lg sm:text-xl text-white/80 animate-fade-up-delay-1 text-balance">
+          <p className="text-lg sm:text-xl text-foreground/80 animate-fade-up-delay-1 text-balance">
             Cutting-edge digital solutions designed for performance, security and growth.
           </p>
         </div>
       </section>
 
-      <section className="py-20 sm:py-24 bg-[#050520]">
+      <section className="py-20 sm:py-24 bg-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-3 mb-10">
-            <p className="text-white/60 uppercase tracking-[0.2em] text-xs">Key Solutions</p>
-            <h2 className="text-3xl sm:text-4xl font-[family-name:var(--font-heading)] font-bold text-white leading-tight">
+            <p className="text-foreground/60 uppercase tracking-[0.2em] text-xs">Key Solutions</p>
+            <h2 className="text-3xl sm:text-4xl font-[family-name:var(--font-heading)] font-bold text-foreground leading-tight">
               Digital journeys that make people want to work with you.
             </h2>
-            <p className="text-white/70 text-lg max-w-3xl">
+            <p className="text-foreground/70 text-lg max-w-3xl">
               Each solution is designed with a clear editorial line, measured performance and integrated security,
               to inspire confidence in your users and partners.
             </p>
@@ -137,25 +137,25 @@ export default function ServicesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {solutionAreas.map((area) => (
-              <div key={area.title} className="rounded-2xl border border-[#2382FF]/25 bg-[#0a0a2e]/80 p-6 sm:p-7 space-y-4">
+              <div key={area.title} className="rounded-2xl border border-[#2382FF]/25 bg-background/80 p-6 sm:p-7 space-y-4">
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex items-center gap-3">
                     <area.icon className="h-10 w-10 text-[#2382FF]" />
                     <div>
                       <Wordmark size="xs" className="h-5 w-auto" />
-                      <h3 className="text-xl font-semibold text-white">{area.title}</h3>
+                      <h3 className="text-xl font-semibold text-foreground">{area.title}</h3>
                     </div>
                   </div>
-                  <div className="h-10 w-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-white/70">
+                  <div className="h-10 w-10 rounded-full border border-foreground/10 bg-foreground/5 flex items-center justify-center text-foreground/70">
                     <ArrowUpRight className="h-5 w-5" />
                   </div>
                 </div>
-                <p className="text-white/70 leading-relaxed">{area.description}</p>
+                <p className="text-foreground/70 leading-relaxed">{area.description}</p>
                 <div className="space-y-2">
                   {area.bullets.map((item) => (
                     <div key={item} className="flex items-start gap-3">
                       <CheckCircle2 className="h-5 w-5 text-[#2382FF] mt-0.5" />
-                      <span className="text-white/80 text-sm">{item}</span>
+                      <span className="text-foreground/80 text-sm">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -166,13 +166,13 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-16 sm:py-20 lg:py-28 bg-[#03011E]">
+      <section className="py-16 sm:py-20 lg:py-28 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {services.map((service) => (
               <div
                 key={service.title}
-                className="group bg-[#0a0a2e] border border-[#2382FF]/20 rounded-xl p-6 sm:p-8 hover:border-[#2382FF]/50 transition-all duration-300 flex flex-col"
+                className="group bg-background border border-[#2382FF]/20 rounded-xl p-6 sm:p-8 hover:border-[#2382FF]/50 transition-all duration-300 flex flex-col"
               >
                 {/* Icon - Core Electric Blue */}
                 <div className="w-12 h-12 sm:w-14 sm:h-14 mb-5 sm:mb-6 rounded-xl bg-[#0030FF]/10 flex items-center justify-center group-hover:bg-[#0030FF]/20 transition-colors">
@@ -180,19 +180,19 @@ export default function ServicesPage() {
                 </div>
 
                 {/* Title */}
-                <h3 className="font-[family-name:var(--font-heading)] font-semibold text-lg sm:text-xl text-white mb-3 sm:mb-4 uppercase">
+                <h3 className="font-[family-name:var(--font-heading)] font-semibold text-lg sm:text-xl text-foreground mb-3 sm:mb-4 uppercase">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-white/70 leading-relaxed mb-5 sm:mb-6 flex-grow text-sm sm:text-base">
+                <p className="text-foreground/70 leading-relaxed mb-5 sm:mb-6 flex-grow text-sm sm:text-base">
                   {service.description}
                 </p>
 
                 {/* Features */}
                 <ul className="space-y-2 mb-5 sm:mb-6">
                   {service.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2 text-xs sm:text-sm text-white/60">
+                    <li key={feature} className="flex items-center gap-2 text-xs sm:text-sm text-foreground/60">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#0030FF] flex-shrink-0" />
                       {feature}
                     </li>

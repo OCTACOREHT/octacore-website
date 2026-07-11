@@ -1,0 +1,20 @@
+{"ts":"2026-05-29T22:22:03.060Z","cmd":"goto","args":"http://localhost:3002","origin":"about:blank","durationMs":15031,"status":"error","hasCookies":false,"mode":"launched","error":"page.goto: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3002/\", waiting until \"domcontentloaded\"\u001b[22m\n"}
+{"ts":"2026-05-29T22:22:11.589Z","cmd":"screenshot","args":"C:/Users/kensl/AppData/Local/Temp/home-hero.png","origin":"http://localhost:3002/","durationMs":7885,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-29T22:22:42.357Z","cmd":"goto","args":"http://localhost:3002","origin":"http://localhost:3002/","durationMs":762,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-29T22:22:47.185Z","cmd":"viewport","args":"1440x900","origin":"http://localhost:3002/","durationMs":44,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-29T22:22:59.489Z","cmd":"screenshot","args":"C:/Users/kensl/AppData/Local/Temp/hero-viewport.png --viewport","origin":"about:blank","durationMs":206,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-29T22:23:14.461Z","cmd":"goto","args":"http://localhost:3002","origin":"http://localhost:3002/","durationMs":1520,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-29T22:23:18.073Z","cmd":"console","args":"","origin":"http://localhost:3002/","durationMs":3,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-29T22:23:26.915Z","cmd":"viewport","args":"1440x900","origin":"http://localhost:3002/","durationMs":67,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-29T22:23:30.770Z","cmd":"screenshot","args":"C:/Users/kensl/AppData/Local/Temp/hero-final.png --viewport","origin":"http://localhost:3002/","durationMs":1210,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-29T22:23:44.936Z","cmd":"scroll","args":"","origin":"http://localhost:3002/","durationMs":9,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-29T22:23:46.885Z","cmd":"screenshot","args":"C:/Users/kensl/AppData/Local/Temp/section-services.png --viewport","origin":"http://localhost:3002/","durationMs":364,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-29T22:23:48.703Z","cmd":"scroll","args":"","origin":"http://localhost:3002/","durationMs":100,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-29T22:23:50.613Z","cmd":"screenshot","args":"C:/Users/kensl/AppData/Local/Temp/section-expertise.png --viewport","origin":"http://localhost:3002/","durationMs":310,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-29T22:24:12.481Z","cmd":"goto","args":"http://localhost:3002","origin":"http://localhost:3002/","durationMs":2243,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-29T22:24:16.177Z","cmd":"js","args":"window.scrollTo(0, 900)","origin":"http://localhost:3002/","durationMs":11,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-29T22:24:18.480Z","cmd":"screenshot","args":"C:/Users/kensl/AppData/Local/Temp/about-section.png --viewport","origin":"http://localhost:3002/","durationMs":572,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-29T22:24:33.501Z","cmd":"js","args":"window.scrollTo(0, 2800)","origin":"http://localhost:3002/","durationMs":13,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-29T22:24:35.597Z","cmd":"screenshot","args":"C:/Users/kensl/AppData/Local/Temp/process-section.png --viewport","origin":"http://localhost:3002/","durationMs":327,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-29T22:24:36.184Z","cmd":"js","args":"window.scrollTo(0, 3600)","origin":"http://localhost:3002/","durationMs":16,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-29T22:24:38.156Z","cmd":"screenshot","args":"C:/Users/kensl/AppData/Local/Temp/commitments-section.png --viewport","origin":"http://localhost:3002/","durationMs":318,"status":"ok","hasCookies":false,"mode":"launched"}

@@ -1,0 +1,14 @@
+[2026-05-29T22:24:12.019Z] [info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[2026-05-29T22:24:12.865Z] [log] [HMR] connected
+[2026-05-29T22:24:13.877Z] [warning] A preload for 'https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js' is found, but is not used because the request credentials mode does not match. Consider taking a look at crossorigin attribute.
+[2026-05-29T22:24:13.959Z] [warning] Image with src "http://localhost:3002/Horizontal-lockup%20V2.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[2026-05-29T22:24:14.913Z] [log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[2026-05-29T22:24:14.918Z] [log] %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {route: /, path: /}
+[2026-05-29T22:24:14.921Z] [log] %c[Vercel Web Analytics]%c [view] http://localhost:3002/ color: rgb(120, 120, 120) color: inherit {o: http://localhost:3002/, sv: 0.1.3, sdkn: @vercel/analytics/next, sdkv: 1.6.1, ts: 1780093454909} /_vercel/insights/view
+[2026-05-29T22:24:15.140Z] [warning] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[2026-05-29T22:24:15.653Z] [warning] [.WebGL-0x4ffc096ab800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[2026-05-29T22:24:15.711Z] [warning] [.WebGL-0x4ffc096ab800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[2026-05-29T22:24:15.714Z] [warning] [.WebGL-0x4ffc096ab800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[2026-05-29T22:24:15.766Z] [warning] [.WebGL-0x4ffc096ab800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+[2026-05-29T22:24:19.602Z] [warning] The resource https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+[2026-05-29T22:24:19.602Z] [warning] The resource http://localhost:3002/Horizontal-lockup-white.png was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
