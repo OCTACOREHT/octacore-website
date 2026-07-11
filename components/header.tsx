@@ -34,25 +34,12 @@ export function Header() {
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = "hidden"
-      document.body.style.position = "fixed"
-      document.body.style.width = "100%"
-      document.body.style.top = `-${window.scrollY}px`
     } else {
-      const scrollY = document.body.style.top
       document.body.style.overflow = ""
-      document.body.style.position = ""
-      document.body.style.width = ""
-      document.body.style.top = ""
-      if (scrollY) {
-        window.scrollTo(0, Number.parseInt(scrollY || "0") * -1)
-      }
     }
     
     return () => {
       document.body.style.overflow = ""
-      document.body.style.position = ""
-      document.body.style.width = ""
-      document.body.style.top = ""
     }
   }, [mobileMenuOpen])
 
@@ -104,24 +91,6 @@ export function Header() {
       {mobileMenuOpen && (
         <div className="lg:hidden fixed inset-0 bg-background/95 backdrop-blur-xl z-40 overflow-hidden px-6 pt-20 pb-10">
           <div className="max-w-md mx-auto bg-foreground/5 border border-foreground/10 rounded-3xl p-6 flex flex-col gap-5 shadow-xl">
-            <div className="flex items-center justify-between">
-              <Image
-                src="/horizontal-lockup-v1.png"
-                alt="Octacore"
-                width={140}
-                height={60}
-                className="h-auto w-[140px]"
-                priority
-              />
-              <Button
-                variant="ghost"
-                className="text-foreground hover:text-[#2382FF] px-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <X className="h-5 w-5" />
-              </Button>
-            </div>
-
             <div className="grid grid-cols-1 gap-3">
               {navigation.map((item) => {
                 const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href))

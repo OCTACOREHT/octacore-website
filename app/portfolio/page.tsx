@@ -5,6 +5,7 @@ import { ActivePartners } from "@/components/active-partners"
 import { Marquee } from "@/components/ui/3d-testimonials"
 import { Card, CardContent } from "@/components/ui/card"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
+import { TestimonialsSection } from "@/components/ui/testimonials-with-marquee"
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -107,7 +108,7 @@ function PartnerCard({ img, name, username, body, country }: (typeof partnersTes
           </Avatar>
           <div className="flex flex-col overflow-hidden">
             <figcaption className="text-sm font-semibold text-foreground flex items-center gap-1 truncate">
-              {name} <span className="text-xs flex-shrink-0">{country}</span>
+              {name}
             </figcaption>
             <p className="text-xs font-medium text-[#2382FF] truncate">{username}</p>
           </div>
@@ -220,70 +221,15 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* 3D Testimonials Marquee Section */}
-      <section className="py-20 bg-slate-50 overflow-hidden relative border-y border-border">
-        <div className="absolute inset-0 circuit-bg opacity-30" />
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-          <div className="text-center mb-12">
-            <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl sm:text-3xl uppercase text-foreground mb-4">
-              Our Partners & Integrations
-            </h2>
-            <p className="text-foreground/70 max-w-2xl mx-auto">
-              We collaborate with a growing network of visionary brands and organizations to deliver excellence.
-            </p>
-          </div>
-          
-          <div className="relative flex h-[600px] w-full max-w-[850px] mx-auto flex-row items-center justify-center overflow-hidden gap-1.5 [perspective:500px]">
-            <div
-              className="flex flex-row items-center justify-center h-full w-full gap-4"
-              style={{
-                transform:
-                  'translateX(0px) translateY(0px) translateZ(-50px) rotateX(15deg) rotateY(-5deg) rotateZ(5deg)',
-              }}
-            >
-              {/* Column 1 (downwards) - FC Toro, HBF Haiti, Granpanpan */}
-              <Marquee 
-                vertical 
-                repeat={4} 
-                style={{ '--duration': '15s' } as React.CSSProperties}
-                className="h-full w-full max-w-[260px]"
-              >
-                {[partnersTestimonials[0], partnersTestimonials[1], partnersTestimonials[2]].map((partner) => (
-                  <PartnerCard key={partner.name} {...partner} />
-                ))}
-              </Marquee>
-
-              {/* Column 2 (upwards / reverse) - Youth Foundation, Badgers */}
-              <Marquee 
-                vertical 
-                reverse
-                repeat={6} 
-                style={{ '--duration': '20s' } as React.CSSProperties}
-                className="h-full w-full max-w-[260px]"
-              >
-                {[partnersTestimonials[3], partnersTestimonials[4]].map((partner) => (
-                  <PartnerCard key={partner.name} {...partner} />
-                ))}
-              </Marquee>
-
-              {/* Column 3 (downwards) - Flexipass, TaiTai */}
-              <Marquee 
-                vertical 
-                repeat={6} 
-                style={{ '--duration': '18s' } as React.CSSProperties}
-                className="h-full w-full max-w-[260px]"
-              >
-                {[partnersTestimonials[5], partnersTestimonials[6]].map((partner) => (
-                  <PartnerCard key={partner.name} {...partner} />
-                ))}
-              </Marquee>
-            </div>
-            {/* Gradient overlays for vertical marquee */}
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-slate-50 z-20"></div>
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-slate-50 z-20"></div>
-          </div>
-        </div>
-      </section>
+      <TestimonialsSection 
+        title="Our Partners & Integrations"
+        description="We collaborate with a growing network of visionary brands and organizations to deliver excellence."
+        testimonials={partnersTestimonials.map(p => ({
+          author: { name: p.name, handle: p.username, avatar: p.img },
+          text: p.body,
+          href: `https://${p.username}`
+        }))}
+      />
 
       {/* Partners Section (same logos style as homepage) */}
       <ActivePartners />
