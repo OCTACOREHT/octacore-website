@@ -34,7 +34,7 @@ export function AnimatedText({
       <VerticalCutReveal
         ref={revealRef}
         autoStart={false}
-        splitBy="words"
+        splitBy="lines"
         staggerDuration={staggerDuration}
         staggerFrom="first"
         reverse={true}
