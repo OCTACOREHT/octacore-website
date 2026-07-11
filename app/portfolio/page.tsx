@@ -2,6 +2,9 @@ import type { Metadata } from "next"
 import { Instagram, Linkedin, Facebook, ArrowUpRight, ExternalLink } from "lucide-react"
 import { Wordmark } from "@/components/logotype"
 import { ActivePartners } from "@/components/active-partners"
+import { Marquee } from "@/components/ui/3d-testimonials"
+import { Card, CardContent } from "@/components/ui/card"
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -40,6 +43,80 @@ const socialLinks = [
     icon: Facebook,
   },
 ]
+
+const partnersTestimonials = [
+  {
+    name: 'FC Toro',
+    username: 'fctoro.com',
+    body: 'Sports organization focused on youth development and football excellence.',
+    img: '/partners/fctoro.png',
+    country: '🇭🇹 Haiti',
+  },
+  {
+    name: 'HBF Haiti',
+    username: 'hbfhaiti.org',
+    body: 'Haitian Basketball Federation, promoting basketball across the nation.',
+    img: '/partners/hbf-logo.png',
+    country: '🇭🇹 Haiti',
+  },
+  {
+    name: 'Granpanpan Nations Cup',
+    username: 'granpanpannationscup.com',
+    body: 'International sports tournament uniting communities.',
+    img: '/partners/granpanpan-nation-logo.png',
+    country: '🇺🇸 USA',
+  },
+  {
+    name: 'Youth Foundation Haiti',
+    username: 'youthfoundationhaiti.org',
+    body: 'Empowering the next generation through education and sports.',
+    img: '/partners/YFH.png',
+    country: '🇭🇹 Haiti',
+  },
+  {
+    name: 'Florida Badgers FCA',
+    username: 'floridabadgersfca.com',
+    body: 'Elite football academy training future champions.',
+    img: '/partners/Badgers.png',
+    country: '🇺🇸 USA',
+  },
+  {
+    name: 'Flexipass',
+    username: 'www.flexipass.shop',
+    body: 'Secure and fast ticketing platform for all your events.',
+    img: '/partners/Flexipass.png',
+    country: '🇭🇹 Haiti',
+  },
+  {
+    name: 'TaiTai',
+    username: 'taïtaï.com',
+    body: 'Innovative brand bringing quality products to the local market.',
+    img: '/partners/taitai-logo.png',
+    country: '🇭🇹 Haiti',
+  },
+];
+
+function PartnerCard({ img, name, username, body, country }: (typeof partnersTestimonials)[number]) {
+  return (
+    <Card className="w-64 bg-background border-[#2382FF]/20 hover:border-[#2382FF]/50 transition-colors shadow-md">
+      <CardContent className="p-4">
+        <div className="flex items-center gap-3">
+          <Avatar className="size-12 bg-transparent rounded-md flex-shrink-0">
+            <AvatarImage src={img} alt={name} className="object-contain" />
+            <AvatarFallback className="bg-transparent text-foreground rounded-md">{name[0]}</AvatarFallback>
+          </Avatar>
+          <div className="flex flex-col overflow-hidden">
+            <figcaption className="text-sm font-semibold text-foreground flex items-center gap-1 truncate">
+              {name} <span className="text-xs flex-shrink-0">{country}</span>
+            </figcaption>
+            <p className="text-xs font-medium text-[#2382FF] truncate">{username}</p>
+          </div>
+        </div>
+        <blockquote className="mt-3 text-sm text-foreground/80 leading-relaxed">{body}</blockquote>
+      </CardContent>
+    </Card>
+  );
+}
 
 export default function PortfolioPage() {
   return (
@@ -140,18 +217,70 @@ export default function PortfolioPage() {
               </a>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Coming Soon Placeholder */}
-          <div className="relative bg-background border border-[#2382FF]/20 rounded-2xl p-8 sm:p-12 md:p-16 octagon-pattern">
-            <div className="relative z-10 text-center">
-              <Wordmark size="sm" className="mx-auto mb-6 h-auto w-auto" />
-              <h3 className="font-[family-name:var(--font-heading)] font-semibold text-lg sm:text-xl text-foreground mb-3 uppercase">
-                More projects coming
-              </h3>
-              <p className="text-foreground/60 max-w-md mx-auto text-sm sm:text-base">
-                Coming soon: a complete gallery of our achievements with detailed case studies.
-              </p>
+      {/* 3D Testimonials Marquee Section */}
+      <section className="py-20 bg-slate-50 overflow-hidden relative border-y border-border">
+        <div className="absolute inset-0 circuit-bg opacity-30" />
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="text-center mb-12">
+            <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl sm:text-3xl uppercase text-foreground mb-4">
+              Our Partners & Integrations
+            </h2>
+            <p className="text-foreground/70 max-w-2xl mx-auto">
+              We collaborate with a growing network of visionary brands and organizations to deliver excellence.
+            </p>
+          </div>
+          
+          <div className="relative flex h-[600px] w-full max-w-[850px] mx-auto flex-row items-center justify-center overflow-hidden gap-1.5 [perspective:500px]">
+            <div
+              className="flex flex-row items-center justify-center h-full w-full gap-4"
+              style={{
+                transform:
+                  'translateX(0px) translateY(0px) translateZ(-50px) rotateX(15deg) rotateY(-5deg) rotateZ(5deg)',
+              }}
+            >
+              {/* Column 1 (downwards) - FC Toro, HBF Haiti, Granpanpan */}
+              <Marquee 
+                vertical 
+                repeat={4} 
+                style={{ '--duration': '15s' } as React.CSSProperties}
+                className="h-full w-full max-w-[260px]"
+              >
+                {[partnersTestimonials[0], partnersTestimonials[1], partnersTestimonials[2]].map((partner) => (
+                  <PartnerCard key={partner.name} {...partner} />
+                ))}
+              </Marquee>
+
+              {/* Column 2 (upwards / reverse) - Youth Foundation, Badgers */}
+              <Marquee 
+                vertical 
+                reverse
+                repeat={6} 
+                style={{ '--duration': '20s' } as React.CSSProperties}
+                className="h-full w-full max-w-[260px]"
+              >
+                {[partnersTestimonials[3], partnersTestimonials[4]].map((partner) => (
+                  <PartnerCard key={partner.name} {...partner} />
+                ))}
+              </Marquee>
+
+              {/* Column 3 (downwards) - Flexipass, TaiTai */}
+              <Marquee 
+                vertical 
+                repeat={6} 
+                style={{ '--duration': '18s' } as React.CSSProperties}
+                className="h-full w-full max-w-[260px]"
+              >
+                {[partnersTestimonials[5], partnersTestimonials[6]].map((partner) => (
+                  <PartnerCard key={partner.name} {...partner} />
+                ))}
+              </Marquee>
             </div>
+            {/* Gradient overlays for vertical marquee */}
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-slate-50 z-20"></div>
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-slate-50 z-20"></div>
           </div>
         </div>
       </section>
