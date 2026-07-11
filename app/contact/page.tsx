@@ -81,9 +81,10 @@ export default function ContactPage() {
       </section>
 
       <section className="py-20 bg-background overflow-hidden relative">
-        <AnimatedGroup showBlueEllipse={true} className="max-w-4xl mx-auto px-4 sm:px-6">
+        <AnimatedGroup showBlueEllipse={true} className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Formulaire */}
-          <AnimatedItem animationNum={0} className="max-w-lg mx-auto bg-foreground/5 border border-border rounded-2xl p-8 mb-12">
+          <AnimatedItem animationNum={0} className="w-full bg-foreground/5 border border-border rounded-2xl p-8">
             <h3 className="font-bold text-2xl text-foreground mb-8 text-center uppercase">
               Send us a message
             </h3>
@@ -156,8 +157,8 @@ export default function ContactPage() {
           </AnimatedItem>
 
           {/* Contact Info */}
-          <AnimatedItem animationNum={1} className="max-w-lg mx-auto">
-            <div className="bg-0a0a2e border border-2382FF/20 rounded-2xl p-8 mb-8">
+          <AnimatedItem animationNum={1} className="w-full flex flex-col gap-8">
+            <div className="bg-0a0a2e border border-2382FF/20 rounded-2xl p-8">
               <h3 className="font-bold text-xl text-foreground mb-6 text-center uppercase">Our contact details</h3>
               <div className="space-y-4">
                 {contactInfo.map((info, i) => (
@@ -187,6 +188,7 @@ export default function ContactPage() {
               <p className="text-foreground/50 text-lg">Port-au-Prince, Haiti</p>
             </div>
           </AnimatedItem>
+          </div>
         </AnimatedGroup>
       </section>
     </>

@@ -46,7 +46,7 @@ export default function AProposPage() {
           <AnimatedItem animationNum={0} className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-foreground/10 bg-foreground/5 text-foreground/80 text-[11px] tracking-[0.3em] uppercase">
             <Image src="/logo.png" alt="OCTACORE" width={24} height={24} className="h-6 w-6" priority />
             <span>Technology Partner</span>
-          </div>
+          </AnimatedItem>
           <h1 className="font-[family-name:var(--font-heading)] font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-tight text-foreground animate-fade-up">
             ABOUT
           </h1>
