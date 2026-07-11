@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { AnimatedGroup, AnimatedItem } from "@/components/ui/animated-group"
 import { AnimatedTitle } from "@/components/ui/animated-title"
+import { AnimatedText } from "@/components/ui/animated-text"
 
 const ACCESS_KEY = "7fdaacca-8ad7-4669-be27-40f4384540df"  // TA CLÉ
 
@@ -64,18 +65,19 @@ export default function ContactPage() {
 
   return (
     <>
-      {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+        <AnimatedGroup showBlueEllipse={false}>
         <div className="absolute inset-0 bg-gradient-section" />
         <div className="absolute inset-0 circuit-bg opacity-30" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h1 className="font-[family-name:var(--font-heading)] font-bold text-4xl lg:text-6xl uppercase tracking-tight text-foreground mb-6 animate-fade-up">
+          <AnimatedTitle as="h1" className="font-[family-name:var(--font-heading)] font-bold text-4xl lg:text-6xl uppercase tracking-tight text-foreground mb-6">
             CONTACT US
-          </h1>
-          <p className="text-xl text-foreground/80 animate-fade-up animation-delay-200">
+          </AnimatedTitle>
+          <AnimatedText animationNum={0} as="p" className="text-xl text-foreground/80">
             Let's discuss your project
-          </p>
+          </AnimatedText>
         </div>
+        </AnimatedGroup>
       </section>
 
       <section className="py-20 bg-background overflow-hidden relative">

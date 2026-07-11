@@ -8,6 +8,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 import { TestimonialsSection } from "@/components/ui/testimonials-with-marquee"
 import { AnimatedGroup, AnimatedItem } from "@/components/ui/animated-group"
 import { AnimatedTitle } from "@/components/ui/animated-title"
+import { AnimatedText } from "@/components/ui/animated-text"
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -168,18 +169,20 @@ export default function PortfolioPage() {
     <>
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+        <AnimatedGroup showBlueEllipse={false}>
         {/* Blue Gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-slate-50 to-white" />
         <div className="absolute inset-0 circuit-bg opacity-30" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h1 className="font-[family-name:var(--font-heading)] font-bold text-clamp-h1 uppercase tracking-tight text-foreground mb-6 animate-fade-up">
+          <AnimatedTitle as="h1" className="font-[family-name:var(--font-heading)] font-bold text-clamp-h1 uppercase tracking-tight text-foreground mb-6">
             OUR ACHIEVEMENTS
-          </h1>
-          <p className="text-lg sm:text-xl text-foreground/80 animate-fade-up-delay-1">
+          </AnimatedTitle>
+          <AnimatedText animationNum={0} as="p" className="text-lg sm:text-xl text-foreground/80">
             Discover our latest projects
-          </p>
+          </AnimatedText>
         </div>
+        </AnimatedGroup>
       </section>
 
 

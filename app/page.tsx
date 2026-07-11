@@ -15,6 +15,7 @@ import {
 import { ArrowUpRight, CheckCircle2 } from "lucide-react"
 import { AnimatedGroup, AnimatedItem } from "@/components/ui/animated-group"
 import { AnimatedTitle } from "@/components/ui/animated-title"
+import { AnimatedText } from "@/components/ui/animated-text"
 
 const metrics = [
   { label: "Target Availability", value: "99.9%", detail: "Monitored architecture and integrated redundancy." },
@@ -107,14 +108,12 @@ export default function HomePage() {
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid lg:grid-cols-[1.08fr_0.92fr] items-start gap-12">
             <div className="space-y-6 pt-4 lg:pt-8">
-              <AnimatedItem animationNum={0} as="h1" className="text-foreground text-4xl sm:text-5xl lg:text-6xl font-[family-name:var(--font-heading)] font-bold leading-tight">
-                Technology that inspires <span className="text-foreground drop-shadow-[0_0_18px_rgba(35,130,255,0.35)]">trust</span>.
-              </AnimatedItem>
-              <AnimatedItem animationNum={1} as="p" className="text-lg sm:text-xl text-foreground/80 max-w-3xl leading-relaxed">
-                We design secure, high-performance and elegant digital platforms so that your teams and
-                your clients have a smooth experience. Each project is framed, measured and operated with the rigor of a
-                long-term partner.
-              </AnimatedItem>
+              <AnimatedTitle as="h1" className="text-foreground text-4xl sm:text-5xl lg:text-6xl font-[family-name:var(--font-heading)] font-bold leading-tight [&>span>span:last-child]:text-foreground [&>span>span:last-child]:drop-shadow-[0_0_18px_rgba(35,130,255,0.35)]">
+                Technology that inspires trust.
+              </AnimatedTitle>
+              <AnimatedText animationNum={1} as="p" className="text-lg sm:text-xl text-foreground/80 max-w-3xl leading-relaxed">
+                We design secure, high-performance and elegant digital platforms so that your teams and your clients have a smooth experience. Each project is framed, measured and operated with the rigor of a long-term partner.
+              </AnimatedText>
               <AnimatedItem animationNum={2} className="flex flex-wrap items-center gap-3">
                 <Button
                   asChild
@@ -170,9 +169,9 @@ export default function HomePage() {
             <AnimatedTitle as="h2" className="text-3xl sm:text-4xl text-foreground leading-tight">
               Innovating Digital Solutions with Expertise and Security
             </AnimatedTitle>
-            <AnimatedItem animationNum={1} as="p" className="text-foreground/70 text-lg max-w-3xl">
+            <AnimatedText animationNum={1} as="p" className="text-foreground/70 text-lg max-w-3xl">
               Octacore is an information technology company specializing in the design, security, and optimization of innovative digital solutions. The company supports organizations in their digital transformation by delivering high-value services tailored to today's and tomorrow's technological challenges.
-            </AnimatedItem>
+            </AnimatedText>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
@@ -217,14 +216,13 @@ export default function HomePage() {
         <AnimatedGroup showBlueEllipse={false} className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-6">
             <div className="space-y-3 max-w-2xl">
-              <AnimatedItem animationNum={0} as="p" className="text-foreground/60 uppercase tracking-[0.2em] text-xs">Our Expertise</AnimatedItem>
+              <AnimatedText animationNum={0} as="p" className="text-foreground/60 uppercase tracking-[0.2em] text-xs">Our Expertise</AnimatedText>
               <AnimatedTitle as="h2" className="text-3xl sm:text-4xl text-foreground leading-tight">
                 Services designed for performance and reliability.
               </AnimatedTitle>
-              <AnimatedItem animationNum={1} as="p" className="text-foreground/70 text-lg">
-                We combine design, engineering and security to deliver credible, elegant platforms ready
-                to grow with your organization.
-              </AnimatedItem>
+              <AnimatedText animationNum={1} as="p" className="text-foreground/70 text-lg">
+                We don't just deliver a platform. We commit to availability, responsiveness, and performance to secure your operations.
+              </AnimatedText>
             </div>
             <div className="flex flex-wrap gap-2">
               {["Product Approach", "Security", "Cloud", "Data", "Support"].map((item) => (
@@ -256,14 +254,13 @@ export default function HomePage() {
       <section className="py-20 sm:py-24 bg-background overflow-hidden relative">
         <AnimatedGroup showBlueEllipse={true} className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-3 mb-10">
-            <AnimatedItem animationNum={0} as="p" className="text-foreground/60 uppercase tracking-[0.2em] text-xs">Method</AnimatedItem>
+            <AnimatedText animationNum={0} as="p" className="text-foreground/60 uppercase tracking-[0.2em] text-xs">Method</AnimatedText>
             <AnimatedTitle as="h2" className="text-3xl sm:text-4xl text-foreground leading-tight">
               A controlled approach from diagnosis to continuous improvement.
             </AnimatedTitle>
-            <AnimatedItem animationNum={1} as="p" className="text-foreground/70 text-lg max-w-3xl">
-              We frame each phase to stay aligned: workshops, architecture, short sprints and operational follow-up
-              to secure your deadlines and the expected quality.
-            </AnimatedItem>
+            <AnimatedText animationNum={1} as="p" className="text-foreground/70 text-lg max-w-3xl">
+              We frame each phase to stay aligned: workshops, architecture, short sprints and operational follow-up to secure your deadlines and the expected quality.
+            </AnimatedText>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -286,14 +283,13 @@ export default function HomePage() {
       <section className="py-20 sm:py-24 bg-background overflow-hidden relative">
         <AnimatedGroup showBlueEllipse={false} className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-3 mb-10">
-            <AnimatedItem animationNum={0} as="p" className="text-foreground/60 uppercase tracking-[0.2em] text-xs">Commitments</AnimatedItem>
+            <AnimatedText animationNum={0} as="p" className="text-foreground/60 uppercase tracking-[0.2em] text-xs">Commitments</AnimatedText>
             <AnimatedTitle as="h2" className="text-3xl sm:text-4xl text-foreground leading-tight">
               Reliability, transparency and flawless user experience.
             </AnimatedTitle>
-            <AnimatedItem animationNum={1} as="p" className="text-foreground/70 text-lg max-w-3xl">
-              Our teams manage your projects with constant rigor: security, performance and clear communication
-              to build a relationship of trust.
-            </AnimatedItem>
+            <AnimatedText animationNum={1} as="p" className="text-foreground/70 text-lg max-w-3xl">
+              Our teams manage your projects with constant rigor: security, performance and clear communication to build a relationship of trust.
+            </AnimatedText>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

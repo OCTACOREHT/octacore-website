@@ -6,6 +6,7 @@ import { Globe, Building2, Headphones, Share2, Wrench, ArrowUpRight, CheckCircle
 import { RiSparklingLine, RiStackLine, RiCloudLine, RiHeadphoneLine } from "react-icons/ri"
 import { AnimatedGroup, AnimatedItem } from "@/components/ui/animated-group"
 import { AnimatedTitle } from "@/components/ui/animated-title"
+import { AnimatedText } from "@/components/ui/animated-text"
 
 export const metadata: Metadata = {
   title: "Services",
@@ -110,18 +111,20 @@ export default function ServicesPage() {
     <>
       {/* Hero Section */}
       <section className="relative pt-28 sm:pt-32 pb-16 sm:pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+        <AnimatedGroup showBlueEllipse={false}>
         {/* Blue Gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-slate-50 to-white" />
         <div className="absolute inset-0 circuit-bg opacity-30" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h1 className="font-[family-name:var(--font-heading)] font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-tight text-foreground mb-4 sm:mb-6 animate-fade-up">
+          <AnimatedTitle as="h1" className="font-[family-name:var(--font-heading)] font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-tight text-foreground mb-4 sm:mb-6">
             OUR SERVICES
-          </h1>
-          <p className="text-lg sm:text-xl text-foreground/80 animate-fade-up-delay-1 text-balance">
+          </AnimatedTitle>
+          <AnimatedText animationNum={0} as="p" className="text-lg sm:text-xl text-foreground/80 text-balance mx-auto">
             Cutting-edge digital solutions designed for performance, security and growth.
-          </p>
+          </AnimatedText>
         </div>
+        </AnimatedGroup>
       </section>
 
       <section className="py-20 sm:py-24 bg-background overflow-hidden relative">
@@ -131,10 +134,10 @@ export default function ServicesPage() {
             <AnimatedTitle as="h2" className="text-3xl sm:text-4xl text-foreground leading-tight">
               Digital journeys that make people want to work with you.
             </AnimatedTitle>
-            <AnimatedItem animationNum={1} as="p" className="text-foreground/70 text-lg max-w-3xl">
+            <AnimatedText animationNum={1} as="p" className="text-foreground/70 text-lg max-w-3xl">
               Each solution is designed with a clear editorial line, measured performance and integrated security,
               to inspire confidence in your users and partners.
-            </AnimatedItem>
+            </AnimatedText>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">

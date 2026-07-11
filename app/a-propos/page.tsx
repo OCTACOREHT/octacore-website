@@ -4,6 +4,7 @@ import { Lightbulb, Target, Shield, Users } from "lucide-react"
 import { Wordmark } from "@/components/logotype"
 import { AnimatedGroup, AnimatedItem } from "@/components/ui/animated-group"
 import { AnimatedTitle } from "@/components/ui/animated-title"
+import { AnimatedText } from "@/components/ui/animated-text"
 
 export const metadata: Metadata = {
   title: "About",
@@ -69,15 +70,15 @@ export default function AProposPage() {
                 Who we are
               </AnimatedTitle>
               <div className="space-y-5 sm:space-y-6 text-foreground/80 text-base sm:text-lg leading-relaxed">
-                <AnimatedItem animationNum={0} as="p">
+                <AnimatedText animationNum={0} as="p">
                   Octacore is a technology company specializing in the design, security and optimization of intelligent digital solutions. Our brand combines innovation, precision and a human-centered approach to help organizations succeed in their digital transformation and achieve real and measurable impact.
-                </AnimatedItem>
-                <AnimatedItem animationNum={1} as="p">
+                </AnimatedText>
+                <AnimatedText animationNum={1} as="p">
                   Octacore provides cutting-edge digital systems designed for performance, security and growth.
-                </AnimatedItem>
-                <AnimatedItem animationNum={2} as="p" className="text-foreground/60 text-sm sm:text-base">
+                </AnimatedText>
+                <AnimatedText animationNum={2} as="p" className="text-foreground/60 text-sm sm:text-base">
                   Based in Port-au-Prince, Haiti — Operating locally and internationally.
-                </AnimatedItem>
+                </AnimatedText>
               </div>
             </div>
 
@@ -110,9 +111,9 @@ export default function AProposPage() {
             <AnimatedTitle as="h2" className="text-2xl sm:text-3xl md:text-4xl uppercase text-foreground mb-4">
               Our approach
             </AnimatedTitle>
-            <AnimatedItem animationNum={0} as="p" className="text-foreground/70 text-base sm:text-lg max-w-2xl mx-auto">
+            <AnimatedText animationNum={0} as="p" className="text-foreground/70 text-base sm:text-lg max-w-2xl mx-auto">
               The values that guide each of our projects
-            </AnimatedItem>
+            </AnimatedText>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">

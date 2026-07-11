@@ -4,16 +4,17 @@ import React, { useContext, useRef, useEffect } from "react"
 import { VerticalCutReveal, VerticalCutRevealRef } from "./vertical-cut-reveal"
 import { AnimatedGroupContext } from "./animated-group"
 import { useInView } from "framer-motion"
-import { cn } from "@/lib/utils"
 
-export function AnimatedTitle({
+export function AnimatedText({
   children,
   className,
-  as: Component = "h2",
+  as: Component = "p",
+  staggerDuration = 0.02,
 }: {
   children: string | React.ReactNode
   className?: string
   as?: any
+  staggerDuration?: number
 }) {
   const text = typeof children === "string" ? children : children?.toString() || ""
   const groupRef = useContext(AnimatedGroupContext)
@@ -29,18 +30,18 @@ export function AnimatedTitle({
   }, [isInView])
 
   return (
-    <Component className={cn("font-[family-name:var(--font-heading)]", className)} ref={!groupRef ? fallbackRef : undefined}>
+    <Component className={className} ref={!groupRef ? fallbackRef : undefined}>
       <VerticalCutReveal
         ref={revealRef}
         autoStart={false}
         splitBy="words"
-        staggerDuration={0.08}
+        staggerDuration={staggerDuration}
         staggerFrom="first"
         reverse={true}
         transition={{
           type: "spring",
-          stiffness: 250,
-          damping: 40,
+          stiffness: 200,
+          damping: 30,
         }}
       >
         {text}

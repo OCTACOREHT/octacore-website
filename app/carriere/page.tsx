@@ -5,6 +5,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { AnimatedGroup, AnimatedItem } from "@/components/ui/animated-group"
 import { AnimatedTitle } from "@/components/ui/animated-title"
+import { AnimatedText } from "@/components/ui/animated-text"
 
 export const metadata: Metadata = {
   title: "Careers",
@@ -42,6 +43,7 @@ export default function CarrierePage() {
   return (
     <>
       <section className="relative pt-28 sm:pt-32 pb-16 sm:pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+        <AnimatedGroup showBlueEllipse={false}>
         <div className="absolute inset-0 bg-gradient-to-b from-slate-50 to-white" />
         <div className="absolute inset-0 circuit-bg opacity-30" />
 
@@ -54,15 +56,15 @@ export default function CarrierePage() {
             className="h-auto w-[210px]"
             priority
           />
-          <p className="text-foreground/70 uppercase tracking-[0.22em] text-xs">Join the team</p>
-          <h1 className="font-[family-name:var(--font-heading)] font-bold text-3xl sm:text-4xl md:text-5xl text-foreground leading-tight">
+          <AnimatedText animationNum={0} as="p" className="text-foreground/70 uppercase tracking-[0.22em] text-xs">Join the team</AnimatedText>
+          <AnimatedTitle as="h1" className="font-[family-name:var(--font-heading)] font-bold text-3xl sm:text-4xl md:text-5xl text-foreground leading-tight">
             Let's build the next generation of digital solutions.
-          </h1>
-          <p className="text-lg sm:text-xl text-foreground/80 max-w-3xl">
+          </AnimatedTitle>
+          <AnimatedText animationNum={1} as="p" className="text-lg sm:text-xl text-foreground/80 max-w-3xl">
             We recruit talents who love designing, securing and operating elegant digital experiences.
             Browse the open positions or send us a spontaneous application.
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
+          </AnimatedText>
+          <AnimatedItem animationNum={2} className="flex flex-wrap justify-center gap-3">
             <Button
               asChild
               size="lg"
@@ -77,21 +79,21 @@ export default function CarrierePage() {
             >
               <Link href="mailto:info@octacore.com?subject=Spontaneous%20application">Spontaneous application</Link>
             </Button>
-          </div>
+          </AnimatedItem>
         </div>
+        </AnimatedGroup>
       </section>
 
       <section id="offres" className="py-16 sm:py-20 lg:py-24 bg-background overflow-hidden relative">
         <AnimatedGroup showBlueEllipse={true} className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-3 mb-8 sm:mb-10">
-            <AnimatedItem animationNum={0} as="p" className="text-foreground/60 uppercase tracking-[0.2em] text-xs">Open positions</AnimatedItem>
+            <AnimatedText animationNum={0} as="p" className="text-foreground/60 uppercase tracking-[0.2em] text-xs">Open positions</AnimatedText>
             <AnimatedTitle as="h2" className="text-3xl sm:text-4xl text-foreground leading-tight">
               Missions where design, code and reliability meet.
             </AnimatedTitle>
-            <AnimatedItem animationNum={1} as="p" className="text-foreground/70 text-lg max-w-3xl">
-              We favor autonomous, curious and rigorous profiles on quality. Remote-friendly, with a
-              core team based in Port-au-Prince.
-            </AnimatedItem>
+            <AnimatedText animationNum={1} as="p" className="text-foreground/70 text-lg max-w-3xl">
+              We favor autonomous, curious and rigorous profiles on quality. Remote-friendly, with a core team based in Port-au-Prince.
+            </AnimatedText>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

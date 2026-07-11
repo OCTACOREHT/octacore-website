@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { supabaseClient } from '@/lib/supabaseClient'
 import { AnimatedGroup, AnimatedItem } from "@/components/ui/animated-group"
 import { AnimatedTitle } from "@/components/ui/animated-title"
+import { AnimatedText } from "@/components/ui/animated-text"
 
 const supabaseStorageUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
   ? `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/`
@@ -50,11 +51,11 @@ export default async function BlogPage() {
       <AnimatedGroup showBlueEllipse={true} className="mx-auto flex max-w-6xl flex-col gap-10">
         <header className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div className="space-y-2">
-            <AnimatedItem animationNum={0} as="p" className="text-sm uppercase tracking-[0.2em] text-foreground/60">Octacore Insights</AnimatedItem>
+            <AnimatedText animationNum={0} as="p" className="text-sm uppercase tracking-[0.2em] text-foreground/60">Octacore Insights</AnimatedText>
             <AnimatedTitle as="h1" className="text-4xl font-semibold text-foreground md:text-5xl">Blog</AnimatedTitle>
-            <AnimatedItem animationNum={1} as="p" className="max-w-3xl text-foreground/70">
+            <AnimatedText animationNum={1} as="p" className="max-w-3xl text-foreground/70">
               Articles published by the Octacore team: architecture, security, productivity and experience feedback.
-            </AnimatedItem>
+            </AnimatedText>
           </div>
         </header>
 

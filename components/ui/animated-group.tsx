@@ -21,7 +21,7 @@ export const revealVariants = {
   },
 }
 
-const AnimatedGroupContext = React.createContext<React.RefObject<Element | null> | null>(null)
+export const AnimatedGroupContext = React.createContext<React.RefObject<Element | null> | null>(null)
 
 export function AnimatedGroup({
   children,

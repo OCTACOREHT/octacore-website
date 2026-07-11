@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Sparkles as SparklesComp } from "@/components/ui/sparkles"
 import { TimelineContent } from "@/components/ui/timeline-animation"
 import { VerticalCutReveal } from "@/components/ui/vertical-cut-reveal"
+import { AnimatedText } from "@/components/ui/animated-text"
 import { cn } from "@/lib/utils"
 import NumberFlow from "@number-flow/react"
 import { motion } from "framer-motion"
@@ -203,16 +204,11 @@ export default function PricingSection4() {
           </VerticalCutReveal>
         </h2>
 
-        <TimelineContent
-          as="p"
-          animationNum={0}
-          timelineRef={pricingRef}
-          customVariants={revealVariants}
+        <AnimatedText
           className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto font-[family-name:var(--font-sans)]"
         >
-          Trusted by millions. We help teams all around the world. Explore which
-          option is right for you.
-        </TimelineContent>
+          Trusted by millions. We help teams all around the world. Explore which option is right for you.
+        </AnimatedText>
 
         <TimelineContent
           as="div"
