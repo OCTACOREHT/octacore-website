@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
-import { Star } from "lucide-react"
 
 export interface TestimonialAuthor {
   name: string
@@ -53,10 +52,14 @@ export function TestimonialCard({
       </div>
       <div className="flex gap-1 mt-5 relative z-10">
         {[...Array(5)].map((_, i) => (
-          <Star 
-            key={i} 
-            className="w-4 h-4 fill-amber-400 text-amber-500 drop-shadow-[0_0_6px_rgba(251,191,36,0.6)]" 
-          />
+          <svg
+            key={i}
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            className="w-5 h-5 fill-amber-400 text-amber-500 drop-shadow-[0_0_6px_rgba(251,191,36,0.6)]"
+          >
+            <path d="M12.0006 18.26L4.94715 22.2082L6.52248 14.2799L0.587891 8.7918L8.61493 7.84006L12.0006 0.5L15.3862 7.84006L23.4132 8.7918L17.4787 14.2799L19.054 22.2082L12.0006 18.26Z"></path>
+          </svg>
         ))}
       </div>
       <p className="mt-5 text-sm text-foreground/80 leading-relaxed font-medium relative z-10">

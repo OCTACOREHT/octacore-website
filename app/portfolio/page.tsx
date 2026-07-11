@@ -18,6 +18,48 @@ const projects = [
     description: "Octa-AI is a wellness artificial intelligence that accompanies users daily to improve mental, emotional and personal balance through simple and personalized advice.",
     href: "https://octaia.netlify.app/",
     tags: ["Artificial Intelligence", "Web App", "SaaS"],
+  },
+  {
+    name: 'FC Toro',
+    description: 'Sports organization focused on youth development and football excellence.',
+    href: 'https://fctoro.com',
+    tags: ["Sports", "Football", "Youth Development"],
+  },
+  {
+    name: 'Haitian Basketball Federation',
+    description: 'National governing body for basketball in Haiti.',
+    href: 'https://haitianbasketball.com',
+    tags: ["Sports", "Basketball", "Federation"],
+  },
+  {
+    name: 'Granpanpan Nations Cup',
+    description: 'International sports tournament uniting communities.',
+    href: 'https://granpanpannationscup.com',
+    tags: ["Sports", "Tournament", "International"],
+  },
+  {
+    name: 'Youth Foundation Haiti',
+    description: 'Empowering the next generation through education and sports.',
+    href: 'https://youthfoundationhaiti.org',
+    tags: ["Non-Profit", "Education", "Youth"],
+  },
+  {
+    name: 'Florida Badgers FCA',
+    description: 'Elite football academy training future champions.',
+    href: 'https://floridabadgersfca.com',
+    tags: ["Sports", "Academy", "Football"],
+  },
+  {
+    name: 'Flexipass',
+    description: 'Secure and fast ticketing platform for all your events.',
+    href: 'https://www.flexipass.shop',
+    tags: ["Ticketing", "Platform", "Events"],
+  },
+  {
+    name: "TaiTai",
+    description: "Innovative brand bringing quality products to the local market.",
+    href: "https://taïtaï.com",
+    tags: ["Brand", "E-commerce", "Quality Products"],
   }
 ]
 
@@ -138,63 +180,33 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section className="py-16 sm:py-20 lg:py-28 bg-background">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl sm:text-3xl uppercase text-foreground mb-10 text-center">
-            Completed Projects
-          </h2>
-          
-          {/* Project Cards */}
-          <div className="grid gap-6 mb-16">
-            {projects.map((project) => (
-              <a
-                key={project.name}
-                href={project.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group bg-background border border-[#2382FF]/20 rounded-2xl p-6 sm:p-8 hover:border-[#2382FF]/50 transition-all duration-300"
-              >
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-3">
-                      <h3 className="font-[family-name:var(--font-heading)] font-bold text-xl sm:text-2xl text-foreground uppercase">
-                        {project.name}
-                      </h3>
-                      <ExternalLink className="w-5 h-5 text-[#2382FF] opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </div>
-                    <p className="text-foreground/70 mb-4 leading-relaxed">
-                      {project.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-3 py-1 text-xs font-medium bg-[#0030FF]/10 text-[#2382FF] rounded-full"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2 text-[#0030FF] font-semibold group-hover:text-[#2382FF] transition-colors">
-                    <span className="text-sm">View project</span>
-                    <ArrowUpRight className="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                  </div>
-                </div>
-              </a>
-            ))}
-          </div>
 
-          {/* Message */}
+      <TestimonialsSection 
+        title="Completed Projects & Reviews"
+        description="Discover the projects we've delivered and the reviews from our clients and partners."
+        testimonials={partnersTestimonials.map(p => ({
+          author: { name: p.name, handle: p.username, avatar: p.img },
+          text: p.body,
+          href: `https://${p.username}`
+        }))}
+      />
+
+      {/* Partners Section (same logos style as homepage) */}
+      <ActivePartners />
+
+      {/* Social Networks Section */}
+      <section className="py-20 bg-background relative z-10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
+            <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl sm:text-3xl uppercase text-foreground mb-4">
+              Join Our Community
+            </h2>
             <p className="text-foreground/70 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
               Our recent projects are also visible on our social networks. 
               Follow us to discover our latest achievements and stay informed of our news.
             </p>
           </div>
 
-          {/* Social Links Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-3xl mx-auto mb-16">
             {socialLinks.map((social) => (
               <a
@@ -202,7 +214,7 @@ export default function PortfolioPage() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-background border border-[#2382FF]/20 rounded-xl p-6 hover:border-[#2382FF]/50 transition-all duration-300 flex flex-col items-center text-center"
+                className="group bg-background border border-[#2382FF]/20 rounded-xl p-6 hover:border-[#2382FF]/50 transition-all duration-300 flex flex-col items-center text-center shadow-sm hover:shadow-md"
               >
                 <div className="w-12 h-12 sm:w-14 sm:h-14 mb-4 rounded-xl bg-[#0030FF]/10 flex items-center justify-center group-hover:bg-[#0030FF]/20 transition-colors">
                   <social.icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#0030FF]" />
@@ -220,19 +232,6 @@ export default function PortfolioPage() {
           </div>
         </div>
       </section>
-
-      <TestimonialsSection 
-        title="Our Partners & Integrations"
-        description="We collaborate with a growing network of visionary brands and organizations to deliver excellence."
-        testimonials={partnersTestimonials.map(p => ({
-          author: { name: p.name, handle: p.username, avatar: p.img },
-          text: p.body,
-          href: `https://${p.username}`
-        }))}
-      />
-
-      {/* Partners Section (same logos style as homepage) */}
-      <ActivePartners />
     </>
   )
 }

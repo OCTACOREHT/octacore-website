@@ -20,9 +20,11 @@ const navigation = [
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
 
   useEffect(() => {
+    setMounted(true)
     const handleScroll = () => {
       setScrolled(window.scrollY > 20)
     }
@@ -61,7 +63,7 @@ export function Header() {
         {/* Desktop Navigation */}
         <div className="hidden lg:flex lg:items-center lg:gap-8">
           {navigation.map((item) => {
-            const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href))
+            const isActive = mounted && (pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href)))
             return (
               <Link
                 key={item.name}
