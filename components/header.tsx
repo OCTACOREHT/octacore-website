@@ -49,7 +49,15 @@ export function Header() {
   const isPricingPage = pathname === '/pricing'
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? (isPricingPage ? 'bg-black/90 backdrop-blur-md border-b border-[#2382FF]/20' : 'bg-background/95 backdrop-blur-md border-b border-[#2382FF]/20') : 'bg-transparent'}`}>
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        mobileMenuOpen 
+          ? 'inset-0 bg-background/95 backdrop-blur-xl' 
+          : scrolled 
+            ? (isPricingPage ? 'bg-black/90 backdrop-blur-md border-b border-[#2382FF]/20' : 'bg-background/95 backdrop-blur-md border-b border-[#2382FF]/20') 
+            : 'bg-transparent'
+      }`}
+    >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 py-4 lg:px-8">
         {/* Logo - Primary Horizontal Lockup (min 200px width) */}
         <Link href="/" className="min-w-[180px] sm:min-w-[200px]">
@@ -84,7 +92,7 @@ export function Header() {
         {/* Mobile menu button */}
         <button
           type="button"
-          className={`lg:hidden p-2 z-50 ${isPricingPage ? 'text-white' : 'text-foreground'}`}
+          className={`lg:hidden p-2 relative z-50 ${isPricingPage ? 'text-white' : 'text-foreground'}`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
         >
@@ -92,9 +100,9 @@ export function Header() {
         </button>
       </nav>
 
-      {/* Mobile menu - Fixed overlay with no scroll */}
+      {/* Mobile menu - Scrollable container inside the inset-0 header */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 bg-background/95 backdrop-blur-xl z-40 overflow-hidden px-6 pt-20 pb-10">
+        <div className="lg:hidden overflow-y-auto px-6 pb-10 max-h-[calc(100vh-80px)]">
           <div className="max-w-md mx-auto bg-foreground/5 border border-foreground/10 rounded-3xl p-6 flex flex-col gap-5 shadow-xl">
             <div className="grid grid-cols-1 gap-3">
               {navigation.map((item) => {
@@ -118,7 +126,6 @@ export function Header() {
             </div>
 
             <div className="flex flex-col gap-3">
-              {/* Removed Start a project button from mobile menu per request */}
               <Button
                 asChild
                 variant="outline"
