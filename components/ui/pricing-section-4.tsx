@@ -194,9 +194,9 @@ export default function PricingSection4() {
             reverse={true}
             containerClassName="justify-center "
             transition={{
-              type: "spring",
-              stiffness: 250,
-              damping: 40,
+              type: "tween",
+              ease: "easeOut",
+              duration: 0.5,
               delay: 0,
             }}
           >

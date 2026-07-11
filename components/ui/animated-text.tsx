@@ -39,9 +39,9 @@ export function AnimatedText({
         staggerFrom="first"
         reverse={true}
         transition={{
-          type: "spring",
-          stiffness: 200,
-          damping: 30,
+          type: "tween",
+          ease: "easeOut",
+          duration: 0.5,
         }}
       >
         {text}
