@@ -130,9 +130,8 @@ export function Header() {
                 asChild
                 variant="outline"
                 className="w-full border-foreground/10 text-foreground hover:bg-foreground/5"
-                onClick={() => setMobileMenuOpen(false)}
               >
-                <Link href="/services">View our services</Link>
+                <Link href="/services" onClick={() => setMobileMenuOpen(false)}>View our services</Link>
               </Button>
             </div>
           </div>
