@@ -37,14 +37,13 @@ const values = [
 export default function AProposPage() {
   return (
     <>
-      {/* Hero Section */}
       <section className="relative pt-28 sm:pt-32 pb-16 sm:pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
-        {/* Blue Gradient background */}
         <div className="absolute inset-0 bg-gradient-to-b from-slate-50 to-white" />
         <div className="absolute inset-0 circuit-bg opacity-30" />
-
+        
+        <AnimatedGroup showBlueEllipse={false}>
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center gap-4">
-          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-foreground/10 bg-foreground/5 text-foreground/80 text-[11px] tracking-[0.3em] uppercase animate-fade-up">
+          <AnimatedItem animationNum={0} className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-foreground/10 bg-foreground/5 text-foreground/80 text-[11px] tracking-[0.3em] uppercase">
             <Image src="/logo.png" alt="OCTACORE" width={24} height={24} className="h-6 w-6" priority />
             <span>Technology Partner</span>
           </div>

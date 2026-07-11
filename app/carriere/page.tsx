@@ -43,9 +43,9 @@ export default function CarrierePage() {
   return (
     <>
       <section className="relative pt-28 sm:pt-32 pb-16 sm:pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
-        <AnimatedGroup showBlueEllipse={false}>
         <div className="absolute inset-0 bg-gradient-to-b from-slate-50 to-white" />
         <div className="absolute inset-0 circuit-bg opacity-30" />
+        <AnimatedGroup showBlueEllipse={false}>
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center gap-5">
           <Image

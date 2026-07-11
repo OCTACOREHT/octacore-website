@@ -111,11 +111,11 @@ export default function ServicesPage() {
     <>
       {/* Hero Section */}
       <section className="relative pt-28 sm:pt-32 pb-16 sm:pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
-        <AnimatedGroup showBlueEllipse={false}>
         {/* Blue Gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-slate-50 to-white" />
         <div className="absolute inset-0 circuit-bg opacity-30" />
 
+        <AnimatedGroup showBlueEllipse={false}>
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <AnimatedTitle as="h1" className="font-[family-name:var(--font-heading)] font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-tight text-foreground mb-4 sm:mb-6">
             OUR SERVICES
