@@ -4,6 +4,8 @@ import React, { useState, useRef, useEffect } from "react"
 import { Mail, Phone, Instagram, Linkedin, Facebook, Send, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { AnimatedGroup, AnimatedItem } from "@/components/ui/animated-group"
+import { AnimatedTitle } from "@/components/ui/animated-title"
 
 const ACCESS_KEY = "7fdaacca-8ad7-4669-be27-40f4384540df"  // TA CLÉ
 
@@ -76,10 +78,10 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-background">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+      <section className="py-20 bg-background overflow-hidden relative">
+        <AnimatedGroup showBlueEllipse={true} className="max-w-4xl mx-auto px-4 sm:px-6">
           {/* Formulaire */}
-          <div className="max-w-lg mx-auto bg-foreground/5 border border-border rounded-2xl p-8 mb-12">
+          <AnimatedItem animationNum={0} className="max-w-lg mx-auto bg-foreground/5 border border-border rounded-2xl p-8 mb-12">
             <h3 className="font-bold text-2xl text-foreground mb-8 text-center uppercase">
               Send us a message
             </h3>
@@ -149,10 +151,10 @@ export default function ContactPage() {
                 <Send className="w-5 h-5 ml-2" />
               </Button>
             </form>
-          </div>
+          </AnimatedItem>
 
           {/* Contact Info */}
-          <div className="max-w-lg mx-auto">
+          <AnimatedItem animationNum={1} className="max-w-lg mx-auto">
             <div className="bg-0a0a2e border border-2382FF/20 rounded-2xl p-8 mb-8">
               <h3 className="font-bold text-xl text-foreground mb-6 text-center uppercase">Our contact details</h3>
               <div className="space-y-4">
@@ -182,8 +184,8 @@ export default function ContactPage() {
               </div>
               <p className="text-foreground/50 text-lg">Port-au-Prince, Haiti</p>
             </div>
-          </div>
-        </div>
+          </AnimatedItem>
+        </AnimatedGroup>
       </section>
     </>
   )

@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button"
 import { Wordmark } from "@/components/logotype"
 import { Globe, Building2, Headphones, Share2, Wrench, ArrowUpRight, CheckCircle2 } from "lucide-react"
 import { RiSparklingLine, RiStackLine, RiCloudLine, RiHeadphoneLine } from "react-icons/ri"
+import { AnimatedGroup, AnimatedItem } from "@/components/ui/animated-group"
+import { AnimatedTitle } from "@/components/ui/animated-title"
 
 export const metadata: Metadata = {
   title: "Services",
@@ -122,22 +124,22 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="py-20 sm:py-24 bg-background">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 sm:py-24 bg-background overflow-hidden relative">
+        <AnimatedGroup showBlueEllipse={true} className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-3 mb-10">
-            <p className="text-foreground/60 uppercase tracking-[0.2em] text-xs">Key Solutions</p>
-            <h2 className="text-3xl sm:text-4xl font-[family-name:var(--font-heading)] font-bold text-foreground leading-tight">
+            <AnimatedItem animationNum={0} as="p" className="text-foreground/60 uppercase tracking-[0.2em] text-xs">Key Solutions</AnimatedItem>
+            <AnimatedTitle as="h2" className="text-3xl sm:text-4xl text-foreground leading-tight">
               Digital journeys that make people want to work with you.
-            </h2>
-            <p className="text-foreground/70 text-lg max-w-3xl">
+            </AnimatedTitle>
+            <AnimatedItem animationNum={1} as="p" className="text-foreground/70 text-lg max-w-3xl">
               Each solution is designed with a clear editorial line, measured performance and integrated security,
               to inspire confidence in your users and partners.
-            </p>
+            </AnimatedItem>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-            {solutionAreas.map((area) => (
-              <div key={area.title} className="rounded-2xl border border-[#2382FF]/25 bg-background/80 p-6 sm:p-7 space-y-4">
+            {solutionAreas.map((area, index) => (
+              <AnimatedItem animationNum={2 + index} key={area.title} className="rounded-2xl border border-[#2382FF]/25 bg-background/80 p-6 sm:p-7 space-y-4">
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex items-center gap-3">
                     <area.icon className="h-10 w-10 text-[#2382FF]" />
@@ -159,18 +161,18 @@ export default function ServicesPage() {
                     </div>
                   ))}
                 </div>
-              </div>
+              </AnimatedItem>
             ))}
           </div>
-        </div>
+        </AnimatedGroup>
       </section>
 
       {/* Services Grid */}
-      <section className="py-16 sm:py-20 lg:py-28 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <section className="py-16 sm:py-20 lg:py-28 bg-background overflow-hidden relative">
+        <AnimatedGroup showBlueEllipse={false} className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {services.map((service) => (
-              <div
+            {services.map((service, index) => (
+              <AnimatedItem animationNum={index}
                 key={service.title}
                 className="group bg-background border border-[#2382FF]/20 rounded-xl p-6 sm:p-8 hover:border-[#2382FF]/50 transition-all duration-300 flex flex-col"
               >
@@ -206,10 +208,10 @@ export default function ServicesPage() {
                 >
                   <Link href="/contact">Request info</Link>
                 </Button>
-              </div>
+              </AnimatedItem>
             ))}
           </div>
-        </div>
+        </AnimatedGroup>
       </section>
     </>
   )

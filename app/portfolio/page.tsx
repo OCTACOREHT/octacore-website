@@ -6,6 +6,8 @@ import { Marquee } from "@/components/ui/3d-testimonials"
 import { Card, CardContent } from "@/components/ui/card"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 import { TestimonialsSection } from "@/components/ui/testimonials-with-marquee"
+import { AnimatedGroup, AnimatedItem } from "@/components/ui/animated-group"
+import { AnimatedTitle } from "@/components/ui/animated-title"
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -195,26 +197,25 @@ export default function PortfolioPage() {
       <ActivePartners />
 
       {/* Social Networks Section */}
-      <section className="py-20 bg-background relative z-10">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <section className="py-20 bg-background relative z-10 overflow-hidden">
+        <AnimatedGroup showBlueEllipse={true} className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl sm:text-3xl uppercase text-foreground mb-4">
+            <AnimatedTitle as="h2" className="text-2xl sm:text-3xl uppercase text-foreground mb-4">
               Join Our Community
-            </h2>
-            <p className="text-foreground/70 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+            </AnimatedTitle>
+            <AnimatedItem animationNum={0} as="p" className="text-foreground/70 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
               Our recent projects are also visible on our social networks. 
               Follow us to discover our latest achievements and stay informed of our news.
-            </p>
+            </AnimatedItem>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-3xl mx-auto mb-16">
-            {socialLinks.map((social) => (
-              <a
-                key={social.name}
+            {socialLinks.map((social, index) => (
+              <AnimatedItem animationNum={1 + index} key={social.name} as="a"
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-background border border-[#2382FF]/20 rounded-xl p-6 hover:border-[#2382FF]/50 transition-all duration-300 flex flex-col items-center text-center shadow-sm hover:shadow-md"
+                className="group bg-background border border-[#2382FF]/20 rounded-xl p-6 hover:border-[#2382FF]/50 transition-all duration-300 flex flex-col items-center text-center shadow-sm hover:shadow-md block w-full"
               >
                 <div className="w-12 h-12 sm:w-14 sm:h-14 mb-4 rounded-xl bg-[#0030FF]/10 flex items-center justify-center group-hover:bg-[#0030FF]/20 transition-colors">
                   <social.icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#0030FF]" />
@@ -227,10 +228,10 @@ export default function PortfolioPage() {
                   {social.description}
                   <ArrowUpRight className="w-4 h-4" />
                 </div>
-              </a>
+              </AnimatedItem>
             ))}
           </div>
-        </div>
+        </AnimatedGroup>
       </section>
     </>
   )

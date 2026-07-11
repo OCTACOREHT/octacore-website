@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import { Lightbulb, Target, Shield, Users } from "lucide-react"
 import { Wordmark } from "@/components/logotype"
+import { AnimatedGroup, AnimatedItem } from "@/components/ui/animated-group"
+import { AnimatedTitle } from "@/components/ui/animated-title"
 
 export const metadata: Metadata = {
   title: "About",
@@ -58,29 +60,29 @@ export default function AProposPage() {
       </section>
 
       {/* About Content */}
-      <section className="py-16 sm:py-20 lg:py-28 bg-background">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <section className="py-16 sm:py-20 lg:py-28 bg-background overflow-hidden relative">
+        <AnimatedGroup showBlueEllipse={true} className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             {/* Text Content */}
             <div>
-              <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl sm:text-3xl md:text-4xl uppercase text-foreground mb-6">
+              <AnimatedTitle as="h2" className="text-2xl sm:text-3xl md:text-4xl uppercase text-foreground mb-6">
                 Who we are
-              </h2>
+              </AnimatedTitle>
               <div className="space-y-5 sm:space-y-6 text-foreground/80 text-base sm:text-lg leading-relaxed">
-                <p>
+                <AnimatedItem animationNum={0} as="p">
                   Octacore is a technology company specializing in the design, security and optimization of intelligent digital solutions. Our brand combines innovation, precision and a human-centered approach to help organizations succeed in their digital transformation and achieve real and measurable impact.
-                </p>
-                <p>
+                </AnimatedItem>
+                <AnimatedItem animationNum={1} as="p">
                   Octacore provides cutting-edge digital systems designed for performance, security and growth.
-                </p>
-                <p className="text-foreground/60 text-sm sm:text-base">
+                </AnimatedItem>
+                <AnimatedItem animationNum={2} as="p" className="text-foreground/60 text-sm sm:text-base">
                   Based in Port-au-Prince, Haiti — Operating locally and internationally.
-                </p>
+                </AnimatedItem>
               </div>
             </div>
 
             {/* Visual Element */}
-            <div className="relative order-first lg:order-last">
+            <AnimatedItem animationNum={3} className="relative order-first lg:order-last">
               <div className="aspect-square max-w-xs sm:max-w-md mx-auto relative">
                 <div className="absolute inset-0 octagon-pattern rounded-2xl opacity-50" />
                 <div className="absolute inset-4 bg-background/80 rounded-xl border border-[#2382FF]/20 flex items-center justify-center">
@@ -96,26 +98,26 @@ export default function AProposPage() {
                 <div className="absolute -top-4 -right-4 w-20 sm:w-24 h-20 sm:h-24 bg-[#0030FF]/30 rounded-full blur-2xl" />
                 <div className="absolute -bottom-4 -left-4 w-24 sm:w-32 h-24 sm:h-32 bg-[#2382FF]/20 rounded-full blur-2xl" />
               </div>
-            </div>
+            </AnimatedItem>
           </div>
-        </div>
+        </AnimatedGroup>
       </section>
 
       {/* Values Section */}
-      <section className="py-16 sm:py-20 lg:py-28 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <section className="py-16 sm:py-20 lg:py-28 bg-background overflow-hidden relative">
+        <AnimatedGroup showBlueEllipse={false} className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl sm:text-3xl md:text-4xl uppercase text-foreground mb-4">
+            <AnimatedTitle as="h2" className="text-2xl sm:text-3xl md:text-4xl uppercase text-foreground mb-4">
               Our approach
-            </h2>
-            <p className="text-foreground/70 text-base sm:text-lg max-w-2xl mx-auto">
+            </AnimatedTitle>
+            <AnimatedItem animationNum={0} as="p" className="text-foreground/70 text-base sm:text-lg max-w-2xl mx-auto">
               The values that guide each of our projects
-            </p>
+            </AnimatedItem>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {values.map((value) => (
-              <div
+            {values.map((value, index) => (
+              <AnimatedItem animationNum={1 + index}
                 key={value.title}
                 className="bg-background border border-[#2382FF]/20 rounded-xl p-5 sm:p-6 text-center hover:border-[#2382FF]/50 transition-all duration-300 group"
               >
@@ -128,10 +130,10 @@ export default function AProposPage() {
                 <p className="text-foreground/70 text-sm leading-relaxed">
                   {value.description}
                 </p>
-              </div>
+              </AnimatedItem>
             ))}
           </div>
-        </div>
+        </AnimatedGroup>
       </section>
     </>
   )

@@ -18,7 +18,7 @@ export function TimelineContent({
   className?: string
   as?: ElementType | string
 }) {
-  const isInView = useInView(timelineRef || { current: null }, { once: true, margin: "-100px" })
+  const isInView = useInView(timelineRef || { current: null }, { once: true, amount: 0.2, margin: "0px 0px -100px 0px" })
   const MotionComponent = motion(as as any)
 
   return (

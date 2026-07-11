@@ -3,6 +3,8 @@ import { ArrowUpRight, Briefcase, Clock, MapPin, ShieldCheck, Sparkles } from "l
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import { AnimatedGroup, AnimatedItem } from "@/components/ui/animated-group"
+import { AnimatedTitle } from "@/components/ui/animated-title"
 
 export const metadata: Metadata = {
   title: "Careers",
@@ -79,22 +81,22 @@ export default function CarrierePage() {
         </div>
       </section>
 
-      <section id="offres" className="py-16 sm:py-20 lg:py-24 bg-background">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="offres" className="py-16 sm:py-20 lg:py-24 bg-background overflow-hidden relative">
+        <AnimatedGroup showBlueEllipse={true} className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-3 mb-8 sm:mb-10">
-            <p className="text-foreground/60 uppercase tracking-[0.2em] text-xs">Open positions</p>
-            <h2 className="text-3xl sm:text-4xl font-[family-name:var(--font-heading)] font-bold text-foreground leading-tight">
+            <AnimatedItem animationNum={0} as="p" className="text-foreground/60 uppercase tracking-[0.2em] text-xs">Open positions</AnimatedItem>
+            <AnimatedTitle as="h2" className="text-3xl sm:text-4xl text-foreground leading-tight">
               Missions where design, code and reliability meet.
-            </h2>
-            <p className="text-foreground/70 text-lg max-w-3xl">
+            </AnimatedTitle>
+            <AnimatedItem animationNum={1} as="p" className="text-foreground/70 text-lg max-w-3xl">
               We favor autonomous, curious and rigorous profiles on quality. Remote-friendly, with a
               core team based in Port-au-Prince.
-            </p>
+            </AnimatedItem>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {jobs.map((job) => (
-              <div
+            {jobs.map((job, index) => (
+              <AnimatedItem animationNum={2 + index}
                 key={job.title}
                 className="rounded-2xl border border-[#2382FF]/25 bg-background/80 p-6 sm:p-7 flex flex-col gap-4"
               >
@@ -133,24 +135,24 @@ export default function CarrierePage() {
                     <Link href="mailto:info@octacore.com?subject=Application%20-%20Octacore">Apply</Link>
                   </Button>
                 </div>
-              </div>
+              </AnimatedItem>
             ))}
           </div>
-        </div>
+        </AnimatedGroup>
       </section>
 
-      <section className="py-16 sm:py-20 lg:py-24 bg-background">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 sm:py-20 lg:py-24 bg-background overflow-hidden relative">
+        <AnimatedGroup showBlueEllipse={false} className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 items-center">
             <div className="space-y-4">
-              <p className="text-foreground/60 uppercase tracking-[0.2em] text-xs">Working at Octacore</p>
-              <h3 className="text-3xl sm:text-4xl font-[family-name:var(--font-heading)] font-bold text-foreground leading-tight">
+              <AnimatedItem animationNum={0} as="p" className="text-foreground/60 uppercase tracking-[0.2em] text-xs">Working at Octacore</AnimatedItem>
+              <AnimatedTitle as="h3" className="text-3xl sm:text-4xl text-foreground leading-tight">
                 An environment that values quality and progress.
-              </h3>
-              <p className="text-foreground/70 text-lg">
+              </AnimatedTitle>
+              <AnimatedItem animationNum={1} as="p" className="text-foreground/70 text-lg">
                 We emphasize clarity of missions, documentation and collective review. Deliverables
                 must be reliable, elegant and easy to evolve.
-              </p>
+              </AnimatedItem>
               <div className="flex flex-wrap gap-2">
                 {["Remote-friendly", "Clear process", "Design system", "Code reviews", "Security by default"].map((chip) => (
                   <span key={chip} className="px-3 py-2 rounded-full border border-foreground/10 bg-foreground/5 text-foreground/70 text-sm">
@@ -160,16 +162,16 @@ export default function CarrierePage() {
               </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {values.map((item) => (
-                <div key={item.title} className="rounded-2xl border border-[#2382FF]/20 bg-background/80 p-4 flex flex-col gap-2">
+              {values.map((item, index) => (
+                <AnimatedItem animationNum={2 + index} key={item.title} className="rounded-2xl border border-[#2382FF]/20 bg-background/80 p-4 flex flex-col gap-2">
                   <item.icon className="h-6 w-6 text-[#2382FF]" />
                   <h4 className="text-foreground font-semibold">{item.title}</h4>
                   <p className="text-foreground/70 text-sm leading-relaxed">{item.text}</p>
-                </div>
+                </AnimatedItem>
               ))}
             </div>
           </div>
-        </div>
+        </AnimatedGroup>
       </section>
     </>
   )
