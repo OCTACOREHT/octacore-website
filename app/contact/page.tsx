@@ -84,7 +84,7 @@ export default function ContactPage() {
         <AnimatedGroup showBlueEllipse={true} className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Formulaire */}
-          <AnimatedItem animationNum={0} className="w-full bg-foreground/5 border border-border rounded-2xl p-8">
+          <AnimatedItem animationNum={0} className="w-full bg-transparent border border-foreground/10 rounded-2xl p-8">
             <h3 className="font-bold text-2xl text-foreground mb-8 text-center uppercase">
               Send us a message
             </h3>
@@ -96,7 +96,7 @@ export default function ContactPage() {
                   type="text" 
                   name="name" 
                   required 
-                  className="w-full bg-03011E border border-2382FF/20 text-foreground placeholder-white/40 focus:border-0030FF focus:ring-0030FF/20 px-4 py-3 rounded-lg"
+                  className="w-full bg-transparent border border-foreground/20 text-foreground placeholder-foreground/40 focus:border-[#0030FF] focus:ring-[#0030FF]/20 px-4 py-3 rounded-lg"
                   placeholder="Your name"
                 />
               </div>
@@ -109,7 +109,7 @@ export default function ContactPage() {
                   type="email" 
                   name="email" 
                   required 
-                  className="w-full bg-03011E border border-2382FF/20 text-foreground placeholder-white/40 focus:border-0030FF focus:ring-0030FF/20 px-4 py-3 rounded-lg"
+                  className="w-full bg-transparent border border-foreground/20 text-foreground placeholder-foreground/40 focus:border-[#0030FF] focus:ring-[#0030FF]/20 px-4 py-3 rounded-lg"
                   placeholder="nom@exemple.com"
                 />
               </div>
@@ -119,7 +119,7 @@ export default function ContactPage() {
                 <Input 
                   type="tel" 
                   name="phone" 
-                  className="w-full bg-03011E border border-2382FF/20 text-foreground placeholder-white/40 focus:border-0030FF focus:ring-0030FF/20 px-4 py-3 rounded-lg"
+                  className="w-full bg-transparent border border-foreground/20 text-foreground placeholder-foreground/40 focus:border-[#0030FF] focus:ring-[#0030FF]/20 px-4 py-3 rounded-lg"
                   placeholder="509 XXXX-XXXX"
                 />
               </div>
@@ -132,7 +132,7 @@ export default function ContactPage() {
                   name="message" 
                   rows={5}
                   required
-                  className="w-full bg-03011E border border-2382FF/20 text-foreground placeholder-white/40 focus:border-0030FF focus:ring-0030FF/20 px-4 py-3 rounded-lg resize-vertical"
+                  className="w-full bg-transparent border border-foreground/20 text-foreground placeholder-foreground/40 focus:border-[#0030FF] focus:ring-[#0030FF]/20 px-4 py-3 rounded-lg resize-vertical"
                   placeholder="Describe your project..."
                 />
               </div>
@@ -158,7 +158,7 @@ export default function ContactPage() {
 
           {/* Contact Info */}
           <AnimatedItem animationNum={1} className="w-full flex flex-col gap-8">
-            <div className="bg-0a0a2e border border-2382FF/20 rounded-2xl p-8">
+            <div className="bg-transparent border border-foreground/10 rounded-2xl p-8">
               <h3 className="font-bold text-xl text-foreground mb-6 text-center uppercase">Our contact details</h3>
               <div className="space-y-4">
                 {contactInfo.map((info, i) => (
@@ -175,7 +175,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="bg-0a0a2e border border-2382FF/20 rounded-2xl p-8 text-center">
+            <div className="bg-transparent border border-foreground/10 rounded-2xl p-8 text-center">
               <h3 className="font-bold text-xl text-foreground mb-6 uppercase">Follow us</h3>
               <div className="flex justify-center gap-6 mb-6">
                 {socialLinks.map(link => (
