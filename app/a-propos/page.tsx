@@ -57,6 +57,7 @@ export default function AProposPage() {
             Smart solutions. Real impact.
           </p>
         </div>
+        </AnimatedGroup>
       </section>
 
       {/* About Content */}
