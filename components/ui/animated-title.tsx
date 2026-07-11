@@ -20,7 +20,7 @@ export function AnimatedTitle({
   const revealRef = useRef<VerticalCutRevealRef>(null)
   const fallbackRef = useRef<HTMLDivElement>(null)
   
-  const isInView = useInView(groupRef || fallbackRef, { once: true, amount: 0.2, margin: "0px 0px -100px 0px" })
+  const isInView = useInView(groupRef || fallbackRef, { once: true, amount: "some", margin: "0px 0px 100px 0px" })
 
   useEffect(() => {
     if (isInView) {

@@ -13,16 +13,19 @@ export function TimelineContent({
 }: {
   children: React.ReactNode
   animationNum?: number
-  timelineRef?: React.RefObject<Element>
+  timelineRef?: React.RefObject<Element | null>
   customVariants?: any
   className?: string
   as?: ElementType | string
 }) {
-  const isInView = useInView(timelineRef || { current: null }, { once: true, amount: 0.2, margin: "0px 0px -100px 0px" })
+  const localRef = React.useRef<Element>(null)
+  const targetRef = timelineRef || localRef
+  const isInView = useInView(targetRef as any, { once: true, amount: "some", margin: "0px 0px 100px 0px" })
   const MotionComponent = motion(as as any)
 
   return (
     <MotionComponent
+      ref={!timelineRef ? localRef : undefined}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       custom={animationNum}

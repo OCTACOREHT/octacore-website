@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation"
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useScroll, useMotionValueEvent } from "framer-motion"
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -23,15 +24,15 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
+  const { scrollY } = useScroll()
 
   useEffect(() => {
     setMounted(true)
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
-    }
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setScrolled(latest > 20)
+  })
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
