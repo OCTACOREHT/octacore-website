@@ -21,7 +21,7 @@ export function ActivePartners() {
         <div className="text-center mb-12">
           <p className="text-foreground/60 uppercase tracking-[0.2em] text-xs mb-3">Our Collaborators</p>
           <h2 className="text-2xl sm:text-3xl font-[family-name:var(--font-heading)] font-bold text-foreground">
-            Active Partners
+            Clients and Partners We Have Worked With
           </h2>
         </div>
 
