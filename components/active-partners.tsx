@@ -1,6 +1,7 @@
 'use client'
 
 import Image from "next/image"
+import { motion } from "framer-motion"
 
 const partners = [
   { name: "FC Toro", logo: "/partners/fctoro.png" },
@@ -26,22 +27,27 @@ export function ActivePartners() {
         </div>
 
         <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-10 sm:gap-x-16 sm:gap-y-12">
-          {partners.map((partner) => {
+          {partners.map((partner, index) => {
             const isExtraSmall = ['TaiTai', 'Granpanpan Nation'].includes(partner.name);
             return (
-            <div
+            <motion.div
               key={partner.name}
-              className="flex items-center justify-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05 }}
+              className="flex items-center justify-center cursor-pointer"
             >
               <Image
                 src={partner.logo}
                 alt={partner.name}
                 width={200}
                 height={100}
-                className={`w-auto object-contain ${isExtraSmall ? 'h-6 sm:h-8' : 'h-10 sm:h-14'}`}
+                className={`w-auto object-contain ${isExtraSmall ? 'h-6 sm:h-8' : 'h-10 sm:h-14'} transition-all duration-300`}
                 priority={false}
               />
-            </div>
+            </motion.div>
           )})}
         </div>
       </div>

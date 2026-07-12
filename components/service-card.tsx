@@ -49,7 +49,9 @@ export function ServiceCard({ title, description, icon: Icon, index = 0 }: Servi
       ref={cardRef}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
+      whileHover={{ scale: 1.02, y: -5 }}
+      whileTap={{ scale: 0.98 }}
+      viewport={{ once: true, amount: 0.4 }}
       transition={{ duration: 0.5, delay: index * 0.08, ease: [0.21, 1.02, 0.73, 1] }}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
@@ -60,7 +62,7 @@ export function ServiceCard({ title, description, icon: Icon, index = 0 }: Servi
         transformStyle: "preserve-3d",
         perspective: 800,
       }}
-      className="relative group rounded-2xl overflow-hidden cursor-default"
+      className="relative group rounded-2xl overflow-hidden cursor-pointer"
     >
       {/* Spotlight glow overlay */}
       <motion.div
