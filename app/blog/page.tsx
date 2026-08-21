@@ -65,13 +65,13 @@ export default async function BlogPage() {
           </AnimatedItem>
         ) : (
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {posts.map((post) => {
+            {posts.map((post, index) => {
               const cover = imageUrlFromPath(post.cover_image_path)
               return (
-                <AnimatedItem animationNum={2 + index} key={post.id} as={Link}
-                  href={`/blog/${post.slug}`}
-                  className="group relative overflow-hidden rounded-2xl border border-foreground/10 bg-gradient-to-br from-white/8 via-white/5 to-transparent p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition hover:-translate-y-1 hover:border-core-electric/70 block w-full"
-                >
+                <Link key={post.id} href={`/blog/${post.slug}`} className="block w-full">
+                  <AnimatedItem animationNum={2 + index}
+                    className="group relative overflow-hidden rounded-2xl border border-foreground/10 bg-gradient-to-br from-white/8 via-white/5 to-transparent p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition hover:-translate-y-1 hover:border-core-electric/70 block w-full"
+                  >
                   <div className="flex flex-col gap-4">
                     <div className="relative h-56 md:h-64 overflow-hidden rounded-xl border border-foreground/10 bg-foreground/5">
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-40 transition group-hover:opacity-80" />
@@ -102,7 +102,8 @@ export default async function BlogPage() {
                     </div>
                   </div>
                 </AnimatedItem>
-              )
+              </Link>
+            )
             })}
           </div>
         )}
