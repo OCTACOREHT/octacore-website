@@ -162,7 +162,7 @@ export default function HomePage() {
         </AnimatedGroup>
       </section>
 
-      <section className="bg-background py-20 sm:py-24 overflow-hidden relative">
+      <section className="bg-background py-20 sm:py-24 relative">
         <AnimatedGroup showBlueEllipse={true} className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-3 mb-10">
             <AnimatedItem animationNum={0} as="p" className="text-foreground/60 uppercase tracking-[0.2em] text-xs">About Octacore</AnimatedItem>
@@ -251,7 +251,7 @@ export default function HomePage() {
         </AnimatedGroup>
       </section>
 
-      <section className="py-20 sm:py-24 bg-background overflow-hidden relative">
+      <section className="bg-background py-20 sm:py-24 relative">
         <AnimatedGroup showBlueEllipse={true} className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-3 mb-10">
             <AnimatedText animationNum={0} as="p" className="text-foreground/60 uppercase tracking-[0.2em] text-xs">Method</AnimatedText>

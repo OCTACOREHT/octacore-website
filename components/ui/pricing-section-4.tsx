@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Sparkles as SparklesComp } from "@/components/ui/sparkles"
 import { TimelineContent } from "@/components/ui/timeline-animation"
@@ -59,7 +60,7 @@ export default function PricingSection4() {
 
   return (
     <div
-      className="min-h-screen mx-auto relative bg-black overflow-x-hidden pt-20 pb-24"
+      className="min-h-screen mx-auto relative bg-black bg-[radial-gradient(ellipse_80%_70%_at_50%_-20%,rgba(49,49,245,0.22),transparent_100%)] overflow-x-hidden pt-20 pb-24"
       ref={pricingRef}
     >
       {/* Background glow animations */}
@@ -83,7 +84,7 @@ export default function PricingSection4() {
         animationNum={5}
         timelineRef={pricingRef}
         customVariants={revealVariants}
-        className="absolute left-0 top-[-114px] w-full h-[113.625vh] flex flex-col items-start justify-start content-start flex-none flex-nowrap gap-2.5 overflow-hidden p-0 z-0 pointer-events-none"
+        className="absolute left-0 top-[-114px] w-full h-[150vh] flex flex-col items-start justify-start content-start flex-none flex-nowrap gap-2.5 overflow-hidden p-0 z-0 pointer-events-none [mask-image:linear-gradient(to_bottom,black_30%,transparent_95%)]"
       >
         <div className="framer-1i5axl2">
           <div
@@ -230,12 +231,12 @@ export default function PricingSection4() {
                       ))}
                     </ul>
 
-                    <a
-                      href="#contact"
+                    <Link
+                      href="/contact"
                       className="w-full py-3 px-4 font-bold text-xs rounded-xl bg-neutral-800 hover:bg-neutral-700 text-white transition-all text-center block"
                     >
                       Get Started with Starter
-                    </a>
+                    </Link>
                   </CardContent>
                 </Card>
 
@@ -281,12 +282,12 @@ export default function PricingSection4() {
                       ))}
                     </ul>
 
-                    <a
-                      href="#contact"
+                    <Link
+                      href="/contact"
                       className="w-full py-3 px-4 font-bold text-xs rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white transition-all shadow-lg shadow-blue-950 text-center block"
                     >
                       Get Started with Business
-                    </a>
+                    </Link>
                   </CardContent>
                 </Card>
 
@@ -332,12 +333,12 @@ export default function PricingSection4() {
                       ))}
                     </ul>
 
-                    <a
-                      href="#contact"
+                    <Link
+                      href="/contact"
                       className="w-full py-3 px-4 font-bold text-xs rounded-xl bg-neutral-800 hover:bg-neutral-700 text-white transition-all text-center block"
                     >
                       Request Enterprise Quote
-                    </a>
+                    </Link>
                   </CardContent>
                 </Card>
               </div>
@@ -458,12 +459,12 @@ export default function PricingSection4() {
                       ))}
                     </ul>
 
-                    <a
-                      href="#contact"
+                    <Link
+                      href="/contact"
                       className="w-full py-3 px-4 font-bold text-xs rounded-xl bg-neutral-800 hover:bg-neutral-700 text-white transition-all text-center block"
                     >
                       Get Started with Starter
-                    </a>
+                    </Link>
                   </CardContent>
                 </Card>
 
@@ -506,12 +507,12 @@ export default function PricingSection4() {
                       ))}
                     </ul>
 
-                    <a
-                      href="#contact"
+                    <Link
+                      href="/contact"
                       className="w-full py-3 px-4 font-bold text-xs rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white transition-all shadow-lg shadow-blue-950 text-center block"
                     >
                       Get Started with Business
-                    </a>
+                    </Link>
                   </CardContent>
                 </Card>
 
@@ -554,12 +555,12 @@ export default function PricingSection4() {
                       ))}
                     </ul>
 
-                    <a
-                      href="#contact"
+                    <Link
+                      href="/contact"
                       className="w-full py-3 px-4 font-bold text-xs rounded-xl bg-neutral-800 hover:bg-neutral-700 text-white transition-all text-center block"
                     >
                       Request Enterprise Quote
-                    </a>
+                    </Link>
                   </CardContent>
                 </Card>
               </div>
@@ -642,12 +643,12 @@ export default function PricingSection4() {
                   <p className="text-xs text-gray-400">
                     Ready to automate your company's core operations? Get a custom technical quote.
                   </p>
-                  <a
-                    href="#contact"
+                  <Link
+                    href="/contact"
                     className="py-3 px-6 font-bold text-xs rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white transition-all shadow-lg shadow-blue-950/50 whitespace-nowrap"
                   >
                     Request System Analysis
-                  </a>
+                  </Link>
                 </div>
               </div>
             </motion.div>
@@ -711,12 +712,12 @@ export default function PricingSection4() {
                       ))}
                     </ul>
 
-                    <a
-                      href="#contact"
+                    <Link
+                      href="/contact"
                       className="w-full py-3 px-4 font-bold text-xs rounded-xl bg-neutral-800 hover:bg-neutral-700 text-white transition-all text-center block"
                     >
                       Subscribe to Essential
-                    </a>
+                    </Link>
                   </CardContent>
                 </Card>
 
@@ -758,12 +759,12 @@ export default function PricingSection4() {
                       ))}
                     </ul>
 
-                    <a
-                      href="#contact"
+                    <Link
+                      href="/contact"
                       className="w-full py-3 px-4 font-bold text-xs rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white transition-all shadow-lg text-center block"
                     >
                       Subscribe to Business
-                    </a>
+                    </Link>
                   </CardContent>
                 </Card>
 
@@ -805,12 +806,12 @@ export default function PricingSection4() {
                       ))}
                     </ul>
 
-                    <a
-                      href="#contact"
+                    <Link
+                      href="/contact"
                       className="w-full py-3 px-4 font-bold text-xs rounded-xl bg-neutral-800 hover:bg-neutral-700 text-white transition-all text-center block"
                     >
                       Subscribe to Complete
-                    </a>
+                    </Link>
                   </CardContent>
                 </Card>
               </div>
@@ -882,12 +883,12 @@ export default function PricingSection4() {
                       ))}
                     </ul>
 
-                    <a
-                      href="#contact"
+                    <Link
+                      href="/contact"
                       className="w-full py-3 px-4 font-bold text-xs rounded-xl bg-neutral-800 hover:bg-neutral-700 text-white transition-all text-center block"
                     >
                       Select Starter Maintenance
-                    </a>
+                    </Link>
                   </CardContent>
                 </Card>
 
@@ -931,12 +932,12 @@ export default function PricingSection4() {
                       ))}
                     </ul>
 
-                    <a
-                      href="#contact"
+                    <Link
+                      href="/contact"
                       className="w-full py-3 px-4 font-bold text-xs rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white transition-all shadow-lg text-center block"
                     >
                       Select Business Care
-                    </a>
+                    </Link>
                   </CardContent>
                 </Card>
 
@@ -979,12 +980,12 @@ export default function PricingSection4() {
                       ))}
                     </ul>
 
-                    <a
-                      href="#contact"
+                    <Link
+                      href="/contact"
                       className="w-full py-3 px-4 font-bold text-xs rounded-xl bg-neutral-800 hover:bg-neutral-700 text-white transition-all text-center block"
                     >
-                      Request SLA Maintenance
-                    </a>
+                      Request SLA Technical Proposal
+                    </Link>
                   </CardContent>
                 </Card>
               </div>

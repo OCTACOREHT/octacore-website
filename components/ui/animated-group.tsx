@@ -38,13 +38,13 @@ export function AnimatedGroup({
     <AnimatedGroupContext.Provider value={ref}>
       <div className={cn("relative w-full", className)} ref={ref}>
         {showBlueEllipse && (
-          <div className="absolute left-0 top-0 w-full h-full flex items-center justify-center pointer-events-none z-0 overflow-hidden">
+          <div className="absolute left-0 -top-24 -bottom-24 w-full flex items-center justify-center pointer-events-none z-0 [mask-image:radial-gradient(ellipse_70%_70%_at_50%_50%,black_20%,transparent_100%)]">
             <div
-              className="absolute left-[calc(50%-400px)] top-[-100px] h-[800px] w-[800px] flex-none rounded-full"
+              className="absolute left-[calc(50%-400px)] top-[10%] h-[600px] w-[800px] flex-none rounded-full"
               style={{
-                border: "150px solid #2382FF",
-                filter: "blur(120px)",
-                opacity: 0.1,
+                border: "120px solid #2382FF",
+                filter: "blur(140px)",
+                opacity: 0.12,
               }}
             />
           </div>
